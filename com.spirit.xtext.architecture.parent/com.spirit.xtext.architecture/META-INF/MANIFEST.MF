@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: com.spirit.xtext.architecture
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: com.spirit.xtext.architecture; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ org.eclipse.emf.common
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: com.spirit.xtext.architecture.services,
+ com.spirit.xtext.architecture.serializer,
+ com.spirit.xtext.architecture.scoping,
+ com.spirit.xtext.architecture.parser.antlr.internal,
+ com.spirit.xtext.architecture.generator,
+ com.spirit.xtext.architecture,
+ com.spirit.xtext.architecture.tgfi,
+ com.spirit.xtext.architecture.tgfi.util,
+ com.spirit.xtext.architecture.validation,
+ com.spirit.xtext.architecture.tgfi.impl,
+ com.spirit.xtext.architecture.parser.antlr
+Import-Package: org.apache.log4j

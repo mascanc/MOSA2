@@ -1,0 +1,521 @@
+ArchitecturalElement IHE_ITI_TF_v13 {
+	JavaPackage: "com.spirit.ihe.iti"
+	Name: "IHE ITI Technical Framework"
+	Version: "13"
+	Status: "Released"
+	Objective: "IHE ITI actors library"
+	HL_Function: "IT Infrastructure Technical components"
+	Rules: {
+		// these are the rules from Table 2-1
+		// all actors shall be in CT. Since All actors
+		// ar ATNA, I reference ATNA->CT. This are the mandatory grouping
+		atna1 : "*/PIX->SecureNode/ATNA"
+		atna2 : "*/PSA->SecureNode/ATNA"
+		atna3 : "*/PDQ->SecureNode/ATNA"
+		atna4 : "*/XDS->SecureNode/ATNA"
+		atna5 : "*/XUA->SecureNode/ATNA"
+		atna6 : "*/XDR->SecureNode/ATNA"
+		atna7 : "*/RFD->SecureNode/ATNA"
+		atna8 : "*/XCA->SecureNode/ATNA"
+		atna9 : "*/PIXV3->SecureNode/ATNA"
+		atna10 : "*/PDQV3->SecureNode/ATNA"
+		atna11 : "*/MPQ->SecureNode/ATNA"
+		atna12 : "*/DSUB->SecureNode/ATNA"
+		atna13 : "*/XCPD->SecureNode/ATNA"
+		atna14 : "*/XDW->SecureNode/ATNA"
+		atna15 : "*/XDM->SecureNode/ATNA"
+		time1 : "*/EUA->TimeClient/CT"
+		time2 : "*/PIX->TimeClient/CT"
+		time3 : "*/PSA->TimeClient/CT"
+		time4 : "*/PDQ->TimeClient/CT"
+		time5 : "*/PWP->TimeClient/CT"
+		time6 : "*/XDS->TimeClient/CT"
+		time7 : "*/XUA->TimeClient/CT"
+		time8 : "*/PAM->TimeClient/CT"
+		time9 : "*/XDR->TimeClient/CT"
+		time10 : "*/XDM->TimeClient/CT"
+		time11 : "*/RFD->TimeClient/CT"
+		time12 : "*/XCA->TimeClient/CT"
+		time13 : "*/BPPC->TimeClient/CT"
+		time14 : "*/XDSSD->TimeClient/CT"
+		time15 : "*/SVS->TimeClient/CT"
+		time16 : "*/PIXV3->TimeClient/CT"
+		time17 : "*/PDQV3->TimeClient/CT"
+		time18 : "*/MPQ->TimeClient/CT"
+		time19 : "*/DSUB->TimeClient/CT"
+		time20 : "*/XCPD->TimeClient/CT"
+		time21 : "*/XDW->TimeClient/CT"
+		
+		bppc1 : "ContentCreator/BPPC->DocumentSource/XDS"
+		bppc2 : "ContentCreator/BPPC->PortableMediaCreator/XDM"
+		bppc3 : "ContentCreator/BPPC->DocumentSource/XDR"
+		bppc4 : "ContentConsumer/BPPC->DocumentConsumer/XDS"
+		bppc5 : "ContentConsumer/BPPC->PortableMediaImporter/XDM"
+		bppc6 : "ContentConsumer/BPPC->DocumentRecipient/XDR"
+		bppc7 : "ContentConsumer/BPPC->ContentConsumer/XDSSD"
+		xdssd1 : "ContentCreator/XDSSD->DocumentSource/XDS"
+		xdssd2 : "ContentCreator/XDSSD->PortableMediaCreator/XDM"
+		xdssd3 : "ContentCreator/XDSSD->DocumentSource/XDR"
+		xdssd4 : "ContentConsumer/XDSSD->DocumentConsumer/XDS"
+		xdssd5 : "ContentConsumer/XDSSD->PortableMediaImporter/XDM"
+		xdssd6 : "ContentConsumer/XDSSD->DocumentRecipient/XDR"
+		
+		
+		
+
+	}
+	
+	
+	
+	Profile EUA {
+		Name: "EUA"
+		Description: "Defines a a means to establish one name per user that can then be used on all of the devices and software that participate in this integration profile"
+		Features: "Authenticate users"
+		Function: "Enterprise User Authentication"
+
+		actors: 
+			"KerberosAuthenticationServer"
+			"KerberizedServer"
+			"ClientAuthenticationAgent"
+			"ContextManager"
+			"UserContextParticipant"  
+		transactions:
+			("ClientAuthenticationAgent", "ITI_2_Get_User_Authentication", "KerberosAuthenticationServer")
+			("ClientAuthenticationAgent", "ITI_3_Get_Service_Ticket", "KerberosAuthenticationServer")
+			("ClientAuthenticationAgent", "ITI_4_Kerberized_Communication", "KerberizedServer")
+			("ClientAuthenticationAgent", "ITI_5_Join_Context", "ContextManager")
+			("ClientAuthenticationAgent", "ITI_6_Change_Context", "ContextManager")
+			("ClientAuthenticationAgent", "ITI_7_Leave_Context", "ContextManager")
+			("UserContextParticipant", "ITI_5_Join_Context_User", "ContextManager")
+			("UserContextParticipant", "ITI_6_Change_Context_User", "ContextManager")
+			("UserContextParticipant", "ITI_7_Leave_Context_User", "ContextManager")
+			
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	Profile PIX {
+		Name: "PIX"
+		Description: "Supports the cross-referencing of patient identifiers from multiple Patient Identifier Domains"
+		Features: "Patient Identification"
+		Function: "Patient Identifier Cross-referencing"
+
+		actors: 
+			"PatientIdentifierCrossReferenceManager"
+			"PatientIdentitySource"
+			"PatientIdentifierCrossReferenceConsumer"  
+		transactions:
+			("PatientIdentitySource", "ITI_8_Patient_Identity_Feed", "PatientIdentifierCrossReferenceManager")
+			("PatientIdentitySource", "ITI_30_Patient_Identity_Management_Hl7_v25", "PatientIdentifierCrossReferenceManager")
+			("PatientIdentifierCrossReferenceConsumer", "ITI_9_PIX_Query", "PatientIdentifierCrossReferenceManager")
+			("PatientIdentifierCrossReferenceManager", "ITI_10_PIX_Update_Notification", "PatientIdentifierCrossReferenceConsumer")
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	Profile PSA {
+		Name: "PSA"
+		Description: "The Patient Synchronized Applications Profile (PSA) enables single patient selection for the user working in multiple applications on a workstation desktop."
+		Features: "Patient Synchronized Applications Profile. Enhance EUA"
+		Function: "Allows patient to use a common context for authentication"
+
+		actors: 
+			"PatientContextParticipantActor"
+			"ContextManagerActor"
+		transactions:
+			("ContextManagerActor", "ITI_13_Follow_Context", "PatientContextParticipantActor")
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	Profile CT {
+		Name: "CT"
+		Description: "Defines a mechanism to synchronize the time base between multiple actors and computers"
+		Features: "Keep time in sync, using NTP"
+		Function: "Consistent time"
+
+		actors: 
+			"TimeClient"
+			"TimeServer"  
+		transactions:
+			("TimeClient", "ITI_1_Maintain_Time", "TimeServer")
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	Profile PDQ {
+		Name: "PDQ"
+		Description: "The Patient Demographics Query Integration Profile (PDQ) provides ways for multiple distributed applications to query a patient information server"
+		Features: "Query Demographics of a patient"
+		Function: "Patient Demographics Query"
+
+		actors: 
+			"PatientDemographicsSupplier"
+			"PatientDemographicsConsumer"  
+		transactions:
+			("PatientDemographicsConsumer", "ITI_21_Patient_Demographics_Query", "PatientDemographicsSupplier")
+			("PatientDemographicsConsumer", "ITI_22_Patient_Demographics_and_visit_Query", "PatientDemographicsSupplier")
+
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	Profile ATNA {
+		Name: "ATNA"
+		Description: "The Audit Trail and Node Authentication (ATNA) Profile specifies the foundational elements needed by all forms of secure systems"
+		Features: "Secure Connection and Audit Trail"
+		Function: "Audit Trail and Node Authentication"
+
+		actors: 
+			"SecureApplication"
+			"SecureNode"
+			"AuditRecordRepository"
+			"AuditRecordForwarder"  
+		transactions:
+			("SecureApplication", "ITI_19_Node_Authentication", "SecureNode")
+			("SecureApplication", "ITI_20_Record_Audit_Event", "AuditRecordRepository")
+			("AuditRecordForwarder", "ITI_20_Record_Audit_Forward", "AuditRecordRepository")
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	Profile XDS {
+		Name: "XDS"
+		Description: "The Cross-Enterprise Document Sharing (XDS.b) IHE Integration Profile facilitates the registration, distribution and access across health enterprises of patient electronic health records."
+		Features: "Document Sharing"
+		Function: "Cross-Enterprise Document Sharing"
+
+		actors: 
+			"PatientIdentitySource"
+			"DocumentRegistry"
+			"DocumentConsumer"
+			"DocumentRepository"
+			"OnDemandDocumentSource"  
+			"DocumentSource"
+		transactions:
+			("PatientIdentitySource", "ITI_8_Patient_Identity_Feed", "DocumentRegistry")
+			("PatientIdentitySource", "ITI_44_Patient_Identity_Feed_HL7V3", "DocumentRegistry")
+			("OnDemandDocumentSource", "ITI_61_Register_OnDemand_Document_Entry", "DocumentRegistry")
+			("DocumentConsumer", "ITI_18_Registry_Stored_Query", "DocumentRegistry")
+			("DocumentSource", "ITI_41_Provide_and_Register_Document_Set", "DocumentRepository")
+			("DocumentRepository", "ITI_42_Register_document_set", "DocumentRegistry")
+			("DocumentConsumer", "ITI_43_Retrieve_Document_Set", "DocumentRepository")
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	Profile PWP {
+		Name: "PWP"
+		Description: "The Personnel White Pages (PWP) Profile provides access to basic directory information on human workforce members to other workforce members within the enterprise"
+		Features: "Directory of Users"
+		Function: "Personnel White Pages"
+
+		actors: 
+			"PersonnelWhitePagesConsumer"
+			"DNSServer"
+			"PersonnelWhitePagesDirectory"
+		transactions:
+			("PersonnelWhitePagesConsumer", "ITI_23_Find_Personnel_White_Pages", "DNSServer")
+			("PersonnelWhitePagesConsumer", "ITI_24_Query_Personnel_White_Pages", "PersonnelWhitePagesDirectory")
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	Profile XUA {
+		Name: "XUA"
+		Description: "The Cross-Enterprise User Assertion Profile (XUA) provides a means to communicate claims about an authenticated principal (user, application, system...) in transactions that cross enterprise boundaries."
+		Features: "Authentication of messages"
+		Function: "Cross Enterprise User Assertion"
+
+		actors: 
+			"XServiceUser"
+			"XServiceProvider"
+		transactions:
+			("XServiceUser", "ITI_40_Provide_X_User_Assertion", "XServiceProvider")
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	Profile PAM {
+		Name: "PAM"
+		Description: "The Patient Administration Management Integration Profile defines transactions based on message exchanges to support patient identity and encounter information, as well as movements within an acute care encounter"
+		Features: "Patient Administration"
+		Function: "Patient Administration Management"
+
+		actors: 
+			"PatientDemographicSupplier"
+			"PatientDemographicConsumer"
+			"PatientEncounterSupplier"
+			"PatientEncounterConsumer"
+		transactions:
+			("PatientDemographicSupplier", "ITI_30_Patient_Identity_Management", "PatientDemographicConsumer")
+			("PatientEncounterSupplier", "ITI_31_Patient_Encounter_Management", "PatientEncounterConsumer")
+		
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	Profile XDR {
+		Name: "XDR"
+		Description: "CrossEnterprise Document Reliable Interchange (XDR) provides document interchange using a 3860 reliable messaging system"
+		Features: "Document Exchange"
+		Function: "CrossEnterprise Document Reliable Interchange"
+
+		actors: 
+			"DocumentSource"
+			"MetadataLimitedDocumentSource"
+			"DocumentRecipient"
+		transactions:
+			("DocumentSource", "ITI_41_Provide_and_Register_Document_Set", "DocumentRecipient")
+			("MetadataLimitedDocumentSource", "ITI_41_Provide_and_Register_Document_Set_MLD", "DocumentRecipient")
+		
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	Profile XDM {
+		Name: "XDM"
+		Description: "Cross-Enterprise Document Media Interchange (XDM) provides document interchange using a common file and directory structure over several standard media types"
+		Features: "Document Exchange"
+		Function: "Cross-Enterprise Document Media Interchange (XDM)"
+
+		actors: 
+			"PortableMediaCreator"
+			"PortableMediaImporter"
+		transactions:
+			("PortableMediaCreator", "ITI_32_Distribute_Document_Set_on_Media", "PortableMediaImporter")
+	
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	Profile RFD {
+		Name: "RFD"
+		Description: "The Retrieve Form for Data Capture (RFD) Profile provides a method for gathering data within a user’s current application to meet the requirements of an external system"
+		Features: "Retrieve Form Exchange"
+		Function: "Retrieve Form for Data Capture (RFD)"
+
+		actors: 
+			"FormFiller"
+			"FormArchiver"
+			"FormManager"
+			"FormReceiver"
+		transactions:
+			("FormFiller", "ITI_34_Retrieve_Form", "FormManager")
+			("FormFiller", "ITI_37_Retrieve_Clarifications", "FormManager")
+			("FormFiller", "ITI_35_Submit_Form", "FormReceiver")
+			("FormFiller", "ITI_36_Archive_Form", "FormArchiver")
+	
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	Profile XCA {
+		Name: "XCA"
+		Description: "The Cross-Community Access Profile supports the means to query and retrieve patient relevant medical data held by other communities"
+		Features: "Cross Community Data Exchange"
+		Function: "Cross-Community Access (XCA)"
+
+		actors: 
+			"InitiatingGateway"
+			"RespondingGateway"
+			
+		transactions:
+			("InitiatingGateway", "ITI_38_Cross_Gateway_Query", "RespondingGateway")
+			("InitiatingGateway", "ITI_39_Cross_Gateway_Retrieve", "RespondingGateway")
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	// note that the BPPC is more a content profile, rather than an infrastructure. It should go in PCC
+	Profile BPPC {
+		Name: "BPPC"
+		Description: "The document sharing infrastructure provided by XD* allow for the publication and use of clinical documents associated with a patient"
+		Features: "Patient Privacy"
+		Function: "Basic Patient Privacy Consents (BPPC)"
+
+		actors: 
+			"ContentCreator"
+			"ContentConsumer"
+			
+		transactions:
+			("ContentCreator", "ITI_XX_Share_Data", "ContentConsumer")
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	Profile XDSSD {
+		Name: "XDSSD"
+		Description: "A variety of legacy paper, film, electronic and scanner outputted formats are used to store and exchange clinical documents. It provide a mechanism that allows such source metadata to be stored with the document"
+		Features: "Scanned documents"
+		Function: "Cross-Enterprise Sharing of Scanned Documents (XDS-SD)"
+
+		actors: 
+			"ContentCreator"
+			"ContentConsumer"
+			
+		transactions:
+			("ContentCreator", "ITI_XX_Share_Data", "ContentConsumer")
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	Profile SVS {
+		Name: "SVS"
+		Description: "The Sharing Value Sets (SVS) Profile provides a means through which healthcare systems producing clinical or administrative data"
+		Features: "Shares Value Set"
+		Function: "Sharing Value Sets (SVS)"
+
+		actors: 
+			"ValueSetConsumer"
+			"ValueSetRepository"
+			
+		transactions:
+			("ValueSetConsumer", "ITI_48_Retrieve_Value_Set", "ValueSetRepository")
+			("ValueSetConsumer", "ITI_60_Retrieve_Multiple_Value_Set", "ValueSetRepository")
+			
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	Profile PIXV3 {
+		Name: "PIXV3"
+		Description: "Supports the cross-referencing of patient identifiers from multiple Patient Identifier Domains in HL7V3"
+		Features: "Patient Identification"
+		Function: "Patient Identifier Cross-referencing"
+
+		actors: 
+			"PatientIdentifierCrossReferenceManager"
+			"PatientIdentitySource"
+			"PatientIdentifierCrossReferenceConsumer"  
+		transactions:
+			("PatientIdentitySource", "ITI_44_Patient_Identity_Feed_HL7V3", "PatientIdentifierCrossReferenceManager")
+			("PatientIdentifierCrossReferenceConsumer", "ITI_45_PIXV3_Query", "PatientIdentifierCrossReferenceManager")
+			("PatientIdentifierCrossReferenceManager", "ITI_46_PIXV3_Update_Notification", "PatientIdentifierCrossReferenceConsumer")
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	Profile PDQV3 {
+		Name: "PDQV3"
+		Description: "The Patient Demographics Query Integration Profile (PDQ) provides ways for multiple distributed applications to query a patient information server V3"
+		Features: "Query Demographics of a patient"
+		Function: "Patient Demographics Query V3"
+
+		actors: 
+			"PatientDemographicsSupplier"
+			"PatientDemographicsConsumer"  
+		transactions:
+			("PatientDemographicsConsumer", "ITI_47_Patient_Demographics_Query_HL7V3", "PatientDemographicsSupplier")
+			("PatientDemographicsConsumer", "ITI_47_Patient_Demographics_and_visit_Query_HL7V3", "PatientDemographicsSupplier")
+
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	Profile MPQ {
+		Name: "MPQ"
+		Description: "The Multi-Patient Queries Profile defines a mechanism to enable aggregated queries to a 6155 Document Registry based on certain criteria needed by areas related to data analysis"
+		Features: "Query Demographics of many patients"
+		Function: "Multi-Patient Queries (MPQ)"
+
+		actors: 
+			"DocumentConsumer"
+			"DocumentRegistry"  
+		transactions:
+			("DocumentConsumer", "ITI_51_Multi_Patient_Stored_Query", "DocumentRegistry")
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	Profile DSUB {
+		Name: "DSUB"
+		Description: "This profile describes the use of subscription and notification mechanism for use within an XDS Affinity Domain and across communities"
+		Features: "Subscription mechanism for XDS registries"
+		Function: "Document Metadata Subscription (DSUB)"
+
+		actors: 
+			"DocumentMetadataPublisher"
+			"DocumentMetadataNotificationBroker"
+			"DocumentMetadataNotificationRecipient"
+			"DocumentMetadataSubscriber"  
+		transactions:
+			("DocumentMetadataPublisher", "ITI_54_Document_Metadata_Publish", "DocumentMetadataNotificationBroker")
+			("DocumentMetadataSubscriber", "ITI_52_Document_Metadata_Subscribe", "DocumentMetadataNotificationBroker")
+			("DocumentMetadataNotificationBroker", "ITI_53_Document_Metadata_Notify", "DocumentMetadataNotificationRecipient")
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	Profile XCPD {
+		Name: "XCPD"
+		Description: "The Cross-Community Patient Discovery (XCPD) Profile supports the means to locate communities that hold patient relevant health data and the translation of patient identifiers across communities holding the same patient’s data"
+		Features: "Cross Community Data Exchange"
+		Function: "Cross-Community Access (XCA)"
+
+		actors: 
+			"InitiatingGateway"
+			"RespondingGateway"
+			
+		transactions:
+			("InitiatingGateway", "ITI_55_Cross_Gateway_Patient_Discovery", "RespondingGateway")
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	Profile XDW {
+		Name: "XDW"
+		Description: "The Cross-Enterprise Document Workflow (XDW) Profile enables participants in a multi-organizational environment to manage and track the tasks related to patient-centric workflows as the systems hosting workflow management applications coordinate their activities for the health professionals and patients they support."
+		Features: "Workflow handling"
+		Function: "Cross-Enterprise Document Workflow Content Profile (XDW)"
+
+		actors: 
+			"ContentCreator"
+			"ContentConsumer"
+			
+		transactions:
+			("ContentCreator", "ITI_XX_Share_Data", "ContentConsumer")
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+	
+	Profile DSG {
+		Name: "DSG"
+		Description: "The Document Digital Signature (DSG) Profile defines general purpose methods of digitally signing of documents for communication and persistence"
+		Features: "Digital Signature"
+		Function: "Document Digital Signature (DSG)"
+
+		actors: 
+			"ContentCreator"
+			"ContentConsumer"
+			
+		transactions:
+			("ContentCreator", "ITI_XX_Share_Data", "ContentConsumer")
+		domains:
+			"Infrastructure"
+		quality_attributes:
+	}
+}
