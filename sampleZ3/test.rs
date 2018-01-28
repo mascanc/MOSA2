@@ -8,11 +8,11 @@
 ; for the quality_attributes
 ;
 (echo "Declaring the quality attributes of Profile PI")
-(echo "Declaring pi.levenstein.match_score")
-(define-fun pi.levenstein.match_score () Real 0.9)
+(echo "Declaring pi.levenshtein.match_score")
+(define-fun pi.levenshtein.match_score () Real 0.9)
 
-(echo "Declaring pi.levenstein.match_sec")
-(define-fun pi.levenstein.match_sec () Int 200)
+(echo "Declaring pi.levenshtein.match_sec")
+(define-fun pi.levenshtein.match_sec () Int 200)
 
 (echo "Declaring pi.soundex.match_score")
 (define-fun pi.soundex.match_score () Real 0.83)
@@ -52,8 +52,8 @@
 ; Algorithms. We put in OR the quality attributes, and we AND the overall
 ;
 (echo "Declaring the algorithms")
-(define-fun throughput_pix_read() Bool(
-    or (> pi.levenstein.match_sec secure_reads_per_seconds) (> pi.soundex.match_sec secure_reads_per_seconds)
+(define-fun throughput_pi_read() Bool(
+    or (> pi.levenshtein.match_sec secure_reads_per_seconds) (> pi.soundex.match_sec secure_reads_per_seconds)
 ))
 
 (define-fun throughput_sr_read() Bool(
@@ -71,14 +71,14 @@
 ;
 
 
-(define-fun througtput_total() Bool(
-    and throughput_pix_read throughput_ds_read throughput_sr_read
+(define-fun throughput_total() Bool(
+    and throughput_pi_read throughput_ds_read throughput_sr_read
 ))
 
 ;
 ; Adding the assertions to the stack
 ;
-(assert througtput_total)
+(assert throughput_total)
 (assert (and (> secure_reads_per_seconds 30) (< secure_reads_per_seconds 32)))
 
 
