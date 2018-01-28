@@ -76,7 +76,8 @@
 ))
 
 ;
-; Adding the assertions to the stack
+; Adding the assertions to the stack. This is the main goal of the 
+; evaluation of the quality attributes: how many reads per seconds
 ;
 (assert throughput_total)
 (assert (and (> secure_reads_per_seconds 30) (< secure_reads_per_seconds 32)))
