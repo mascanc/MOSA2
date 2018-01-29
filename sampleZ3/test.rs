@@ -46,23 +46,23 @@
 ;
 
 (echo "Declaring the GOAL")
-(declare-fun secure_reads_per_seconds () Int)
+(declare-fun secure_reads_per_second () Int)
 
 ;
 ; Algorithms. We put in OR the quality attributes, and we AND the overall
 ;
 (echo "Declaring the algorithms")
 (define-fun throughput_pi_read() Bool(
-    or (> pi.levenshtein.match_sec secure_reads_per_seconds) (> pi.soundex.match_sec secure_reads_per_seconds)
+    or (> pi.levenshtein.match_sec secure_reads_per_second) (> pi.soundex.match_sec secure_reads_per_second)
 ))
 
 (define-fun throughput_sr_read() Bool(
-    or (> sr.hw.hs secure_reads_per_seconds) (> sr.sw.hs secure_reads_per_seconds)
+    or (> sr.hw.hs secure_reads_per_second) (> sr.sw.hs secure_reads_per_second)
 
 ))
 
 (define-fun throughput_ds_read() Bool(
-    or (> ds.db.read.sec secure_reads_per_seconds) (> ds.fs.read.sec secure_reads_per_seconds)
+    or (> ds.db.read.sec secure_reads_per_second) (> ds.fs.read.sec secure_reads_per_second)
 
 ))
 
@@ -77,10 +77,10 @@
 
 ;
 ; Adding the assertions to the stack. This is the main goal of the 
-; evaluation of the quality attributes: how many reads per seconds
+; evaluation of the quality attributes: how many reads per second
 ;
 (assert throughput_total)
-(assert (and (> secure_reads_per_seconds 30) (< secure_reads_per_seconds 32)))
+(assert (and (> secure_reads_per_second 30) (< secure_reads_per_second 32)))
 
 
 (echo "Checking satisifiability")
@@ -88,7 +88,7 @@
 (check-sat)
 
 (echo "The architecture supports the following value")
-(get-value (secure_reads_per_seconds))
+(get-value (secure_reads_per_second))
 (get-proof)
 (get-model)
 (get-info :all-statistics)
