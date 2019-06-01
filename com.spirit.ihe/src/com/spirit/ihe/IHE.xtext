@@ -1,0 +1,113 @@
+grammar com.spirit.ihe.IHE with org.eclipse.xtext.common.Terminals
+
+generate iHE "http://www.spirit.com/ihe/IHE"
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+IHE:
+        importEl+=Import* &
+        main=MainTgf?
+        ;
+        
+        
+        // Imports
+Import:
+        'import' importURI=STRING
+;
+MainTgf:
+        'ArchitecturalElement' name=ID '{' ('JavaPackage' ':' genPackage=STRING)?
+        ('Name' ':' satName=STRING)?
+        ('Version' ':' versionName=STRING)?
+        ('Status' ':' statusName=STRING)?
+        ('Objective' ':' objectiveName=STRING)?
+        ('HL_Function' ':' hlfunctionName=STRING)?
+        ('Rules:' '{' rules+=Rule*'}')*
+        prof+=Profile+'}'
+;
+
+Profile:
+//      'Profile' name=STRING '{' 'actors:' (Actor)+ 'transactions:' (Transaction)+ 'domains:' (Domain)* 'quality_attributes:' (QualityAttr)* Rule*
+        'Profile' name=ID '{' 
+                ('Name' ':' profName=STRING)?
+                ('Description' ':' descrName=STRING)?
+                ('Features' ':' featName=STRING)?
+                ('Function' ':' functionName=STRING)?
+                
+                'actors:' actor+=Actor+ 
+                'transactions:' transaction+=Transaction* 
+                'domains:' domain+=Domain*  
+                'quality_attributes:' qualityattr+=QualityAttr*
+                'security_requirements:' secre+=SecRequirements*
+                        '}'
+
+;
+
+
+
+SecRequirements:
+	SecReID=ID '{'
+	('Goal' ':' secreGoal=STRING)?
+	('Level' ':' secreLevel=STRING)?
+	('Location' ':' secreLocation=STRING)?
+	('State' ':' secreState=STRING)?
+	('Descr' ':' secreDesc=STRING)?
+	('Category' ':' secreCategory=STRING)?
+
+	'}'
+;
+//
+//
+//secreLevel returns ecore::EString:
+//	STRING
+//;
+//
+//secreLocation returns ecore::EString:
+//	STRING
+//;
+//
+//secreState returns ecore::EString:
+//	STRING
+//;
+//
+//secreDesc returns ecore::EString:
+//	STRING
+//;
+//
+//secreCategory returns ecore::EString:
+//	STRING
+//;
+//
+//secreGoal returns ecore::EString:
+//	STRING
+//;
+//
+//SecReID returns ecore::EString:
+//	ID
+//;
+
+Actor returns ecore::EString:
+        STRING
+;
+
+Transaction:
+        '(' Actor ',' STRING ',' Actor ')'
+;
+
+Domain returns ecore::EString:
+        STRING
+;
+
+QualityAttr returns ecore::EString:
+       QualityAttrID '[' STRING ']'
+;
+
+QualityAttrID returns ecore::EString:
+        ID
+;
+
+Rule:
+        RuleId ':' STRING 
+;
+
+RuleId returns ecore::EString:
+        ID
+;
