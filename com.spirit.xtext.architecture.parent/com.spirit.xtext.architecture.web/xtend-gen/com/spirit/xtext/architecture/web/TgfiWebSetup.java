@@ -3,24 +3,19 @@
  */
 package com.spirit.xtext.architecture.web;
 
-import com.google.inject.Guice;
-import com.google.inject.Injector;
-import com.spirit.xtext.architecture.TgfiRuntimeModule;
-import com.spirit.xtext.architecture.TgfiStandaloneSetup;
-import com.spirit.xtext.architecture.ide.TgfiIdeModule;
-import com.spirit.xtext.architecture.web.TgfiWebModule;
-import org.eclipse.xtext.util.Modules2;
-
 /**
  * Initialization support for running Xtext languages in web applications.
  */
 @SuppressWarnings("all")
-public class TgfiWebSetup extends TgfiStandaloneSetup {
+public class TgfiWebSetup /* implements TgfiStandaloneSetup  */{
   @Override
-  public Injector createInjector() {
-    TgfiRuntimeModule _tgfiRuntimeModule = new TgfiRuntimeModule();
-    TgfiIdeModule _tgfiIdeModule = new TgfiIdeModule();
-    TgfiWebModule _tgfiWebModule = new TgfiWebModule();
-    return Guice.createInjector(Modules2.mixin(_tgfiRuntimeModule, _tgfiIdeModule, _tgfiWebModule));
+  public /* Injector */Object createInjector() {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field Guice is undefined"
+      + "\nThe method or field Modules2 is undefined"
+      + "\nTgfiRuntimeModule cannot be resolved."
+      + "\nTgfiIdeModule cannot be resolved."
+      + "\ncreateInjector cannot be resolved"
+      + "\nmixin cannot be resolved");
   }
 }

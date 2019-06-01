@@ -37,9 +37,22 @@ Profile:
                 'transactions:' transaction+=Transaction* 
                 'domains:' domain+=Domain*  
                 'quality_attributes:' qualityattr+=QualityAttr*
+                'quality_securityrequirements:' secre+=SecRequirements*
                 
                         '}'
 
+;
+
+SecRequirements:
+	'{'
+	('Goal' ':' secreGoal=STRING)?
+	('Level' ':' secreLevel=STRING)?
+	('Location' ':' secreLocation=STRING)?
+	('State' ':' secreState=STRING)?
+	('Descr' ':' secreDescr=STRING)?
+	('Category' ':' secreCategory=STRING)?
+
+	'}'
 ;
 
 Actor returns ecore::EString:
