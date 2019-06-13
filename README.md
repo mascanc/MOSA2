@@ -191,7 +191,7 @@ Hit ENTER
 1. | es1   | Electronic| Confidential | Partially Controlled| Transmission| Authentication| Authenticate the user who is submitting the document| Data integrity transfer protection      |
 2. | xds1  | Electronic|              | Any                 |             |               |                                                     |                                         |
 3. | satna2| Electronic| Confidential | Controlled          | Transmission| Accountability| rfc5424 syslog and DICOM PS A.5                     | Accountability                          |
-4. | satna1| Electronic| Condfidential| Controlled          | Transmission|               | TLS Channels                                        | Data confidentiality transfer protection|
+4. | satna1| Electronic| Condfidential| Controlled          | Transmission| Authentication| TLS Channels                                        | Data confidentiality transfer protection|
 5. | prtl1 | Electronic| Confidential | Controlled          | Transit     | Authentication| The portal authenticates user via a login screen    | User Authentication                     |
 6. |       |           |              |                     |             |               |                                                     |                                         |
 
