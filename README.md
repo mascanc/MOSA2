@@ -88,10 +88,11 @@ Profile CT {
 		ct1: "drift(1msec)"
 	security_requirement:
 	    sct1: {
+	      Form: "Electronic"
+	      Sensitivity: "Public"
+	      Location: "Any"
 	      Goal: "Maintain Time"
-	      Level: "0"
-	      Location: "Public"
-	      State: "Public"
+	      State: "Transmission"
 	      Descr: "Maintain Time using NTP"
 	      Category: "Time Synchronization"
 	    }
@@ -112,22 +113,22 @@ This is ascreenshot of the IDE (using xText and xTend)
 A sample execution of the test `TestCentralRegistry` (available under the `Language` directory) is as follows. 
 
 ```
-GROUP: adding Name: PORTAL Actors:  ContentCreator ContentConsumer ContentRecipient
+GROUP: adding Name: CLINIC Actors:  ContentCreator ContentConsumer ContentRecipient
 GROUP: resolving dependency
-Going to resolve dependency on ABB named PORTAL
+Going to resolve dependency on ABB named CLINIC
 For actors: 
    ContentCreator
    ContentConsumer
    ContentRecipient
 For rules: 
    */XDS->SN/ATNA
-   */Portal->XServiceUser/XUA
-   */Portal->SN/ATNA
+   */Clinic->XServiceUser/XUA
+   */Clinic->SN/ATNA
    */ExtSource->SN/ATNA
-Evaluating rule [*/XDS->SN/ATNA] with actor ContentCreator and profile PORTAL
-Evaluating rule [*/Portal->XServiceUser/XUA] with actor ContentCreator and profile PORTAL
-Evaluating rule [*/Portal->SN/ATNA] with actor ContentCreator and profile PORTAL
-Evaluating rule [*/ExtSource->SN/ATNA] with actor ContentCreator and profile PORTAL
+Evaluating rule [*/XDS->SN/ATNA] with actor ContentCreator and profile CLINIC
+Evaluating rule [*/Clinic->XServiceUser/XUA] with actor ContentCreator and profile CLINIC
+Evaluating rule [*/Clinic->SN/ATNA] with actor ContentCreator and profile CLINIC
+Evaluating rule [*/ExtSource->SN/ATNA] with actor ContentCreator and profile CLINIC
 GROUP: resolved 0 dependencies
 GROUP: adding Name: XDS Actors:  Consumer Source Registry Repository
 GROUP: resolving dependency
@@ -139,8 +140,8 @@ For actors:
    Repository
 For rules: 
    */XDS->SN/ATNA
-   */Portal->XServiceUser/XUA
-   */Portal->SN/ATNA
+   */Clinic->XServiceUser/XUA
+   */Clinic->SN/ATNA
    */ExtSource->SN/ATNA
 Evaluating rule [*/XDS->SN/ATNA] with actor Consumer and profile XDS
 Rule matches!
@@ -150,16 +151,16 @@ For actors:
    ARR
 For rules: 
    */XDS->SN/ATNA
-   */Portal->XServiceUser/XUA
-   */Portal->SN/ATNA
+   */Clinic->XServiceUser/XUA
+   */Clinic->SN/ATNA
    */ExtSource->SN/ATNA
 Evaluating rule [*/XDS->SN/ATNA] with actor SN and profile ATNA
-Evaluating rule [*/Portal->XServiceUser/XUA] with actor SN and profile ATNA
-Evaluating rule [*/Portal->SN/ATNA] with actor SN and profile ATNA
+Evaluating rule [*/Clinic->XServiceUser/XUA] with actor SN and profile ATNA
+Evaluating rule [*/Clinic->SN/ATNA] with actor SN and profile ATNA
 Evaluating rule [*/ExtSource->SN/ATNA] with actor SN and profile ATNA
 ABB To return: null
-Evaluating rule [*/Portal->XServiceUser/XUA] with actor Consumer and profile XDS
-Evaluating rule [*/Portal->SN/ATNA] with actor Consumer and profile XDS
+Evaluating rule [*/Clinic->XServiceUser/XUA] with actor Consumer and profile XDS
+Evaluating rule [*/Clinic->SN/ATNA] with actor Consumer and profile XDS
 Evaluating rule [*/ExtSource->SN/ATNA] with actor Consumer and profile XDS
 GROUP: resolved 1 dependencies
 Resolved dependency Name: ATNA Actors:  SN ARR for ABB Name: XDS Actors:  Consumer Source Registry Repository
@@ -173,27 +174,27 @@ For actors:
    ContentRecipient
 For rules: 
    */XDS->SN/ATNA
-   */Portal->XServiceUser/XUA
-   */Portal->SN/ATNA
+   */Clinic->XServiceUser/XUA
+   */Clinic->SN/ATNA
    */ExtSource->SN/ATNA
 Evaluating rule [*/XDS->SN/ATNA] with actor ContentCreator and profile EXTSOURCE
-Evaluating rule [*/Portal->XServiceUser/XUA] with actor ContentCreator and profile EXTSOURCE
-Evaluating rule [*/Portal->SN/ATNA] with actor ContentCreator and profile EXTSOURCE
+Evaluating rule [*/Clinic->XServiceUser/XUA] with actor ContentCreator and profile EXTSOURCE
+Evaluating rule [*/Clinic->SN/ATNA] with actor ContentCreator and profile EXTSOURCE
 Evaluating rule [*/ExtSource->SN/ATNA] with actor ContentCreator and profile EXTSOURCE
 GROUP: resolved 0 dependencies
 Assembling the ABB
 Hit ENTER
 
+   _______________________________________________________________________________________________________________________________________________________________________________________
+   | ID    | Form      | Sensitivity  | Location            | State       | Goal          | Description                                         | Category                                |
+   |======================================================================================================================================================================================|
+1. | es1   | Electronic| Confidential | Partially Controlled| Transmission| Authentication| Authenticate the user who is submitting the document| Data integrity transfer protection      |
+2. | xds1  | Electronic|              | Any                 |             |               |                                                     |                                         |
+3. | satna2| Electronic| Confidential | Controlled          | Transmission| Accountability| rfc5424 syslog and DICOM PS A.5                     | Accountability                          |
+4. | satna1| Electronic| Condfidential| Controlled          | Transmission|               | TLS Channels                                        | Data confidentiality transfer protection|
+5. | prtl1 | Electronic| Confidential | Controlled          | Transit     | Authentication| The portal authenticates user via a login screen    | User Authentication                     |
+6. |       |           |              |                     |             |               |                                                     |                                         |
 
-___________________________________________________________________________________________________________________________________________________
-   | ID    | Goal           | Level| Location| State  | Description                                         | Category                                |
-   |==================================================================================================================================================|
-1. | satna1| Confidentiality| 2    | Zone1   | Transit| TLS Channels                                        | Data confidentiality transfer protection|
-2. | prtl1 | Authentication | 2    | Zone2   | Transit| The portal authenticates user via a login screen    | User Authentication                     |
-3. | satna2| Accountability | 1    | Zone1   | Transit| rfc5424 syslog and DICOM PS A.5                     | Accountability                          |
-4. | es1   | Authentication | 0    | Zone3   | Transit| Authenticate the user who is submitting the document| Data integrity transfer protection      |
-5. | xds1  |                | -1   | Any     |        |                                                     |                                         |
-___________________________________________________________________________________________________________________________________________________
 
 ```
 
