@@ -204,7 +204,7 @@ class IHEGenerator extends AbstractGenerator {
 		        			private String location = "«sre.secreLocation»";
 		        			private String state = "«sre.secreState»";
 		        			private String goal = "«sre.secreGoal»";
-		        			private String descr = "«sre.secreDesc»";
+		        			private String countermeasure = "«sre.secreCountermeasure»";
 		        			private String category = "«sre.secreCategory»";
 		        			private String name = "«sre.secReID»";
 		        			
@@ -213,7 +213,7 @@ class IHEGenerator extends AbstractGenerator {
 		        				return this.name;	
 		        			}
 
-							@Override
+		        		@Override
 		        			public String getForm() {
 		        				return this.form;	
 		        			}
@@ -234,8 +234,8 @@ class IHEGenerator extends AbstractGenerator {
 		        				return this.state;	
 		        			}
 		        			@Override
-		        			public String getDescription() {
-		        				return this.descr;	
+		        			public String getCountermeasure() {
+		        				return this.countermeasure;	
 		        			}
 		        			@Override
 		        			public String getCategory() {

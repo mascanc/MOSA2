@@ -396,13 +396,13 @@ public interface IHEPackage extends EPackage
   int SEC_REQUIREMENTS__SECRE_GOAL = 5;
 
   /**
-   * The feature id for the '<em><b>Secre Desc</b></em>' attribute.
+   * The feature id for the '<em><b>Secre Countermeasure</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SEC_REQUIREMENTS__SECRE_DESC = 6;
+  int SEC_REQUIREMENTS__SECRE_COUNTERMEASURE = 6;
 
   /**
    * The feature id for the '<em><b>Secre Category</b></em>' attribute.
@@ -782,15 +782,15 @@ public interface IHEPackage extends EPackage
   EAttribute getSecRequirements_SecreGoal();
 
   /**
-   * Returns the meta object for the attribute '{@link com.spirit.ihe.iHE.SecRequirements#getSecreDesc <em>Secre Desc</em>}'.
+   * Returns the meta object for the attribute '{@link com.spirit.ihe.iHE.SecRequirements#getSecreCountermeasure <em>Secre Countermeasure</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Secre Desc</em>'.
-   * @see com.spirit.ihe.iHE.SecRequirements#getSecreDesc()
+   * @return the meta object for the attribute '<em>Secre Countermeasure</em>'.
+   * @see com.spirit.ihe.iHE.SecRequirements#getSecreCountermeasure()
    * @see #getSecRequirements()
    * @generated
    */
-  EAttribute getSecRequirements_SecreDesc();
+  EAttribute getSecRequirements_SecreCountermeasure();
 
   /**
    * Returns the meta object for the attribute '{@link com.spirit.ihe.iHE.SecRequirements#getSecreCategory <em>Secre Category</em>}'.
@@ -1101,12 +1101,12 @@ public interface IHEPackage extends EPackage
     EAttribute SEC_REQUIREMENTS__SECRE_GOAL = eINSTANCE.getSecRequirements_SecreGoal();
 
     /**
-     * The meta object literal for the '<em><b>Secre Desc</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Secre Countermeasure</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SEC_REQUIREMENTS__SECRE_DESC = eINSTANCE.getSecRequirements_SecreDesc();
+    EAttribute SEC_REQUIREMENTS__SECRE_COUNTERMEASURE = eINSTANCE.getSecRequirements_SecreCountermeasure();
 
     /**
      * The meta object literal for the '<em><b>Secre Category</b></em>' attribute feature.

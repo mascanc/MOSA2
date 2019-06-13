@@ -492,7 +492,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage
    * @generated
    */
   @Override
-  public EAttribute getSecRequirements_SecreDesc()
+  public EAttribute getSecRequirements_SecreCountermeasure()
   {
     return (EAttribute)secRequirementsEClass.getEStructuralFeatures().get(6);
   }
@@ -576,7 +576,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage
     createEAttribute(secRequirementsEClass, SEC_REQUIREMENTS__SECRE_LOCATION);
     createEAttribute(secRequirementsEClass, SEC_REQUIREMENTS__SECRE_STATE);
     createEAttribute(secRequirementsEClass, SEC_REQUIREMENTS__SECRE_GOAL);
-    createEAttribute(secRequirementsEClass, SEC_REQUIREMENTS__SECRE_DESC);
+    createEAttribute(secRequirementsEClass, SEC_REQUIREMENTS__SECRE_COUNTERMEASURE);
     createEAttribute(secRequirementsEClass, SEC_REQUIREMENTS__SECRE_CATEGORY);
   }
 
@@ -648,7 +648,7 @@ public class IHEPackageImpl extends EPackageImpl implements IHEPackage
     initEAttribute(getSecRequirements_SecreLocation(), ecorePackage.getEString(), "secreLocation", null, 0, 1, SecRequirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSecRequirements_SecreState(), ecorePackage.getEString(), "secreState", null, 0, 1, SecRequirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSecRequirements_SecreGoal(), ecorePackage.getEString(), "secreGoal", null, 0, 1, SecRequirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSecRequirements_SecreDesc(), ecorePackage.getEString(), "secreDesc", null, 0, 1, SecRequirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSecRequirements_SecreCountermeasure(), ecorePackage.getEString(), "secreCountermeasure", null, 0, 1, SecRequirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSecRequirements_SecreCategory(), ecorePackage.getEString(), "secreCategory", null, 0, 1, SecRequirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource

@@ -54,7 +54,7 @@ public class ExtSource {
         			private String location = "Partially Controlled";
         			private String state = "Transmission";
         			private String goal = "Authentication";
-        			private String descr = "Authenticate the user who is submitting the document";
+        			private String countermeasure = "Authenticate the user who is submitting the document";
         			private String category = "Data integrity transfer protection";
         			private String name = "es1";
         			
@@ -63,7 +63,7 @@ public class ExtSource {
         				return this.name;	
         			}
 
-							@Override
+        		@Override
         			public String getForm() {
         				return this.form;	
         			}
@@ -84,8 +84,8 @@ public class ExtSource {
         				return this.state;	
         			}
         			@Override
-        			public String getDescription() {
-        				return this.descr;	
+        			public String getCountermeasure() {
+        				return this.countermeasure;	
         			}
         			@Override
         			public String getCategory() {

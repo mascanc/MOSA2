@@ -13,7 +13,7 @@ public abstract class SecurityRequirement {
     public abstract String getState();
 
 
-    public abstract String getDescription();
+    public abstract String getCountermeasure();
 
 
     public abstract String getCategory();

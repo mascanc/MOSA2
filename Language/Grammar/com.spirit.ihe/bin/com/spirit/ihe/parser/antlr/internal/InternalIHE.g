@@ -912,9 +912,9 @@ ruleSecRequirements returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_17='Descr'
+			otherlv_17='Countermeasure'
 			{
-				newLeafNode(otherlv_17, grammarAccess.getSecRequirementsAccess().getDescrKeyword_7_0());
+				newLeafNode(otherlv_17, grammarAccess.getSecRequirementsAccess().getCountermeasureKeyword_7_0());
 			}
 			otherlv_18=':'
 			{
@@ -922,9 +922,9 @@ ruleSecRequirements returns [EObject current=null]
 			}
 			(
 				(
-					lv_secreDesc_19_0=RULE_STRING
+					lv_secreCountermeasure_19_0=RULE_STRING
 					{
-						newLeafNode(lv_secreDesc_19_0, grammarAccess.getSecRequirementsAccess().getSecreDescSTRINGTerminalRuleCall_7_2_0());
+						newLeafNode(lv_secreCountermeasure_19_0, grammarAccess.getSecRequirementsAccess().getSecreCountermeasureSTRINGTerminalRuleCall_7_2_0());
 					}
 					{
 						if ($current==null) {
@@ -932,8 +932,8 @@ ruleSecRequirements returns [EObject current=null]
 						}
 						setWithLastConsumed(
 							$current,
-							"secreDesc",
-							lv_secreDesc_19_0,
+							"secreCountermeasure",
+							lv_secreCountermeasure_19_0,
 							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)

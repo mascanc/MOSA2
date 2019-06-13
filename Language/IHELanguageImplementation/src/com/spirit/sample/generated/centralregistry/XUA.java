@@ -54,7 +54,7 @@ public class XUA {
         			private String location = "Controlled";
         			private String state = "Transmission";
         			private String goal = "Authentication";
-        			private String descr = "SAML with passwords";
+        			private String countermeasure = "SAML with passwords";
         			private String category = "User Authentication";
         			private String name = "xua1";
         			
@@ -63,7 +63,7 @@ public class XUA {
         				return this.name;	
         			}
 
-							@Override
+        		@Override
         			public String getForm() {
         				return this.form;	
         			}
@@ -84,8 +84,8 @@ public class XUA {
         				return this.state;	
         			}
         			@Override
-        			public String getDescription() {
-        				return this.descr;	
+        			public String getCountermeasure() {
+        				return this.countermeasure;	
         			}
         			@Override
         			public String getCategory() {

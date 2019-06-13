@@ -79,7 +79,7 @@ public class ATNA {
         			private String location = "Controlled";
         			private String state = "Transmission";
         			private String goal = "";
-        			private String descr = "TLS Channels";
+        			private String countermeasure = "TLS Channels";
         			private String category = "Data confidentiality transfer protection";
         			private String name = "satna1";
         			
@@ -88,7 +88,7 @@ public class ATNA {
         				return this.name;	
         			}
 
-							@Override
+        		@Override
         			public String getForm() {
         				return this.form;	
         			}
@@ -109,8 +109,8 @@ public class ATNA {
         				return this.state;	
         			}
         			@Override
-        			public String getDescription() {
-        				return this.descr;	
+        			public String getCountermeasure() {
+        				return this.countermeasure;	
         			}
         			@Override
         			public String getCategory() {
@@ -126,7 +126,7 @@ public class ATNA {
         			private String location = "Controlled";
         			private String state = "Transmission";
         			private String goal = "Accountability";
-        			private String descr = "rfc5424 syslog and DICOM PS A.5";
+        			private String countermeasure = "rfc5424 syslog and DICOM PS A.5";
         			private String category = "Accountability";
         			private String name = "satna2";
         			
@@ -135,7 +135,7 @@ public class ATNA {
         				return this.name;	
         			}
 
-							@Override
+        		@Override
         			public String getForm() {
         				return this.form;	
         			}
@@ -156,8 +156,8 @@ public class ATNA {
         				return this.state;	
         			}
         			@Override
-        			public String getDescription() {
-        				return this.descr;	
+        			public String getCountermeasure() {
+        				return this.countermeasure;	
         			}
         			@Override
         			public String getCategory() {

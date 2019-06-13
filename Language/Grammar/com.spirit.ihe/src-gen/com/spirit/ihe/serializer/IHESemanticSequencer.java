@@ -143,7 +143,7 @@ public class IHESemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         secreLocation=STRING? 
 	 *         secreState=STRING? 
 	 *         secreGoal=STRING? 
-	 *         secreDesc=STRING? 
+	 *         secreCountermeasure=STRING? 
 	 *         secreCategory=STRING?
 	 *     )
 	 */

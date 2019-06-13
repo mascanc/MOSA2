@@ -661,9 +661,9 @@ public class IHEGenerator extends AbstractGenerator {
         _builder.newLineIfNotEmpty();
         _builder.append("        \t\t");
         _builder.append("\t");
-        _builder.append("private String descr = \"");
-        String _secreDesc = sre.getSecreDesc();
-        _builder.append(_secreDesc, "        \t\t\t");
+        _builder.append("private String countermeasure = \"");
+        String _secreCountermeasure = sre.getSecreCountermeasure();
+        _builder.append(_secreCountermeasure, "        \t\t\t");
         _builder.append("\";");
         _builder.newLineIfNotEmpty();
         _builder.append("        \t\t");
@@ -700,7 +700,7 @@ public class IHEGenerator extends AbstractGenerator {
         _builder.append("}");
         _builder.newLine();
         _builder.newLine();
-        _builder.append("\t\t\t\t\t\t\t");
+        _builder.append("        \t\t");
         _builder.append("@Override");
         _builder.newLine();
         _builder.append("        \t\t");
@@ -785,11 +785,11 @@ public class IHEGenerator extends AbstractGenerator {
         _builder.newLine();
         _builder.append("        \t\t");
         _builder.append("\t");
-        _builder.append("public String getDescription() {");
+        _builder.append("public String getCountermeasure() {");
         _builder.newLine();
         _builder.append("        \t\t");
         _builder.append("\t\t");
-        _builder.append("return this.descr;\t");
+        _builder.append("return this.countermeasure;\t");
         _builder.newLine();
         _builder.append("        \t\t");
         _builder.append("\t");

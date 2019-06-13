@@ -43,7 +43,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IHE.ecore#//SecRequirements/secreLocation"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IHE.ecore#//SecRequirements/secreState"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IHE.ecore#//SecRequirements/secreGoal"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IHE.ecore#//SecRequirements/secreDesc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IHE.ecore#//SecRequirements/secreCountermeasure"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IHE.ecore#//SecRequirements/secreCategory"/>
     </genClasses>
   </genPackages>

@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link com.spirit.ihe.iHE.impl.SecRequirementsImpl#getSecreLocation <em>Secre Location</em>}</li>
  *   <li>{@link com.spirit.ihe.iHE.impl.SecRequirementsImpl#getSecreState <em>Secre State</em>}</li>
  *   <li>{@link com.spirit.ihe.iHE.impl.SecRequirementsImpl#getSecreGoal <em>Secre Goal</em>}</li>
- *   <li>{@link com.spirit.ihe.iHE.impl.SecRequirementsImpl#getSecreDesc <em>Secre Desc</em>}</li>
+ *   <li>{@link com.spirit.ihe.iHE.impl.SecRequirementsImpl#getSecreCountermeasure <em>Secre Countermeasure</em>}</li>
  *   <li>{@link com.spirit.ihe.iHE.impl.SecRequirementsImpl#getSecreCategory <em>Secre Category</em>}</li>
  * </ul>
  *
@@ -156,24 +156,24 @@ public class SecRequirementsImpl extends MinimalEObjectImpl.Container implements
   protected String secreGoal = SECRE_GOAL_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getSecreDesc() <em>Secre Desc</em>}' attribute.
+   * The default value of the '{@link #getSecreCountermeasure() <em>Secre Countermeasure</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSecreDesc()
+   * @see #getSecreCountermeasure()
    * @generated
    * @ordered
    */
-  protected static final String SECRE_DESC_EDEFAULT = null;
+  protected static final String SECRE_COUNTERMEASURE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getSecreDesc() <em>Secre Desc</em>}' attribute.
+   * The cached value of the '{@link #getSecreCountermeasure() <em>Secre Countermeasure</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSecreDesc()
+   * @see #getSecreCountermeasure()
    * @generated
    * @ordered
    */
-  protected String secreDesc = SECRE_DESC_EDEFAULT;
+  protected String secreCountermeasure = SECRE_COUNTERMEASURE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getSecreCategory() <em>Secre Category</em>}' attribute.
@@ -372,9 +372,9 @@ public class SecRequirementsImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public String getSecreDesc()
+  public String getSecreCountermeasure()
   {
-    return secreDesc;
+    return secreCountermeasure;
   }
 
   /**
@@ -383,12 +383,12 @@ public class SecRequirementsImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public void setSecreDesc(String newSecreDesc)
+  public void setSecreCountermeasure(String newSecreCountermeasure)
   {
-    String oldSecreDesc = secreDesc;
-    secreDesc = newSecreDesc;
+    String oldSecreCountermeasure = secreCountermeasure;
+    secreCountermeasure = newSecreCountermeasure;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, IHEPackage.SEC_REQUIREMENTS__SECRE_DESC, oldSecreDesc, secreDesc));
+      eNotify(new ENotificationImpl(this, Notification.SET, IHEPackage.SEC_REQUIREMENTS__SECRE_COUNTERMEASURE, oldSecreCountermeasure, secreCountermeasure));
   }
 
   /**
@@ -438,8 +438,8 @@ public class SecRequirementsImpl extends MinimalEObjectImpl.Container implements
         return getSecreState();
       case IHEPackage.SEC_REQUIREMENTS__SECRE_GOAL:
         return getSecreGoal();
-      case IHEPackage.SEC_REQUIREMENTS__SECRE_DESC:
-        return getSecreDesc();
+      case IHEPackage.SEC_REQUIREMENTS__SECRE_COUNTERMEASURE:
+        return getSecreCountermeasure();
       case IHEPackage.SEC_REQUIREMENTS__SECRE_CATEGORY:
         return getSecreCategory();
     }
@@ -474,8 +474,8 @@ public class SecRequirementsImpl extends MinimalEObjectImpl.Container implements
       case IHEPackage.SEC_REQUIREMENTS__SECRE_GOAL:
         setSecreGoal((String)newValue);
         return;
-      case IHEPackage.SEC_REQUIREMENTS__SECRE_DESC:
-        setSecreDesc((String)newValue);
+      case IHEPackage.SEC_REQUIREMENTS__SECRE_COUNTERMEASURE:
+        setSecreCountermeasure((String)newValue);
         return;
       case IHEPackage.SEC_REQUIREMENTS__SECRE_CATEGORY:
         setSecreCategory((String)newValue);
@@ -512,8 +512,8 @@ public class SecRequirementsImpl extends MinimalEObjectImpl.Container implements
       case IHEPackage.SEC_REQUIREMENTS__SECRE_GOAL:
         setSecreGoal(SECRE_GOAL_EDEFAULT);
         return;
-      case IHEPackage.SEC_REQUIREMENTS__SECRE_DESC:
-        setSecreDesc(SECRE_DESC_EDEFAULT);
+      case IHEPackage.SEC_REQUIREMENTS__SECRE_COUNTERMEASURE:
+        setSecreCountermeasure(SECRE_COUNTERMEASURE_EDEFAULT);
         return;
       case IHEPackage.SEC_REQUIREMENTS__SECRE_CATEGORY:
         setSecreCategory(SECRE_CATEGORY_EDEFAULT);
@@ -544,8 +544,8 @@ public class SecRequirementsImpl extends MinimalEObjectImpl.Container implements
         return SECRE_STATE_EDEFAULT == null ? secreState != null : !SECRE_STATE_EDEFAULT.equals(secreState);
       case IHEPackage.SEC_REQUIREMENTS__SECRE_GOAL:
         return SECRE_GOAL_EDEFAULT == null ? secreGoal != null : !SECRE_GOAL_EDEFAULT.equals(secreGoal);
-      case IHEPackage.SEC_REQUIREMENTS__SECRE_DESC:
-        return SECRE_DESC_EDEFAULT == null ? secreDesc != null : !SECRE_DESC_EDEFAULT.equals(secreDesc);
+      case IHEPackage.SEC_REQUIREMENTS__SECRE_COUNTERMEASURE:
+        return SECRE_COUNTERMEASURE_EDEFAULT == null ? secreCountermeasure != null : !SECRE_COUNTERMEASURE_EDEFAULT.equals(secreCountermeasure);
       case IHEPackage.SEC_REQUIREMENTS__SECRE_CATEGORY:
         return SECRE_CATEGORY_EDEFAULT == null ? secreCategory != null : !SECRE_CATEGORY_EDEFAULT.equals(secreCategory);
     }
@@ -575,8 +575,8 @@ public class SecRequirementsImpl extends MinimalEObjectImpl.Container implements
     result.append(secreState);
     result.append(", secreGoal: ");
     result.append(secreGoal);
-    result.append(", secreDesc: ");
-    result.append(secreDesc);
+    result.append(", secreCountermeasure: ");
+    result.append(secreCountermeasure);
     result.append(", secreCategory: ");
     result.append(secreCategory);
     result.append(')');

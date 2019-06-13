@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.spirit.ihe.iHE.SecRequirements#getSecreLocation <em>Secre Location</em>}</li>
  *   <li>{@link com.spirit.ihe.iHE.SecRequirements#getSecreState <em>Secre State</em>}</li>
  *   <li>{@link com.spirit.ihe.iHE.SecRequirements#getSecreGoal <em>Secre Goal</em>}</li>
- *   <li>{@link com.spirit.ihe.iHE.SecRequirements#getSecreDesc <em>Secre Desc</em>}</li>
+ *   <li>{@link com.spirit.ihe.iHE.SecRequirements#getSecreCountermeasure <em>Secre Countermeasure</em>}</li>
  *   <li>{@link com.spirit.ihe.iHE.SecRequirements#getSecreCategory <em>Secre Category</em>}</li>
  * </ul>
  *
@@ -163,26 +163,26 @@ public interface SecRequirements extends EObject
   void setSecreGoal(String value);
 
   /**
-   * Returns the value of the '<em><b>Secre Desc</b></em>' attribute.
+   * Returns the value of the '<em><b>Secre Countermeasure</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Secre Desc</em>' attribute.
-   * @see #setSecreDesc(String)
-   * @see com.spirit.ihe.iHE.IHEPackage#getSecRequirements_SecreDesc()
+   * @return the value of the '<em>Secre Countermeasure</em>' attribute.
+   * @see #setSecreCountermeasure(String)
+   * @see com.spirit.ihe.iHE.IHEPackage#getSecRequirements_SecreCountermeasure()
    * @model
    * @generated
    */
-  String getSecreDesc();
+  String getSecreCountermeasure();
 
   /**
-   * Sets the value of the '{@link com.spirit.ihe.iHE.SecRequirements#getSecreDesc <em>Secre Desc</em>}' attribute.
+   * Sets the value of the '{@link com.spirit.ihe.iHE.SecRequirements#getSecreCountermeasure <em>Secre Countermeasure</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Secre Desc</em>' attribute.
-   * @see #getSecreDesc()
+   * @param value the new value of the '<em>Secre Countermeasure</em>' attribute.
+   * @see #getSecreCountermeasure()
    * @generated
    */
-  void setSecreDesc(String value);
+  void setSecreCountermeasure(String value);
 
   /**
    * Returns the value of the '<em><b>Secre Category</b></em>' attribute.

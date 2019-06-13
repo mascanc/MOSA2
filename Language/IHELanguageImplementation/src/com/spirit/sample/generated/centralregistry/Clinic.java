@@ -40,7 +40,7 @@ public class Clinic {
         			private String location = "Controlled";
         			private String state = "Transit";
         			private String goal = "Authentication";
-        			private String descr = "The portal authenticates user via a login screen";
+        			private String countermeasure = "The portal authenticates user via a login screen";
         			private String category = "User Authentication";
         			private String name = "prtl1";
         			
@@ -49,7 +49,7 @@ public class Clinic {
         				return this.name;	
         			}
 
-							@Override
+        		@Override
         			public String getForm() {
         				return this.form;	
         			}
@@ -70,8 +70,8 @@ public class Clinic {
         				return this.state;	
         			}
         			@Override
-        			public String getDescription() {
-        				return this.descr;	
+        			public String getCountermeasure() {
+        				return this.countermeasure;	
         			}
         			@Override
         			public String getCategory() {

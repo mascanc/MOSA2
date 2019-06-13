@@ -50,7 +50,7 @@ SecRequirements:
 	('Location' ':' secreLocation=STRING)?
 	('State' ':' secreState=STRING)?
 	('Goal' ':' secreGoal=STRING)?
-	('Descr' ':' secreDesc=STRING)?
+	('Countermeasure' ':' secreCountermeasure=STRING)?
 	('Category' ':' secreCategory=STRING)?
 
 	'}'

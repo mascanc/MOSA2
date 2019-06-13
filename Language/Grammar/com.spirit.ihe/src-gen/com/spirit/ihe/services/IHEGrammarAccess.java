@@ -472,10 +472,10 @@ public class IHEGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cSecreGoalAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
 		private final RuleCall cSecreGoalSTRINGTerminalRuleCall_6_2_0 = (RuleCall)cSecreGoalAssignment_6_2.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cDescrKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cCountermeasureKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Keyword cColonKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cSecreDescAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cSecreDescSTRINGTerminalRuleCall_7_2_0 = (RuleCall)cSecreDescAssignment_7_2.eContents().get(0);
+		private final Assignment cSecreCountermeasureAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cSecreCountermeasureSTRINGTerminalRuleCall_7_2_0 = (RuleCall)cSecreCountermeasureAssignment_7_2.eContents().get(0);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
 		private final Keyword cCategoryKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
 		private final Keyword cColonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
@@ -485,14 +485,14 @@ public class IHEGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//SecRequirements:
 		//	SecReID=ID '{' ('Form' ':' secreForm=STRING)? ('Sensitivity' ':' secreSensitivity=STRING)? ('Location' ':'
-		//	secreLocation=STRING)? ('State' ':' secreState=STRING)? ('Goal' ':' secreGoal=STRING)? ('Descr' ':' secreDesc=STRING)?
-		//	('Category' ':' secreCategory=STRING)?
+		//	secreLocation=STRING)? ('State' ':' secreState=STRING)? ('Goal' ':' secreGoal=STRING)? ('Countermeasure' ':'
+		//	secreCountermeasure=STRING)? ('Category' ':' secreCategory=STRING)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//SecReID=ID '{' ('Form' ':' secreForm=STRING)? ('Sensitivity' ':' secreSensitivity=STRING)? ('Location' ':'
-		//secreLocation=STRING)? ('State' ':' secreState=STRING)? ('Goal' ':' secreGoal=STRING)? ('Descr' ':' secreDesc=STRING)?
-		//('Category' ':' secreCategory=STRING)? '}'
+		//secreLocation=STRING)? ('State' ':' secreState=STRING)? ('Goal' ':' secreGoal=STRING)? ('Countermeasure' ':'
+		//secreCountermeasure=STRING)? ('Category' ':' secreCategory=STRING)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//SecReID=ID
@@ -579,20 +579,20 @@ public class IHEGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getSecreGoalSTRINGTerminalRuleCall_6_2_0() { return cSecreGoalSTRINGTerminalRuleCall_6_2_0; }
 		
-		//('Descr' ':' secreDesc=STRING)?
+		//('Countermeasure' ':' secreCountermeasure=STRING)?
 		public Group getGroup_7() { return cGroup_7; }
 		
-		//'Descr'
-		public Keyword getDescrKeyword_7_0() { return cDescrKeyword_7_0; }
+		//'Countermeasure'
+		public Keyword getCountermeasureKeyword_7_0() { return cCountermeasureKeyword_7_0; }
 		
 		//':'
 		public Keyword getColonKeyword_7_1() { return cColonKeyword_7_1; }
 		
-		//secreDesc=STRING
-		public Assignment getSecreDescAssignment_7_2() { return cSecreDescAssignment_7_2; }
+		//secreCountermeasure=STRING
+		public Assignment getSecreCountermeasureAssignment_7_2() { return cSecreCountermeasureAssignment_7_2; }
 		
 		//STRING
-		public RuleCall getSecreDescSTRINGTerminalRuleCall_7_2_0() { return cSecreDescSTRINGTerminalRuleCall_7_2_0; }
+		public RuleCall getSecreCountermeasureSTRINGTerminalRuleCall_7_2_0() { return cSecreCountermeasureSTRINGTerminalRuleCall_7_2_0; }
 		
 		//('Category' ':' secreCategory=STRING)?
 		public Group getGroup_8() { return cGroup_8; }
@@ -888,8 +888,8 @@ public class IHEGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//SecRequirements:
 	//	SecReID=ID '{' ('Form' ':' secreForm=STRING)? ('Sensitivity' ':' secreSensitivity=STRING)? ('Location' ':'
-	//	secreLocation=STRING)? ('State' ':' secreState=STRING)? ('Goal' ':' secreGoal=STRING)? ('Descr' ':' secreDesc=STRING)?
-	//	('Category' ':' secreCategory=STRING)?
+	//	secreLocation=STRING)? ('State' ':' secreState=STRING)? ('Goal' ':' secreGoal=STRING)? ('Countermeasure' ':'
+	//	secreCountermeasure=STRING)? ('Category' ':' secreCategory=STRING)?
 	//	'}';
 	public SecRequirementsElements getSecRequirementsAccess() {
 		return pSecRequirements;

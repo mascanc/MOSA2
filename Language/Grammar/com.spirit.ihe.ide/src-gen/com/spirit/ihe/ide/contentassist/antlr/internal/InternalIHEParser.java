@@ -23,33 +23,18 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalIHEParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'ArchitecturalElement'", "'{'", "'}'", "'JavaPackage'", "':'", "'Name'", "'Version'", "'Status'", "'Objective'", "'HL_Function'", "'Rules:'", "'Profile'", "'actors:'", "'transactions:'", "'domains:'", "'quality_attributes:'", "'security_requirements:'", "'Description'", "'Features'", "'Function'", "'Goal'", "'Level'", "'Location'", "'State'", "'Descr'", "'Category'", "'('", "','", "')'", "'['", "']'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'ArchitecturalElement'", "'{'", "'}'", "'JavaPackage'", "':'", "'Name'", "'Version'", "'Status'", "'Objective'", "'HL_Function'", "'Rules:'", "'Profile'", "'actors:'", "'transactions:'", "'domains:'", "'quality_attributes:'", "'security_requirements:'", "'Description'", "'Features'", "'Function'", "'Form'", "'Sensitivity'", "'Location'", "'State'", "'Goal'", "'Countermeasure'", "'Category'", "'('", "','", "')'", "'['", "']'"
     };
-    public static final int RULE_STRING=4;
-    public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
-    public static final int T__37=37;
     public static final int T__16=16;
-    public static final int T__38=38;
     public static final int T__17=17;
-    public static final int T__39=39;
     public static final int T__18=18;
     public static final int T__11=11;
-    public static final int T__33=33;
     public static final int T__12=12;
-    public static final int T__34=34;
     public static final int T__13=13;
-    public static final int T__35=35;
     public static final int T__14=14;
-    public static final int T__36=36;
-    public static final int EOF=-1;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
     public static final int RULE_ID=5;
-    public static final int RULE_WS=9;
-    public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
@@ -60,11 +45,27 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
     public static final int T__23=23;
     public static final int T__24=24;
     public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
+    public static final int RULE_STRING=4;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
+    public static final int T__33=33;
+    public static final int T__34=34;
+    public static final int T__35=35;
+    public static final int T__36=36;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
     public static final int T__40=40;
     public static final int T__41=41;
-    public static final int T__20=20;
     public static final int T__42=42;
-    public static final int T__21=21;
+    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -5200,7 +5201,7 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
                 int alt15=2;
                 int LA15_0 = input.LA(1);
 
-                if ( (LA15_0==38) ) {
+                if ( (LA15_0==39) ) {
                     alt15=1;
                 }
 
@@ -7616,17 +7617,22 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group__8"
-    // InternalIHE.g:2364:1: rule__SecRequirements__Group__8 : rule__SecRequirements__Group__8__Impl ;
+    // InternalIHE.g:2364:1: rule__SecRequirements__Group__8 : rule__SecRequirements__Group__8__Impl rule__SecRequirements__Group__9 ;
     public final void rule__SecRequirements__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2368:1: ( rule__SecRequirements__Group__8__Impl )
-            // InternalIHE.g:2369:2: rule__SecRequirements__Group__8__Impl
+            // InternalIHE.g:2368:1: ( rule__SecRequirements__Group__8__Impl rule__SecRequirements__Group__9 )
+            // InternalIHE.g:2369:2: rule__SecRequirements__Group__8__Impl rule__SecRequirements__Group__9
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_20);
             rule__SecRequirements__Group__8__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+            pushFollow(FOLLOW_2);
+            rule__SecRequirements__Group__9();
 
             state._fsp--;
             if (state.failed) return ;
@@ -7649,24 +7655,45 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group__8__Impl"
-    // InternalIHE.g:2375:1: rule__SecRequirements__Group__8__Impl : ( '}' ) ;
+    // InternalIHE.g:2376:1: rule__SecRequirements__Group__8__Impl : ( ( rule__SecRequirements__Group_8__0 )? ) ;
     public final void rule__SecRequirements__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2379:1: ( ( '}' ) )
-            // InternalIHE.g:2380:1: ( '}' )
+            // InternalIHE.g:2380:1: ( ( ( rule__SecRequirements__Group_8__0 )? ) )
+            // InternalIHE.g:2381:1: ( ( rule__SecRequirements__Group_8__0 )? )
             {
-            // InternalIHE.g:2380:1: ( '}' )
-            // InternalIHE.g:2381:2: '}'
+            // InternalIHE.g:2381:1: ( ( rule__SecRequirements__Group_8__0 )? )
+            // InternalIHE.g:2382:2: ( rule__SecRequirements__Group_8__0 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSecRequirementsAccess().getRightCurlyBracketKeyword_8()); 
+               before(grammarAccess.getSecRequirementsAccess().getGroup_8()); 
             }
-            match(input,14,FOLLOW_2); if (state.failed) return ;
+            // InternalIHE.g:2383:2: ( rule__SecRequirements__Group_8__0 )?
+            int alt25=2;
+            int LA25_0 = input.LA(1);
+
+            if ( (LA25_0==38) ) {
+                alt25=1;
+            }
+            switch (alt25) {
+                case 1 :
+                    // InternalIHE.g:2383:3: rule__SecRequirements__Group_8__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__SecRequirements__Group_8__0();
+
+                    state._fsp--;
+                    if (state.failed) return ;
+
+                    }
+                    break;
+
+            }
+
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSecRequirementsAccess().getRightCurlyBracketKeyword_8()); 
+               after(grammarAccess.getSecRequirementsAccess().getGroup_8()); 
             }
 
             }
@@ -7689,15 +7716,89 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__SecRequirements__Group__8__Impl"
 
 
+    // $ANTLR start "rule__SecRequirements__Group__9"
+    // InternalIHE.g:2391:1: rule__SecRequirements__Group__9 : rule__SecRequirements__Group__9__Impl ;
+    public final void rule__SecRequirements__Group__9() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalIHE.g:2395:1: ( rule__SecRequirements__Group__9__Impl )
+            // InternalIHE.g:2396:2: rule__SecRequirements__Group__9__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__SecRequirements__Group__9__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SecRequirements__Group__9"
+
+
+    // $ANTLR start "rule__SecRequirements__Group__9__Impl"
+    // InternalIHE.g:2402:1: rule__SecRequirements__Group__9__Impl : ( '}' ) ;
+    public final void rule__SecRequirements__Group__9__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalIHE.g:2406:1: ( ( '}' ) )
+            // InternalIHE.g:2407:1: ( '}' )
+            {
+            // InternalIHE.g:2407:1: ( '}' )
+            // InternalIHE.g:2408:2: '}'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getSecRequirementsAccess().getRightCurlyBracketKeyword_9()); 
+            }
+            match(input,14,FOLLOW_2); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getSecRequirementsAccess().getRightCurlyBracketKeyword_9()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SecRequirements__Group__9__Impl"
+
+
     // $ANTLR start "rule__SecRequirements__Group_2__0"
-    // InternalIHE.g:2391:1: rule__SecRequirements__Group_2__0 : rule__SecRequirements__Group_2__0__Impl rule__SecRequirements__Group_2__1 ;
+    // InternalIHE.g:2418:1: rule__SecRequirements__Group_2__0 : rule__SecRequirements__Group_2__0__Impl rule__SecRequirements__Group_2__1 ;
     public final void rule__SecRequirements__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2395:1: ( rule__SecRequirements__Group_2__0__Impl rule__SecRequirements__Group_2__1 )
-            // InternalIHE.g:2396:2: rule__SecRequirements__Group_2__0__Impl rule__SecRequirements__Group_2__1
+            // InternalIHE.g:2422:1: ( rule__SecRequirements__Group_2__0__Impl rule__SecRequirements__Group_2__1 )
+            // InternalIHE.g:2423:2: rule__SecRequirements__Group_2__0__Impl rule__SecRequirements__Group_2__1
             {
             pushFollow(FOLLOW_10);
             rule__SecRequirements__Group_2__0__Impl();
@@ -7728,24 +7829,24 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_2__0__Impl"
-    // InternalIHE.g:2403:1: rule__SecRequirements__Group_2__0__Impl : ( 'Goal' ) ;
+    // InternalIHE.g:2430:1: rule__SecRequirements__Group_2__0__Impl : ( 'Form' ) ;
     public final void rule__SecRequirements__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2407:1: ( ( 'Goal' ) )
-            // InternalIHE.g:2408:1: ( 'Goal' )
+            // InternalIHE.g:2434:1: ( ( 'Form' ) )
+            // InternalIHE.g:2435:1: ( 'Form' )
             {
-            // InternalIHE.g:2408:1: ( 'Goal' )
-            // InternalIHE.g:2409:2: 'Goal'
+            // InternalIHE.g:2435:1: ( 'Form' )
+            // InternalIHE.g:2436:2: 'Form'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSecRequirementsAccess().getGoalKeyword_2_0()); 
+               before(grammarAccess.getSecRequirementsAccess().getFormKeyword_2_0()); 
             }
             match(input,32,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSecRequirementsAccess().getGoalKeyword_2_0()); 
+               after(grammarAccess.getSecRequirementsAccess().getFormKeyword_2_0()); 
             }
 
             }
@@ -7769,14 +7870,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_2__1"
-    // InternalIHE.g:2418:1: rule__SecRequirements__Group_2__1 : rule__SecRequirements__Group_2__1__Impl rule__SecRequirements__Group_2__2 ;
+    // InternalIHE.g:2445:1: rule__SecRequirements__Group_2__1 : rule__SecRequirements__Group_2__1__Impl rule__SecRequirements__Group_2__2 ;
     public final void rule__SecRequirements__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2422:1: ( rule__SecRequirements__Group_2__1__Impl rule__SecRequirements__Group_2__2 )
-            // InternalIHE.g:2423:2: rule__SecRequirements__Group_2__1__Impl rule__SecRequirements__Group_2__2
+            // InternalIHE.g:2449:1: ( rule__SecRequirements__Group_2__1__Impl rule__SecRequirements__Group_2__2 )
+            // InternalIHE.g:2450:2: rule__SecRequirements__Group_2__1__Impl rule__SecRequirements__Group_2__2
             {
             pushFollow(FOLLOW_3);
             rule__SecRequirements__Group_2__1__Impl();
@@ -7807,17 +7908,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_2__1__Impl"
-    // InternalIHE.g:2430:1: rule__SecRequirements__Group_2__1__Impl : ( ':' ) ;
+    // InternalIHE.g:2457:1: rule__SecRequirements__Group_2__1__Impl : ( ':' ) ;
     public final void rule__SecRequirements__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2434:1: ( ( ':' ) )
-            // InternalIHE.g:2435:1: ( ':' )
+            // InternalIHE.g:2461:1: ( ( ':' ) )
+            // InternalIHE.g:2462:1: ( ':' )
             {
-            // InternalIHE.g:2435:1: ( ':' )
-            // InternalIHE.g:2436:2: ':'
+            // InternalIHE.g:2462:1: ( ':' )
+            // InternalIHE.g:2463:2: ':'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSecRequirementsAccess().getColonKeyword_2_1()); 
@@ -7848,14 +7949,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_2__2"
-    // InternalIHE.g:2445:1: rule__SecRequirements__Group_2__2 : rule__SecRequirements__Group_2__2__Impl ;
+    // InternalIHE.g:2472:1: rule__SecRequirements__Group_2__2 : rule__SecRequirements__Group_2__2__Impl ;
     public final void rule__SecRequirements__Group_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2449:1: ( rule__SecRequirements__Group_2__2__Impl )
-            // InternalIHE.g:2450:2: rule__SecRequirements__Group_2__2__Impl
+            // InternalIHE.g:2476:1: ( rule__SecRequirements__Group_2__2__Impl )
+            // InternalIHE.g:2477:2: rule__SecRequirements__Group_2__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SecRequirements__Group_2__2__Impl();
@@ -7881,26 +7982,26 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_2__2__Impl"
-    // InternalIHE.g:2456:1: rule__SecRequirements__Group_2__2__Impl : ( ( rule__SecRequirements__SecreGoalAssignment_2_2 ) ) ;
+    // InternalIHE.g:2483:1: rule__SecRequirements__Group_2__2__Impl : ( ( rule__SecRequirements__SecreFormAssignment_2_2 ) ) ;
     public final void rule__SecRequirements__Group_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2460:1: ( ( ( rule__SecRequirements__SecreGoalAssignment_2_2 ) ) )
-            // InternalIHE.g:2461:1: ( ( rule__SecRequirements__SecreGoalAssignment_2_2 ) )
+            // InternalIHE.g:2487:1: ( ( ( rule__SecRequirements__SecreFormAssignment_2_2 ) ) )
+            // InternalIHE.g:2488:1: ( ( rule__SecRequirements__SecreFormAssignment_2_2 ) )
             {
-            // InternalIHE.g:2461:1: ( ( rule__SecRequirements__SecreGoalAssignment_2_2 ) )
-            // InternalIHE.g:2462:2: ( rule__SecRequirements__SecreGoalAssignment_2_2 )
+            // InternalIHE.g:2488:1: ( ( rule__SecRequirements__SecreFormAssignment_2_2 ) )
+            // InternalIHE.g:2489:2: ( rule__SecRequirements__SecreFormAssignment_2_2 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSecRequirementsAccess().getSecreGoalAssignment_2_2()); 
+               before(grammarAccess.getSecRequirementsAccess().getSecreFormAssignment_2_2()); 
             }
-            // InternalIHE.g:2463:2: ( rule__SecRequirements__SecreGoalAssignment_2_2 )
-            // InternalIHE.g:2463:3: rule__SecRequirements__SecreGoalAssignment_2_2
+            // InternalIHE.g:2490:2: ( rule__SecRequirements__SecreFormAssignment_2_2 )
+            // InternalIHE.g:2490:3: rule__SecRequirements__SecreFormAssignment_2_2
             {
             pushFollow(FOLLOW_2);
-            rule__SecRequirements__SecreGoalAssignment_2_2();
+            rule__SecRequirements__SecreFormAssignment_2_2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -7908,7 +8009,7 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSecRequirementsAccess().getSecreGoalAssignment_2_2()); 
+               after(grammarAccess.getSecRequirementsAccess().getSecreFormAssignment_2_2()); 
             }
 
             }
@@ -7932,14 +8033,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_3__0"
-    // InternalIHE.g:2472:1: rule__SecRequirements__Group_3__0 : rule__SecRequirements__Group_3__0__Impl rule__SecRequirements__Group_3__1 ;
+    // InternalIHE.g:2499:1: rule__SecRequirements__Group_3__0 : rule__SecRequirements__Group_3__0__Impl rule__SecRequirements__Group_3__1 ;
     public final void rule__SecRequirements__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2476:1: ( rule__SecRequirements__Group_3__0__Impl rule__SecRequirements__Group_3__1 )
-            // InternalIHE.g:2477:2: rule__SecRequirements__Group_3__0__Impl rule__SecRequirements__Group_3__1
+            // InternalIHE.g:2503:1: ( rule__SecRequirements__Group_3__0__Impl rule__SecRequirements__Group_3__1 )
+            // InternalIHE.g:2504:2: rule__SecRequirements__Group_3__0__Impl rule__SecRequirements__Group_3__1
             {
             pushFollow(FOLLOW_10);
             rule__SecRequirements__Group_3__0__Impl();
@@ -7970,24 +8071,24 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_3__0__Impl"
-    // InternalIHE.g:2484:1: rule__SecRequirements__Group_3__0__Impl : ( 'Level' ) ;
+    // InternalIHE.g:2511:1: rule__SecRequirements__Group_3__0__Impl : ( 'Sensitivity' ) ;
     public final void rule__SecRequirements__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2488:1: ( ( 'Level' ) )
-            // InternalIHE.g:2489:1: ( 'Level' )
+            // InternalIHE.g:2515:1: ( ( 'Sensitivity' ) )
+            // InternalIHE.g:2516:1: ( 'Sensitivity' )
             {
-            // InternalIHE.g:2489:1: ( 'Level' )
-            // InternalIHE.g:2490:2: 'Level'
+            // InternalIHE.g:2516:1: ( 'Sensitivity' )
+            // InternalIHE.g:2517:2: 'Sensitivity'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSecRequirementsAccess().getLevelKeyword_3_0()); 
+               before(grammarAccess.getSecRequirementsAccess().getSensitivityKeyword_3_0()); 
             }
             match(input,33,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSecRequirementsAccess().getLevelKeyword_3_0()); 
+               after(grammarAccess.getSecRequirementsAccess().getSensitivityKeyword_3_0()); 
             }
 
             }
@@ -8011,14 +8112,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_3__1"
-    // InternalIHE.g:2499:1: rule__SecRequirements__Group_3__1 : rule__SecRequirements__Group_3__1__Impl rule__SecRequirements__Group_3__2 ;
+    // InternalIHE.g:2526:1: rule__SecRequirements__Group_3__1 : rule__SecRequirements__Group_3__1__Impl rule__SecRequirements__Group_3__2 ;
     public final void rule__SecRequirements__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2503:1: ( rule__SecRequirements__Group_3__1__Impl rule__SecRequirements__Group_3__2 )
-            // InternalIHE.g:2504:2: rule__SecRequirements__Group_3__1__Impl rule__SecRequirements__Group_3__2
+            // InternalIHE.g:2530:1: ( rule__SecRequirements__Group_3__1__Impl rule__SecRequirements__Group_3__2 )
+            // InternalIHE.g:2531:2: rule__SecRequirements__Group_3__1__Impl rule__SecRequirements__Group_3__2
             {
             pushFollow(FOLLOW_3);
             rule__SecRequirements__Group_3__1__Impl();
@@ -8049,17 +8150,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_3__1__Impl"
-    // InternalIHE.g:2511:1: rule__SecRequirements__Group_3__1__Impl : ( ':' ) ;
+    // InternalIHE.g:2538:1: rule__SecRequirements__Group_3__1__Impl : ( ':' ) ;
     public final void rule__SecRequirements__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2515:1: ( ( ':' ) )
-            // InternalIHE.g:2516:1: ( ':' )
+            // InternalIHE.g:2542:1: ( ( ':' ) )
+            // InternalIHE.g:2543:1: ( ':' )
             {
-            // InternalIHE.g:2516:1: ( ':' )
-            // InternalIHE.g:2517:2: ':'
+            // InternalIHE.g:2543:1: ( ':' )
+            // InternalIHE.g:2544:2: ':'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSecRequirementsAccess().getColonKeyword_3_1()); 
@@ -8090,14 +8191,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_3__2"
-    // InternalIHE.g:2526:1: rule__SecRequirements__Group_3__2 : rule__SecRequirements__Group_3__2__Impl ;
+    // InternalIHE.g:2553:1: rule__SecRequirements__Group_3__2 : rule__SecRequirements__Group_3__2__Impl ;
     public final void rule__SecRequirements__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2530:1: ( rule__SecRequirements__Group_3__2__Impl )
-            // InternalIHE.g:2531:2: rule__SecRequirements__Group_3__2__Impl
+            // InternalIHE.g:2557:1: ( rule__SecRequirements__Group_3__2__Impl )
+            // InternalIHE.g:2558:2: rule__SecRequirements__Group_3__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SecRequirements__Group_3__2__Impl();
@@ -8123,26 +8224,26 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_3__2__Impl"
-    // InternalIHE.g:2537:1: rule__SecRequirements__Group_3__2__Impl : ( ( rule__SecRequirements__SecreLevelAssignment_3_2 ) ) ;
+    // InternalIHE.g:2564:1: rule__SecRequirements__Group_3__2__Impl : ( ( rule__SecRequirements__SecreSensitivityAssignment_3_2 ) ) ;
     public final void rule__SecRequirements__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2541:1: ( ( ( rule__SecRequirements__SecreLevelAssignment_3_2 ) ) )
-            // InternalIHE.g:2542:1: ( ( rule__SecRequirements__SecreLevelAssignment_3_2 ) )
+            // InternalIHE.g:2568:1: ( ( ( rule__SecRequirements__SecreSensitivityAssignment_3_2 ) ) )
+            // InternalIHE.g:2569:1: ( ( rule__SecRequirements__SecreSensitivityAssignment_3_2 ) )
             {
-            // InternalIHE.g:2542:1: ( ( rule__SecRequirements__SecreLevelAssignment_3_2 ) )
-            // InternalIHE.g:2543:2: ( rule__SecRequirements__SecreLevelAssignment_3_2 )
+            // InternalIHE.g:2569:1: ( ( rule__SecRequirements__SecreSensitivityAssignment_3_2 ) )
+            // InternalIHE.g:2570:2: ( rule__SecRequirements__SecreSensitivityAssignment_3_2 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSecRequirementsAccess().getSecreLevelAssignment_3_2()); 
+               before(grammarAccess.getSecRequirementsAccess().getSecreSensitivityAssignment_3_2()); 
             }
-            // InternalIHE.g:2544:2: ( rule__SecRequirements__SecreLevelAssignment_3_2 )
-            // InternalIHE.g:2544:3: rule__SecRequirements__SecreLevelAssignment_3_2
+            // InternalIHE.g:2571:2: ( rule__SecRequirements__SecreSensitivityAssignment_3_2 )
+            // InternalIHE.g:2571:3: rule__SecRequirements__SecreSensitivityAssignment_3_2
             {
             pushFollow(FOLLOW_2);
-            rule__SecRequirements__SecreLevelAssignment_3_2();
+            rule__SecRequirements__SecreSensitivityAssignment_3_2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -8150,7 +8251,7 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSecRequirementsAccess().getSecreLevelAssignment_3_2()); 
+               after(grammarAccess.getSecRequirementsAccess().getSecreSensitivityAssignment_3_2()); 
             }
 
             }
@@ -8174,14 +8275,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_4__0"
-    // InternalIHE.g:2553:1: rule__SecRequirements__Group_4__0 : rule__SecRequirements__Group_4__0__Impl rule__SecRequirements__Group_4__1 ;
+    // InternalIHE.g:2580:1: rule__SecRequirements__Group_4__0 : rule__SecRequirements__Group_4__0__Impl rule__SecRequirements__Group_4__1 ;
     public final void rule__SecRequirements__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2557:1: ( rule__SecRequirements__Group_4__0__Impl rule__SecRequirements__Group_4__1 )
-            // InternalIHE.g:2558:2: rule__SecRequirements__Group_4__0__Impl rule__SecRequirements__Group_4__1
+            // InternalIHE.g:2584:1: ( rule__SecRequirements__Group_4__0__Impl rule__SecRequirements__Group_4__1 )
+            // InternalIHE.g:2585:2: rule__SecRequirements__Group_4__0__Impl rule__SecRequirements__Group_4__1
             {
             pushFollow(FOLLOW_10);
             rule__SecRequirements__Group_4__0__Impl();
@@ -8212,17 +8313,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_4__0__Impl"
-    // InternalIHE.g:2565:1: rule__SecRequirements__Group_4__0__Impl : ( 'Location' ) ;
+    // InternalIHE.g:2592:1: rule__SecRequirements__Group_4__0__Impl : ( 'Location' ) ;
     public final void rule__SecRequirements__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2569:1: ( ( 'Location' ) )
-            // InternalIHE.g:2570:1: ( 'Location' )
+            // InternalIHE.g:2596:1: ( ( 'Location' ) )
+            // InternalIHE.g:2597:1: ( 'Location' )
             {
-            // InternalIHE.g:2570:1: ( 'Location' )
-            // InternalIHE.g:2571:2: 'Location'
+            // InternalIHE.g:2597:1: ( 'Location' )
+            // InternalIHE.g:2598:2: 'Location'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSecRequirementsAccess().getLocationKeyword_4_0()); 
@@ -8253,14 +8354,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_4__1"
-    // InternalIHE.g:2580:1: rule__SecRequirements__Group_4__1 : rule__SecRequirements__Group_4__1__Impl rule__SecRequirements__Group_4__2 ;
+    // InternalIHE.g:2607:1: rule__SecRequirements__Group_4__1 : rule__SecRequirements__Group_4__1__Impl rule__SecRequirements__Group_4__2 ;
     public final void rule__SecRequirements__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2584:1: ( rule__SecRequirements__Group_4__1__Impl rule__SecRequirements__Group_4__2 )
-            // InternalIHE.g:2585:2: rule__SecRequirements__Group_4__1__Impl rule__SecRequirements__Group_4__2
+            // InternalIHE.g:2611:1: ( rule__SecRequirements__Group_4__1__Impl rule__SecRequirements__Group_4__2 )
+            // InternalIHE.g:2612:2: rule__SecRequirements__Group_4__1__Impl rule__SecRequirements__Group_4__2
             {
             pushFollow(FOLLOW_3);
             rule__SecRequirements__Group_4__1__Impl();
@@ -8291,17 +8392,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_4__1__Impl"
-    // InternalIHE.g:2592:1: rule__SecRequirements__Group_4__1__Impl : ( ':' ) ;
+    // InternalIHE.g:2619:1: rule__SecRequirements__Group_4__1__Impl : ( ':' ) ;
     public final void rule__SecRequirements__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2596:1: ( ( ':' ) )
-            // InternalIHE.g:2597:1: ( ':' )
+            // InternalIHE.g:2623:1: ( ( ':' ) )
+            // InternalIHE.g:2624:1: ( ':' )
             {
-            // InternalIHE.g:2597:1: ( ':' )
-            // InternalIHE.g:2598:2: ':'
+            // InternalIHE.g:2624:1: ( ':' )
+            // InternalIHE.g:2625:2: ':'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSecRequirementsAccess().getColonKeyword_4_1()); 
@@ -8332,14 +8433,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_4__2"
-    // InternalIHE.g:2607:1: rule__SecRequirements__Group_4__2 : rule__SecRequirements__Group_4__2__Impl ;
+    // InternalIHE.g:2634:1: rule__SecRequirements__Group_4__2 : rule__SecRequirements__Group_4__2__Impl ;
     public final void rule__SecRequirements__Group_4__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2611:1: ( rule__SecRequirements__Group_4__2__Impl )
-            // InternalIHE.g:2612:2: rule__SecRequirements__Group_4__2__Impl
+            // InternalIHE.g:2638:1: ( rule__SecRequirements__Group_4__2__Impl )
+            // InternalIHE.g:2639:2: rule__SecRequirements__Group_4__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SecRequirements__Group_4__2__Impl();
@@ -8365,23 +8466,23 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_4__2__Impl"
-    // InternalIHE.g:2618:1: rule__SecRequirements__Group_4__2__Impl : ( ( rule__SecRequirements__SecreLocationAssignment_4_2 ) ) ;
+    // InternalIHE.g:2645:1: rule__SecRequirements__Group_4__2__Impl : ( ( rule__SecRequirements__SecreLocationAssignment_4_2 ) ) ;
     public final void rule__SecRequirements__Group_4__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2622:1: ( ( ( rule__SecRequirements__SecreLocationAssignment_4_2 ) ) )
-            // InternalIHE.g:2623:1: ( ( rule__SecRequirements__SecreLocationAssignment_4_2 ) )
+            // InternalIHE.g:2649:1: ( ( ( rule__SecRequirements__SecreLocationAssignment_4_2 ) ) )
+            // InternalIHE.g:2650:1: ( ( rule__SecRequirements__SecreLocationAssignment_4_2 ) )
             {
-            // InternalIHE.g:2623:1: ( ( rule__SecRequirements__SecreLocationAssignment_4_2 ) )
-            // InternalIHE.g:2624:2: ( rule__SecRequirements__SecreLocationAssignment_4_2 )
+            // InternalIHE.g:2650:1: ( ( rule__SecRequirements__SecreLocationAssignment_4_2 ) )
+            // InternalIHE.g:2651:2: ( rule__SecRequirements__SecreLocationAssignment_4_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSecRequirementsAccess().getSecreLocationAssignment_4_2()); 
             }
-            // InternalIHE.g:2625:2: ( rule__SecRequirements__SecreLocationAssignment_4_2 )
-            // InternalIHE.g:2625:3: rule__SecRequirements__SecreLocationAssignment_4_2
+            // InternalIHE.g:2652:2: ( rule__SecRequirements__SecreLocationAssignment_4_2 )
+            // InternalIHE.g:2652:3: rule__SecRequirements__SecreLocationAssignment_4_2
             {
             pushFollow(FOLLOW_2);
             rule__SecRequirements__SecreLocationAssignment_4_2();
@@ -8416,14 +8517,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_5__0"
-    // InternalIHE.g:2634:1: rule__SecRequirements__Group_5__0 : rule__SecRequirements__Group_5__0__Impl rule__SecRequirements__Group_5__1 ;
+    // InternalIHE.g:2661:1: rule__SecRequirements__Group_5__0 : rule__SecRequirements__Group_5__0__Impl rule__SecRequirements__Group_5__1 ;
     public final void rule__SecRequirements__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2638:1: ( rule__SecRequirements__Group_5__0__Impl rule__SecRequirements__Group_5__1 )
-            // InternalIHE.g:2639:2: rule__SecRequirements__Group_5__0__Impl rule__SecRequirements__Group_5__1
+            // InternalIHE.g:2665:1: ( rule__SecRequirements__Group_5__0__Impl rule__SecRequirements__Group_5__1 )
+            // InternalIHE.g:2666:2: rule__SecRequirements__Group_5__0__Impl rule__SecRequirements__Group_5__1
             {
             pushFollow(FOLLOW_10);
             rule__SecRequirements__Group_5__0__Impl();
@@ -8454,17 +8555,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_5__0__Impl"
-    // InternalIHE.g:2646:1: rule__SecRequirements__Group_5__0__Impl : ( 'State' ) ;
+    // InternalIHE.g:2673:1: rule__SecRequirements__Group_5__0__Impl : ( 'State' ) ;
     public final void rule__SecRequirements__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2650:1: ( ( 'State' ) )
-            // InternalIHE.g:2651:1: ( 'State' )
+            // InternalIHE.g:2677:1: ( ( 'State' ) )
+            // InternalIHE.g:2678:1: ( 'State' )
             {
-            // InternalIHE.g:2651:1: ( 'State' )
-            // InternalIHE.g:2652:2: 'State'
+            // InternalIHE.g:2678:1: ( 'State' )
+            // InternalIHE.g:2679:2: 'State'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSecRequirementsAccess().getStateKeyword_5_0()); 
@@ -8495,14 +8596,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_5__1"
-    // InternalIHE.g:2661:1: rule__SecRequirements__Group_5__1 : rule__SecRequirements__Group_5__1__Impl rule__SecRequirements__Group_5__2 ;
+    // InternalIHE.g:2688:1: rule__SecRequirements__Group_5__1 : rule__SecRequirements__Group_5__1__Impl rule__SecRequirements__Group_5__2 ;
     public final void rule__SecRequirements__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2665:1: ( rule__SecRequirements__Group_5__1__Impl rule__SecRequirements__Group_5__2 )
-            // InternalIHE.g:2666:2: rule__SecRequirements__Group_5__1__Impl rule__SecRequirements__Group_5__2
+            // InternalIHE.g:2692:1: ( rule__SecRequirements__Group_5__1__Impl rule__SecRequirements__Group_5__2 )
+            // InternalIHE.g:2693:2: rule__SecRequirements__Group_5__1__Impl rule__SecRequirements__Group_5__2
             {
             pushFollow(FOLLOW_3);
             rule__SecRequirements__Group_5__1__Impl();
@@ -8533,17 +8634,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_5__1__Impl"
-    // InternalIHE.g:2673:1: rule__SecRequirements__Group_5__1__Impl : ( ':' ) ;
+    // InternalIHE.g:2700:1: rule__SecRequirements__Group_5__1__Impl : ( ':' ) ;
     public final void rule__SecRequirements__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2677:1: ( ( ':' ) )
-            // InternalIHE.g:2678:1: ( ':' )
+            // InternalIHE.g:2704:1: ( ( ':' ) )
+            // InternalIHE.g:2705:1: ( ':' )
             {
-            // InternalIHE.g:2678:1: ( ':' )
-            // InternalIHE.g:2679:2: ':'
+            // InternalIHE.g:2705:1: ( ':' )
+            // InternalIHE.g:2706:2: ':'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSecRequirementsAccess().getColonKeyword_5_1()); 
@@ -8574,14 +8675,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_5__2"
-    // InternalIHE.g:2688:1: rule__SecRequirements__Group_5__2 : rule__SecRequirements__Group_5__2__Impl ;
+    // InternalIHE.g:2715:1: rule__SecRequirements__Group_5__2 : rule__SecRequirements__Group_5__2__Impl ;
     public final void rule__SecRequirements__Group_5__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2692:1: ( rule__SecRequirements__Group_5__2__Impl )
-            // InternalIHE.g:2693:2: rule__SecRequirements__Group_5__2__Impl
+            // InternalIHE.g:2719:1: ( rule__SecRequirements__Group_5__2__Impl )
+            // InternalIHE.g:2720:2: rule__SecRequirements__Group_5__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SecRequirements__Group_5__2__Impl();
@@ -8607,23 +8708,23 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_5__2__Impl"
-    // InternalIHE.g:2699:1: rule__SecRequirements__Group_5__2__Impl : ( ( rule__SecRequirements__SecreStateAssignment_5_2 ) ) ;
+    // InternalIHE.g:2726:1: rule__SecRequirements__Group_5__2__Impl : ( ( rule__SecRequirements__SecreStateAssignment_5_2 ) ) ;
     public final void rule__SecRequirements__Group_5__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2703:1: ( ( ( rule__SecRequirements__SecreStateAssignment_5_2 ) ) )
-            // InternalIHE.g:2704:1: ( ( rule__SecRequirements__SecreStateAssignment_5_2 ) )
+            // InternalIHE.g:2730:1: ( ( ( rule__SecRequirements__SecreStateAssignment_5_2 ) ) )
+            // InternalIHE.g:2731:1: ( ( rule__SecRequirements__SecreStateAssignment_5_2 ) )
             {
-            // InternalIHE.g:2704:1: ( ( rule__SecRequirements__SecreStateAssignment_5_2 ) )
-            // InternalIHE.g:2705:2: ( rule__SecRequirements__SecreStateAssignment_5_2 )
+            // InternalIHE.g:2731:1: ( ( rule__SecRequirements__SecreStateAssignment_5_2 ) )
+            // InternalIHE.g:2732:2: ( rule__SecRequirements__SecreStateAssignment_5_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSecRequirementsAccess().getSecreStateAssignment_5_2()); 
             }
-            // InternalIHE.g:2706:2: ( rule__SecRequirements__SecreStateAssignment_5_2 )
-            // InternalIHE.g:2706:3: rule__SecRequirements__SecreStateAssignment_5_2
+            // InternalIHE.g:2733:2: ( rule__SecRequirements__SecreStateAssignment_5_2 )
+            // InternalIHE.g:2733:3: rule__SecRequirements__SecreStateAssignment_5_2
             {
             pushFollow(FOLLOW_2);
             rule__SecRequirements__SecreStateAssignment_5_2();
@@ -8658,14 +8759,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_6__0"
-    // InternalIHE.g:2715:1: rule__SecRequirements__Group_6__0 : rule__SecRequirements__Group_6__0__Impl rule__SecRequirements__Group_6__1 ;
+    // InternalIHE.g:2742:1: rule__SecRequirements__Group_6__0 : rule__SecRequirements__Group_6__0__Impl rule__SecRequirements__Group_6__1 ;
     public final void rule__SecRequirements__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2719:1: ( rule__SecRequirements__Group_6__0__Impl rule__SecRequirements__Group_6__1 )
-            // InternalIHE.g:2720:2: rule__SecRequirements__Group_6__0__Impl rule__SecRequirements__Group_6__1
+            // InternalIHE.g:2746:1: ( rule__SecRequirements__Group_6__0__Impl rule__SecRequirements__Group_6__1 )
+            // InternalIHE.g:2747:2: rule__SecRequirements__Group_6__0__Impl rule__SecRequirements__Group_6__1
             {
             pushFollow(FOLLOW_10);
             rule__SecRequirements__Group_6__0__Impl();
@@ -8696,24 +8797,24 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_6__0__Impl"
-    // InternalIHE.g:2727:1: rule__SecRequirements__Group_6__0__Impl : ( 'Descr' ) ;
+    // InternalIHE.g:2754:1: rule__SecRequirements__Group_6__0__Impl : ( 'Goal' ) ;
     public final void rule__SecRequirements__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2731:1: ( ( 'Descr' ) )
-            // InternalIHE.g:2732:1: ( 'Descr' )
+            // InternalIHE.g:2758:1: ( ( 'Goal' ) )
+            // InternalIHE.g:2759:1: ( 'Goal' )
             {
-            // InternalIHE.g:2732:1: ( 'Descr' )
-            // InternalIHE.g:2733:2: 'Descr'
+            // InternalIHE.g:2759:1: ( 'Goal' )
+            // InternalIHE.g:2760:2: 'Goal'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSecRequirementsAccess().getDescrKeyword_6_0()); 
+               before(grammarAccess.getSecRequirementsAccess().getGoalKeyword_6_0()); 
             }
             match(input,36,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSecRequirementsAccess().getDescrKeyword_6_0()); 
+               after(grammarAccess.getSecRequirementsAccess().getGoalKeyword_6_0()); 
             }
 
             }
@@ -8737,14 +8838,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_6__1"
-    // InternalIHE.g:2742:1: rule__SecRequirements__Group_6__1 : rule__SecRequirements__Group_6__1__Impl rule__SecRequirements__Group_6__2 ;
+    // InternalIHE.g:2769:1: rule__SecRequirements__Group_6__1 : rule__SecRequirements__Group_6__1__Impl rule__SecRequirements__Group_6__2 ;
     public final void rule__SecRequirements__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2746:1: ( rule__SecRequirements__Group_6__1__Impl rule__SecRequirements__Group_6__2 )
-            // InternalIHE.g:2747:2: rule__SecRequirements__Group_6__1__Impl rule__SecRequirements__Group_6__2
+            // InternalIHE.g:2773:1: ( rule__SecRequirements__Group_6__1__Impl rule__SecRequirements__Group_6__2 )
+            // InternalIHE.g:2774:2: rule__SecRequirements__Group_6__1__Impl rule__SecRequirements__Group_6__2
             {
             pushFollow(FOLLOW_3);
             rule__SecRequirements__Group_6__1__Impl();
@@ -8775,17 +8876,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_6__1__Impl"
-    // InternalIHE.g:2754:1: rule__SecRequirements__Group_6__1__Impl : ( ':' ) ;
+    // InternalIHE.g:2781:1: rule__SecRequirements__Group_6__1__Impl : ( ':' ) ;
     public final void rule__SecRequirements__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2758:1: ( ( ':' ) )
-            // InternalIHE.g:2759:1: ( ':' )
+            // InternalIHE.g:2785:1: ( ( ':' ) )
+            // InternalIHE.g:2786:1: ( ':' )
             {
-            // InternalIHE.g:2759:1: ( ':' )
-            // InternalIHE.g:2760:2: ':'
+            // InternalIHE.g:2786:1: ( ':' )
+            // InternalIHE.g:2787:2: ':'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSecRequirementsAccess().getColonKeyword_6_1()); 
@@ -8816,14 +8917,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_6__2"
-    // InternalIHE.g:2769:1: rule__SecRequirements__Group_6__2 : rule__SecRequirements__Group_6__2__Impl ;
+    // InternalIHE.g:2796:1: rule__SecRequirements__Group_6__2 : rule__SecRequirements__Group_6__2__Impl ;
     public final void rule__SecRequirements__Group_6__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2773:1: ( rule__SecRequirements__Group_6__2__Impl )
-            // InternalIHE.g:2774:2: rule__SecRequirements__Group_6__2__Impl
+            // InternalIHE.g:2800:1: ( rule__SecRequirements__Group_6__2__Impl )
+            // InternalIHE.g:2801:2: rule__SecRequirements__Group_6__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SecRequirements__Group_6__2__Impl();
@@ -8849,26 +8950,26 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_6__2__Impl"
-    // InternalIHE.g:2780:1: rule__SecRequirements__Group_6__2__Impl : ( ( rule__SecRequirements__SecreDescAssignment_6_2 ) ) ;
+    // InternalIHE.g:2807:1: rule__SecRequirements__Group_6__2__Impl : ( ( rule__SecRequirements__SecreGoalAssignment_6_2 ) ) ;
     public final void rule__SecRequirements__Group_6__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2784:1: ( ( ( rule__SecRequirements__SecreDescAssignment_6_2 ) ) )
-            // InternalIHE.g:2785:1: ( ( rule__SecRequirements__SecreDescAssignment_6_2 ) )
+            // InternalIHE.g:2811:1: ( ( ( rule__SecRequirements__SecreGoalAssignment_6_2 ) ) )
+            // InternalIHE.g:2812:1: ( ( rule__SecRequirements__SecreGoalAssignment_6_2 ) )
             {
-            // InternalIHE.g:2785:1: ( ( rule__SecRequirements__SecreDescAssignment_6_2 ) )
-            // InternalIHE.g:2786:2: ( rule__SecRequirements__SecreDescAssignment_6_2 )
+            // InternalIHE.g:2812:1: ( ( rule__SecRequirements__SecreGoalAssignment_6_2 ) )
+            // InternalIHE.g:2813:2: ( rule__SecRequirements__SecreGoalAssignment_6_2 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSecRequirementsAccess().getSecreDescAssignment_6_2()); 
+               before(grammarAccess.getSecRequirementsAccess().getSecreGoalAssignment_6_2()); 
             }
-            // InternalIHE.g:2787:2: ( rule__SecRequirements__SecreDescAssignment_6_2 )
-            // InternalIHE.g:2787:3: rule__SecRequirements__SecreDescAssignment_6_2
+            // InternalIHE.g:2814:2: ( rule__SecRequirements__SecreGoalAssignment_6_2 )
+            // InternalIHE.g:2814:3: rule__SecRequirements__SecreGoalAssignment_6_2
             {
             pushFollow(FOLLOW_2);
-            rule__SecRequirements__SecreDescAssignment_6_2();
+            rule__SecRequirements__SecreGoalAssignment_6_2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -8876,7 +8977,7 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSecRequirementsAccess().getSecreDescAssignment_6_2()); 
+               after(grammarAccess.getSecRequirementsAccess().getSecreGoalAssignment_6_2()); 
             }
 
             }
@@ -8900,14 +9001,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_7__0"
-    // InternalIHE.g:2796:1: rule__SecRequirements__Group_7__0 : rule__SecRequirements__Group_7__0__Impl rule__SecRequirements__Group_7__1 ;
+    // InternalIHE.g:2823:1: rule__SecRequirements__Group_7__0 : rule__SecRequirements__Group_7__0__Impl rule__SecRequirements__Group_7__1 ;
     public final void rule__SecRequirements__Group_7__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2800:1: ( rule__SecRequirements__Group_7__0__Impl rule__SecRequirements__Group_7__1 )
-            // InternalIHE.g:2801:2: rule__SecRequirements__Group_7__0__Impl rule__SecRequirements__Group_7__1
+            // InternalIHE.g:2827:1: ( rule__SecRequirements__Group_7__0__Impl rule__SecRequirements__Group_7__1 )
+            // InternalIHE.g:2828:2: rule__SecRequirements__Group_7__0__Impl rule__SecRequirements__Group_7__1
             {
             pushFollow(FOLLOW_10);
             rule__SecRequirements__Group_7__0__Impl();
@@ -8938,24 +9039,24 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_7__0__Impl"
-    // InternalIHE.g:2808:1: rule__SecRequirements__Group_7__0__Impl : ( 'Category' ) ;
+    // InternalIHE.g:2835:1: rule__SecRequirements__Group_7__0__Impl : ( 'Countermeasure' ) ;
     public final void rule__SecRequirements__Group_7__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2812:1: ( ( 'Category' ) )
-            // InternalIHE.g:2813:1: ( 'Category' )
+            // InternalIHE.g:2839:1: ( ( 'Countermeasure' ) )
+            // InternalIHE.g:2840:1: ( 'Countermeasure' )
             {
-            // InternalIHE.g:2813:1: ( 'Category' )
-            // InternalIHE.g:2814:2: 'Category'
+            // InternalIHE.g:2840:1: ( 'Countermeasure' )
+            // InternalIHE.g:2841:2: 'Countermeasure'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSecRequirementsAccess().getCategoryKeyword_7_0()); 
+               before(grammarAccess.getSecRequirementsAccess().getCountermeasureKeyword_7_0()); 
             }
             match(input,37,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSecRequirementsAccess().getCategoryKeyword_7_0()); 
+               after(grammarAccess.getSecRequirementsAccess().getCountermeasureKeyword_7_0()); 
             }
 
             }
@@ -8979,14 +9080,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_7__1"
-    // InternalIHE.g:2823:1: rule__SecRequirements__Group_7__1 : rule__SecRequirements__Group_7__1__Impl rule__SecRequirements__Group_7__2 ;
+    // InternalIHE.g:2850:1: rule__SecRequirements__Group_7__1 : rule__SecRequirements__Group_7__1__Impl rule__SecRequirements__Group_7__2 ;
     public final void rule__SecRequirements__Group_7__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2827:1: ( rule__SecRequirements__Group_7__1__Impl rule__SecRequirements__Group_7__2 )
-            // InternalIHE.g:2828:2: rule__SecRequirements__Group_7__1__Impl rule__SecRequirements__Group_7__2
+            // InternalIHE.g:2854:1: ( rule__SecRequirements__Group_7__1__Impl rule__SecRequirements__Group_7__2 )
+            // InternalIHE.g:2855:2: rule__SecRequirements__Group_7__1__Impl rule__SecRequirements__Group_7__2
             {
             pushFollow(FOLLOW_3);
             rule__SecRequirements__Group_7__1__Impl();
@@ -9017,17 +9118,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_7__1__Impl"
-    // InternalIHE.g:2835:1: rule__SecRequirements__Group_7__1__Impl : ( ':' ) ;
+    // InternalIHE.g:2862:1: rule__SecRequirements__Group_7__1__Impl : ( ':' ) ;
     public final void rule__SecRequirements__Group_7__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2839:1: ( ( ':' ) )
-            // InternalIHE.g:2840:1: ( ':' )
+            // InternalIHE.g:2866:1: ( ( ':' ) )
+            // InternalIHE.g:2867:1: ( ':' )
             {
-            // InternalIHE.g:2840:1: ( ':' )
-            // InternalIHE.g:2841:2: ':'
+            // InternalIHE.g:2867:1: ( ':' )
+            // InternalIHE.g:2868:2: ':'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSecRequirementsAccess().getColonKeyword_7_1()); 
@@ -9058,14 +9159,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_7__2"
-    // InternalIHE.g:2850:1: rule__SecRequirements__Group_7__2 : rule__SecRequirements__Group_7__2__Impl ;
+    // InternalIHE.g:2877:1: rule__SecRequirements__Group_7__2 : rule__SecRequirements__Group_7__2__Impl ;
     public final void rule__SecRequirements__Group_7__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2854:1: ( rule__SecRequirements__Group_7__2__Impl )
-            // InternalIHE.g:2855:2: rule__SecRequirements__Group_7__2__Impl
+            // InternalIHE.g:2881:1: ( rule__SecRequirements__Group_7__2__Impl )
+            // InternalIHE.g:2882:2: rule__SecRequirements__Group_7__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SecRequirements__Group_7__2__Impl();
@@ -9091,26 +9192,26 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__Group_7__2__Impl"
-    // InternalIHE.g:2861:1: rule__SecRequirements__Group_7__2__Impl : ( ( rule__SecRequirements__SecreCategoryAssignment_7_2 ) ) ;
+    // InternalIHE.g:2888:1: rule__SecRequirements__Group_7__2__Impl : ( ( rule__SecRequirements__SecreCountermeasureAssignment_7_2 ) ) ;
     public final void rule__SecRequirements__Group_7__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2865:1: ( ( ( rule__SecRequirements__SecreCategoryAssignment_7_2 ) ) )
-            // InternalIHE.g:2866:1: ( ( rule__SecRequirements__SecreCategoryAssignment_7_2 ) )
+            // InternalIHE.g:2892:1: ( ( ( rule__SecRequirements__SecreCountermeasureAssignment_7_2 ) ) )
+            // InternalIHE.g:2893:1: ( ( rule__SecRequirements__SecreCountermeasureAssignment_7_2 ) )
             {
-            // InternalIHE.g:2866:1: ( ( rule__SecRequirements__SecreCategoryAssignment_7_2 ) )
-            // InternalIHE.g:2867:2: ( rule__SecRequirements__SecreCategoryAssignment_7_2 )
+            // InternalIHE.g:2893:1: ( ( rule__SecRequirements__SecreCountermeasureAssignment_7_2 ) )
+            // InternalIHE.g:2894:2: ( rule__SecRequirements__SecreCountermeasureAssignment_7_2 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSecRequirementsAccess().getSecreCategoryAssignment_7_2()); 
+               before(grammarAccess.getSecRequirementsAccess().getSecreCountermeasureAssignment_7_2()); 
             }
-            // InternalIHE.g:2868:2: ( rule__SecRequirements__SecreCategoryAssignment_7_2 )
-            // InternalIHE.g:2868:3: rule__SecRequirements__SecreCategoryAssignment_7_2
+            // InternalIHE.g:2895:2: ( rule__SecRequirements__SecreCountermeasureAssignment_7_2 )
+            // InternalIHE.g:2895:3: rule__SecRequirements__SecreCountermeasureAssignment_7_2
             {
             pushFollow(FOLLOW_2);
-            rule__SecRequirements__SecreCategoryAssignment_7_2();
+            rule__SecRequirements__SecreCountermeasureAssignment_7_2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -9118,7 +9219,7 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSecRequirementsAccess().getSecreCategoryAssignment_7_2()); 
+               after(grammarAccess.getSecRequirementsAccess().getSecreCountermeasureAssignment_7_2()); 
             }
 
             }
@@ -9141,15 +9242,257 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__SecRequirements__Group_7__2__Impl"
 
 
+    // $ANTLR start "rule__SecRequirements__Group_8__0"
+    // InternalIHE.g:2904:1: rule__SecRequirements__Group_8__0 : rule__SecRequirements__Group_8__0__Impl rule__SecRequirements__Group_8__1 ;
+    public final void rule__SecRequirements__Group_8__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalIHE.g:2908:1: ( rule__SecRequirements__Group_8__0__Impl rule__SecRequirements__Group_8__1 )
+            // InternalIHE.g:2909:2: rule__SecRequirements__Group_8__0__Impl rule__SecRequirements__Group_8__1
+            {
+            pushFollow(FOLLOW_10);
+            rule__SecRequirements__Group_8__0__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+            pushFollow(FOLLOW_2);
+            rule__SecRequirements__Group_8__1();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SecRequirements__Group_8__0"
+
+
+    // $ANTLR start "rule__SecRequirements__Group_8__0__Impl"
+    // InternalIHE.g:2916:1: rule__SecRequirements__Group_8__0__Impl : ( 'Category' ) ;
+    public final void rule__SecRequirements__Group_8__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalIHE.g:2920:1: ( ( 'Category' ) )
+            // InternalIHE.g:2921:1: ( 'Category' )
+            {
+            // InternalIHE.g:2921:1: ( 'Category' )
+            // InternalIHE.g:2922:2: 'Category'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getSecRequirementsAccess().getCategoryKeyword_8_0()); 
+            }
+            match(input,38,FOLLOW_2); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getSecRequirementsAccess().getCategoryKeyword_8_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SecRequirements__Group_8__0__Impl"
+
+
+    // $ANTLR start "rule__SecRequirements__Group_8__1"
+    // InternalIHE.g:2931:1: rule__SecRequirements__Group_8__1 : rule__SecRequirements__Group_8__1__Impl rule__SecRequirements__Group_8__2 ;
+    public final void rule__SecRequirements__Group_8__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalIHE.g:2935:1: ( rule__SecRequirements__Group_8__1__Impl rule__SecRequirements__Group_8__2 )
+            // InternalIHE.g:2936:2: rule__SecRequirements__Group_8__1__Impl rule__SecRequirements__Group_8__2
+            {
+            pushFollow(FOLLOW_3);
+            rule__SecRequirements__Group_8__1__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+            pushFollow(FOLLOW_2);
+            rule__SecRequirements__Group_8__2();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SecRequirements__Group_8__1"
+
+
+    // $ANTLR start "rule__SecRequirements__Group_8__1__Impl"
+    // InternalIHE.g:2943:1: rule__SecRequirements__Group_8__1__Impl : ( ':' ) ;
+    public final void rule__SecRequirements__Group_8__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalIHE.g:2947:1: ( ( ':' ) )
+            // InternalIHE.g:2948:1: ( ':' )
+            {
+            // InternalIHE.g:2948:1: ( ':' )
+            // InternalIHE.g:2949:2: ':'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getSecRequirementsAccess().getColonKeyword_8_1()); 
+            }
+            match(input,16,FOLLOW_2); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getSecRequirementsAccess().getColonKeyword_8_1()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SecRequirements__Group_8__1__Impl"
+
+
+    // $ANTLR start "rule__SecRequirements__Group_8__2"
+    // InternalIHE.g:2958:1: rule__SecRequirements__Group_8__2 : rule__SecRequirements__Group_8__2__Impl ;
+    public final void rule__SecRequirements__Group_8__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalIHE.g:2962:1: ( rule__SecRequirements__Group_8__2__Impl )
+            // InternalIHE.g:2963:2: rule__SecRequirements__Group_8__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__SecRequirements__Group_8__2__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SecRequirements__Group_8__2"
+
+
+    // $ANTLR start "rule__SecRequirements__Group_8__2__Impl"
+    // InternalIHE.g:2969:1: rule__SecRequirements__Group_8__2__Impl : ( ( rule__SecRequirements__SecreCategoryAssignment_8_2 ) ) ;
+    public final void rule__SecRequirements__Group_8__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalIHE.g:2973:1: ( ( ( rule__SecRequirements__SecreCategoryAssignment_8_2 ) ) )
+            // InternalIHE.g:2974:1: ( ( rule__SecRequirements__SecreCategoryAssignment_8_2 ) )
+            {
+            // InternalIHE.g:2974:1: ( ( rule__SecRequirements__SecreCategoryAssignment_8_2 ) )
+            // InternalIHE.g:2975:2: ( rule__SecRequirements__SecreCategoryAssignment_8_2 )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getSecRequirementsAccess().getSecreCategoryAssignment_8_2()); 
+            }
+            // InternalIHE.g:2976:2: ( rule__SecRequirements__SecreCategoryAssignment_8_2 )
+            // InternalIHE.g:2976:3: rule__SecRequirements__SecreCategoryAssignment_8_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__SecRequirements__SecreCategoryAssignment_8_2();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getSecRequirementsAccess().getSecreCategoryAssignment_8_2()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SecRequirements__Group_8__2__Impl"
+
+
     // $ANTLR start "rule__Transaction__Group__0"
-    // InternalIHE.g:2877:1: rule__Transaction__Group__0 : rule__Transaction__Group__0__Impl rule__Transaction__Group__1 ;
+    // InternalIHE.g:2985:1: rule__Transaction__Group__0 : rule__Transaction__Group__0__Impl rule__Transaction__Group__1 ;
     public final void rule__Transaction__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2881:1: ( rule__Transaction__Group__0__Impl rule__Transaction__Group__1 )
-            // InternalIHE.g:2882:2: rule__Transaction__Group__0__Impl rule__Transaction__Group__1
+            // InternalIHE.g:2989:1: ( rule__Transaction__Group__0__Impl rule__Transaction__Group__1 )
+            // InternalIHE.g:2990:2: rule__Transaction__Group__0__Impl rule__Transaction__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Transaction__Group__0__Impl();
@@ -9180,22 +9523,22 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transaction__Group__0__Impl"
-    // InternalIHE.g:2889:1: rule__Transaction__Group__0__Impl : ( '(' ) ;
+    // InternalIHE.g:2997:1: rule__Transaction__Group__0__Impl : ( '(' ) ;
     public final void rule__Transaction__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2893:1: ( ( '(' ) )
-            // InternalIHE.g:2894:1: ( '(' )
+            // InternalIHE.g:3001:1: ( ( '(' ) )
+            // InternalIHE.g:3002:1: ( '(' )
             {
-            // InternalIHE.g:2894:1: ( '(' )
-            // InternalIHE.g:2895:2: '('
+            // InternalIHE.g:3002:1: ( '(' )
+            // InternalIHE.g:3003:2: '('
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getTransactionAccess().getLeftParenthesisKeyword_0()); 
             }
-            match(input,38,FOLLOW_2); if (state.failed) return ;
+            match(input,39,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getTransactionAccess().getLeftParenthesisKeyword_0()); 
             }
@@ -9221,14 +9564,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transaction__Group__1"
-    // InternalIHE.g:2904:1: rule__Transaction__Group__1 : rule__Transaction__Group__1__Impl rule__Transaction__Group__2 ;
+    // InternalIHE.g:3012:1: rule__Transaction__Group__1 : rule__Transaction__Group__1__Impl rule__Transaction__Group__2 ;
     public final void rule__Transaction__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2908:1: ( rule__Transaction__Group__1__Impl rule__Transaction__Group__2 )
-            // InternalIHE.g:2909:2: rule__Transaction__Group__1__Impl rule__Transaction__Group__2
+            // InternalIHE.g:3016:1: ( rule__Transaction__Group__1__Impl rule__Transaction__Group__2 )
+            // InternalIHE.g:3017:2: rule__Transaction__Group__1__Impl rule__Transaction__Group__2
             {
             pushFollow(FOLLOW_21);
             rule__Transaction__Group__1__Impl();
@@ -9259,17 +9602,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transaction__Group__1__Impl"
-    // InternalIHE.g:2916:1: rule__Transaction__Group__1__Impl : ( ruleActor ) ;
+    // InternalIHE.g:3024:1: rule__Transaction__Group__1__Impl : ( ruleActor ) ;
     public final void rule__Transaction__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2920:1: ( ( ruleActor ) )
-            // InternalIHE.g:2921:1: ( ruleActor )
+            // InternalIHE.g:3028:1: ( ( ruleActor ) )
+            // InternalIHE.g:3029:1: ( ruleActor )
             {
-            // InternalIHE.g:2921:1: ( ruleActor )
-            // InternalIHE.g:2922:2: ruleActor
+            // InternalIHE.g:3029:1: ( ruleActor )
+            // InternalIHE.g:3030:2: ruleActor
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getTransactionAccess().getActorParserRuleCall_1()); 
@@ -9304,14 +9647,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transaction__Group__2"
-    // InternalIHE.g:2931:1: rule__Transaction__Group__2 : rule__Transaction__Group__2__Impl rule__Transaction__Group__3 ;
+    // InternalIHE.g:3039:1: rule__Transaction__Group__2 : rule__Transaction__Group__2__Impl rule__Transaction__Group__3 ;
     public final void rule__Transaction__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2935:1: ( rule__Transaction__Group__2__Impl rule__Transaction__Group__3 )
-            // InternalIHE.g:2936:2: rule__Transaction__Group__2__Impl rule__Transaction__Group__3
+            // InternalIHE.g:3043:1: ( rule__Transaction__Group__2__Impl rule__Transaction__Group__3 )
+            // InternalIHE.g:3044:2: rule__Transaction__Group__2__Impl rule__Transaction__Group__3
             {
             pushFollow(FOLLOW_3);
             rule__Transaction__Group__2__Impl();
@@ -9342,22 +9685,22 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transaction__Group__2__Impl"
-    // InternalIHE.g:2943:1: rule__Transaction__Group__2__Impl : ( ',' ) ;
+    // InternalIHE.g:3051:1: rule__Transaction__Group__2__Impl : ( ',' ) ;
     public final void rule__Transaction__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2947:1: ( ( ',' ) )
-            // InternalIHE.g:2948:1: ( ',' )
+            // InternalIHE.g:3055:1: ( ( ',' ) )
+            // InternalIHE.g:3056:1: ( ',' )
             {
-            // InternalIHE.g:2948:1: ( ',' )
-            // InternalIHE.g:2949:2: ','
+            // InternalIHE.g:3056:1: ( ',' )
+            // InternalIHE.g:3057:2: ','
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getTransactionAccess().getCommaKeyword_2()); 
             }
-            match(input,39,FOLLOW_2); if (state.failed) return ;
+            match(input,40,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getTransactionAccess().getCommaKeyword_2()); 
             }
@@ -9383,14 +9726,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transaction__Group__3"
-    // InternalIHE.g:2958:1: rule__Transaction__Group__3 : rule__Transaction__Group__3__Impl rule__Transaction__Group__4 ;
+    // InternalIHE.g:3066:1: rule__Transaction__Group__3 : rule__Transaction__Group__3__Impl rule__Transaction__Group__4 ;
     public final void rule__Transaction__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2962:1: ( rule__Transaction__Group__3__Impl rule__Transaction__Group__4 )
-            // InternalIHE.g:2963:2: rule__Transaction__Group__3__Impl rule__Transaction__Group__4
+            // InternalIHE.g:3070:1: ( rule__Transaction__Group__3__Impl rule__Transaction__Group__4 )
+            // InternalIHE.g:3071:2: rule__Transaction__Group__3__Impl rule__Transaction__Group__4
             {
             pushFollow(FOLLOW_21);
             rule__Transaction__Group__3__Impl();
@@ -9421,17 +9764,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transaction__Group__3__Impl"
-    // InternalIHE.g:2970:1: rule__Transaction__Group__3__Impl : ( RULE_STRING ) ;
+    // InternalIHE.g:3078:1: rule__Transaction__Group__3__Impl : ( RULE_STRING ) ;
     public final void rule__Transaction__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2974:1: ( ( RULE_STRING ) )
-            // InternalIHE.g:2975:1: ( RULE_STRING )
+            // InternalIHE.g:3082:1: ( ( RULE_STRING ) )
+            // InternalIHE.g:3083:1: ( RULE_STRING )
             {
-            // InternalIHE.g:2975:1: ( RULE_STRING )
-            // InternalIHE.g:2976:2: RULE_STRING
+            // InternalIHE.g:3083:1: ( RULE_STRING )
+            // InternalIHE.g:3084:2: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getTransactionAccess().getSTRINGTerminalRuleCall_3()); 
@@ -9462,14 +9805,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transaction__Group__4"
-    // InternalIHE.g:2985:1: rule__Transaction__Group__4 : rule__Transaction__Group__4__Impl rule__Transaction__Group__5 ;
+    // InternalIHE.g:3093:1: rule__Transaction__Group__4 : rule__Transaction__Group__4__Impl rule__Transaction__Group__5 ;
     public final void rule__Transaction__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:2989:1: ( rule__Transaction__Group__4__Impl rule__Transaction__Group__5 )
-            // InternalIHE.g:2990:2: rule__Transaction__Group__4__Impl rule__Transaction__Group__5
+            // InternalIHE.g:3097:1: ( rule__Transaction__Group__4__Impl rule__Transaction__Group__5 )
+            // InternalIHE.g:3098:2: rule__Transaction__Group__4__Impl rule__Transaction__Group__5
             {
             pushFollow(FOLLOW_3);
             rule__Transaction__Group__4__Impl();
@@ -9500,22 +9843,22 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transaction__Group__4__Impl"
-    // InternalIHE.g:2997:1: rule__Transaction__Group__4__Impl : ( ',' ) ;
+    // InternalIHE.g:3105:1: rule__Transaction__Group__4__Impl : ( ',' ) ;
     public final void rule__Transaction__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3001:1: ( ( ',' ) )
-            // InternalIHE.g:3002:1: ( ',' )
+            // InternalIHE.g:3109:1: ( ( ',' ) )
+            // InternalIHE.g:3110:1: ( ',' )
             {
-            // InternalIHE.g:3002:1: ( ',' )
-            // InternalIHE.g:3003:2: ','
+            // InternalIHE.g:3110:1: ( ',' )
+            // InternalIHE.g:3111:2: ','
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getTransactionAccess().getCommaKeyword_4()); 
             }
-            match(input,39,FOLLOW_2); if (state.failed) return ;
+            match(input,40,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getTransactionAccess().getCommaKeyword_4()); 
             }
@@ -9541,14 +9884,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transaction__Group__5"
-    // InternalIHE.g:3012:1: rule__Transaction__Group__5 : rule__Transaction__Group__5__Impl rule__Transaction__Group__6 ;
+    // InternalIHE.g:3120:1: rule__Transaction__Group__5 : rule__Transaction__Group__5__Impl rule__Transaction__Group__6 ;
     public final void rule__Transaction__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3016:1: ( rule__Transaction__Group__5__Impl rule__Transaction__Group__6 )
-            // InternalIHE.g:3017:2: rule__Transaction__Group__5__Impl rule__Transaction__Group__6
+            // InternalIHE.g:3124:1: ( rule__Transaction__Group__5__Impl rule__Transaction__Group__6 )
+            // InternalIHE.g:3125:2: rule__Transaction__Group__5__Impl rule__Transaction__Group__6
             {
             pushFollow(FOLLOW_22);
             rule__Transaction__Group__5__Impl();
@@ -9579,17 +9922,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transaction__Group__5__Impl"
-    // InternalIHE.g:3024:1: rule__Transaction__Group__5__Impl : ( ruleActor ) ;
+    // InternalIHE.g:3132:1: rule__Transaction__Group__5__Impl : ( ruleActor ) ;
     public final void rule__Transaction__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3028:1: ( ( ruleActor ) )
-            // InternalIHE.g:3029:1: ( ruleActor )
+            // InternalIHE.g:3136:1: ( ( ruleActor ) )
+            // InternalIHE.g:3137:1: ( ruleActor )
             {
-            // InternalIHE.g:3029:1: ( ruleActor )
-            // InternalIHE.g:3030:2: ruleActor
+            // InternalIHE.g:3137:1: ( ruleActor )
+            // InternalIHE.g:3138:2: ruleActor
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getTransactionAccess().getActorParserRuleCall_5()); 
@@ -9624,14 +9967,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transaction__Group__6"
-    // InternalIHE.g:3039:1: rule__Transaction__Group__6 : rule__Transaction__Group__6__Impl ;
+    // InternalIHE.g:3147:1: rule__Transaction__Group__6 : rule__Transaction__Group__6__Impl ;
     public final void rule__Transaction__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3043:1: ( rule__Transaction__Group__6__Impl )
-            // InternalIHE.g:3044:2: rule__Transaction__Group__6__Impl
+            // InternalIHE.g:3151:1: ( rule__Transaction__Group__6__Impl )
+            // InternalIHE.g:3152:2: rule__Transaction__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Transaction__Group__6__Impl();
@@ -9657,22 +10000,22 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transaction__Group__6__Impl"
-    // InternalIHE.g:3050:1: rule__Transaction__Group__6__Impl : ( ')' ) ;
+    // InternalIHE.g:3158:1: rule__Transaction__Group__6__Impl : ( ')' ) ;
     public final void rule__Transaction__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3054:1: ( ( ')' ) )
-            // InternalIHE.g:3055:1: ( ')' )
+            // InternalIHE.g:3162:1: ( ( ')' ) )
+            // InternalIHE.g:3163:1: ( ')' )
             {
-            // InternalIHE.g:3055:1: ( ')' )
-            // InternalIHE.g:3056:2: ')'
+            // InternalIHE.g:3163:1: ( ')' )
+            // InternalIHE.g:3164:2: ')'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getTransactionAccess().getRightParenthesisKeyword_6()); 
             }
-            match(input,40,FOLLOW_2); if (state.failed) return ;
+            match(input,41,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getTransactionAccess().getRightParenthesisKeyword_6()); 
             }
@@ -9698,14 +10041,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualityAttr__Group__0"
-    // InternalIHE.g:3066:1: rule__QualityAttr__Group__0 : rule__QualityAttr__Group__0__Impl rule__QualityAttr__Group__1 ;
+    // InternalIHE.g:3174:1: rule__QualityAttr__Group__0 : rule__QualityAttr__Group__0__Impl rule__QualityAttr__Group__1 ;
     public final void rule__QualityAttr__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3070:1: ( rule__QualityAttr__Group__0__Impl rule__QualityAttr__Group__1 )
-            // InternalIHE.g:3071:2: rule__QualityAttr__Group__0__Impl rule__QualityAttr__Group__1
+            // InternalIHE.g:3178:1: ( rule__QualityAttr__Group__0__Impl rule__QualityAttr__Group__1 )
+            // InternalIHE.g:3179:2: rule__QualityAttr__Group__0__Impl rule__QualityAttr__Group__1
             {
             pushFollow(FOLLOW_23);
             rule__QualityAttr__Group__0__Impl();
@@ -9736,17 +10079,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualityAttr__Group__0__Impl"
-    // InternalIHE.g:3078:1: rule__QualityAttr__Group__0__Impl : ( ruleQualityAttrID ) ;
+    // InternalIHE.g:3186:1: rule__QualityAttr__Group__0__Impl : ( ruleQualityAttrID ) ;
     public final void rule__QualityAttr__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3082:1: ( ( ruleQualityAttrID ) )
-            // InternalIHE.g:3083:1: ( ruleQualityAttrID )
+            // InternalIHE.g:3190:1: ( ( ruleQualityAttrID ) )
+            // InternalIHE.g:3191:1: ( ruleQualityAttrID )
             {
-            // InternalIHE.g:3083:1: ( ruleQualityAttrID )
-            // InternalIHE.g:3084:2: ruleQualityAttrID
+            // InternalIHE.g:3191:1: ( ruleQualityAttrID )
+            // InternalIHE.g:3192:2: ruleQualityAttrID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getQualityAttrAccess().getQualityAttrIDParserRuleCall_0()); 
@@ -9781,14 +10124,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualityAttr__Group__1"
-    // InternalIHE.g:3093:1: rule__QualityAttr__Group__1 : rule__QualityAttr__Group__1__Impl rule__QualityAttr__Group__2 ;
+    // InternalIHE.g:3201:1: rule__QualityAttr__Group__1 : rule__QualityAttr__Group__1__Impl rule__QualityAttr__Group__2 ;
     public final void rule__QualityAttr__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3097:1: ( rule__QualityAttr__Group__1__Impl rule__QualityAttr__Group__2 )
-            // InternalIHE.g:3098:2: rule__QualityAttr__Group__1__Impl rule__QualityAttr__Group__2
+            // InternalIHE.g:3205:1: ( rule__QualityAttr__Group__1__Impl rule__QualityAttr__Group__2 )
+            // InternalIHE.g:3206:2: rule__QualityAttr__Group__1__Impl rule__QualityAttr__Group__2
             {
             pushFollow(FOLLOW_3);
             rule__QualityAttr__Group__1__Impl();
@@ -9819,22 +10162,22 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualityAttr__Group__1__Impl"
-    // InternalIHE.g:3105:1: rule__QualityAttr__Group__1__Impl : ( '[' ) ;
+    // InternalIHE.g:3213:1: rule__QualityAttr__Group__1__Impl : ( '[' ) ;
     public final void rule__QualityAttr__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3109:1: ( ( '[' ) )
-            // InternalIHE.g:3110:1: ( '[' )
+            // InternalIHE.g:3217:1: ( ( '[' ) )
+            // InternalIHE.g:3218:1: ( '[' )
             {
-            // InternalIHE.g:3110:1: ( '[' )
-            // InternalIHE.g:3111:2: '['
+            // InternalIHE.g:3218:1: ( '[' )
+            // InternalIHE.g:3219:2: '['
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getQualityAttrAccess().getLeftSquareBracketKeyword_1()); 
             }
-            match(input,41,FOLLOW_2); if (state.failed) return ;
+            match(input,42,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getQualityAttrAccess().getLeftSquareBracketKeyword_1()); 
             }
@@ -9860,14 +10203,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualityAttr__Group__2"
-    // InternalIHE.g:3120:1: rule__QualityAttr__Group__2 : rule__QualityAttr__Group__2__Impl rule__QualityAttr__Group__3 ;
+    // InternalIHE.g:3228:1: rule__QualityAttr__Group__2 : rule__QualityAttr__Group__2__Impl rule__QualityAttr__Group__3 ;
     public final void rule__QualityAttr__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3124:1: ( rule__QualityAttr__Group__2__Impl rule__QualityAttr__Group__3 )
-            // InternalIHE.g:3125:2: rule__QualityAttr__Group__2__Impl rule__QualityAttr__Group__3
+            // InternalIHE.g:3232:1: ( rule__QualityAttr__Group__2__Impl rule__QualityAttr__Group__3 )
+            // InternalIHE.g:3233:2: rule__QualityAttr__Group__2__Impl rule__QualityAttr__Group__3
             {
             pushFollow(FOLLOW_24);
             rule__QualityAttr__Group__2__Impl();
@@ -9898,17 +10241,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualityAttr__Group__2__Impl"
-    // InternalIHE.g:3132:1: rule__QualityAttr__Group__2__Impl : ( RULE_STRING ) ;
+    // InternalIHE.g:3240:1: rule__QualityAttr__Group__2__Impl : ( RULE_STRING ) ;
     public final void rule__QualityAttr__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3136:1: ( ( RULE_STRING ) )
-            // InternalIHE.g:3137:1: ( RULE_STRING )
+            // InternalIHE.g:3244:1: ( ( RULE_STRING ) )
+            // InternalIHE.g:3245:1: ( RULE_STRING )
             {
-            // InternalIHE.g:3137:1: ( RULE_STRING )
-            // InternalIHE.g:3138:2: RULE_STRING
+            // InternalIHE.g:3245:1: ( RULE_STRING )
+            // InternalIHE.g:3246:2: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getQualityAttrAccess().getSTRINGTerminalRuleCall_2()); 
@@ -9939,14 +10282,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualityAttr__Group__3"
-    // InternalIHE.g:3147:1: rule__QualityAttr__Group__3 : rule__QualityAttr__Group__3__Impl ;
+    // InternalIHE.g:3255:1: rule__QualityAttr__Group__3 : rule__QualityAttr__Group__3__Impl ;
     public final void rule__QualityAttr__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3151:1: ( rule__QualityAttr__Group__3__Impl )
-            // InternalIHE.g:3152:2: rule__QualityAttr__Group__3__Impl
+            // InternalIHE.g:3259:1: ( rule__QualityAttr__Group__3__Impl )
+            // InternalIHE.g:3260:2: rule__QualityAttr__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QualityAttr__Group__3__Impl();
@@ -9972,22 +10315,22 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualityAttr__Group__3__Impl"
-    // InternalIHE.g:3158:1: rule__QualityAttr__Group__3__Impl : ( ']' ) ;
+    // InternalIHE.g:3266:1: rule__QualityAttr__Group__3__Impl : ( ']' ) ;
     public final void rule__QualityAttr__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3162:1: ( ( ']' ) )
-            // InternalIHE.g:3163:1: ( ']' )
+            // InternalIHE.g:3270:1: ( ( ']' ) )
+            // InternalIHE.g:3271:1: ( ']' )
             {
-            // InternalIHE.g:3163:1: ( ']' )
-            // InternalIHE.g:3164:2: ']'
+            // InternalIHE.g:3271:1: ( ']' )
+            // InternalIHE.g:3272:2: ']'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getQualityAttrAccess().getRightSquareBracketKeyword_3()); 
             }
-            match(input,42,FOLLOW_2); if (state.failed) return ;
+            match(input,43,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getQualityAttrAccess().getRightSquareBracketKeyword_3()); 
             }
@@ -10013,14 +10356,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__0"
-    // InternalIHE.g:3174:1: rule__Rule__Group__0 : rule__Rule__Group__0__Impl rule__Rule__Group__1 ;
+    // InternalIHE.g:3282:1: rule__Rule__Group__0 : rule__Rule__Group__0__Impl rule__Rule__Group__1 ;
     public final void rule__Rule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3178:1: ( rule__Rule__Group__0__Impl rule__Rule__Group__1 )
-            // InternalIHE.g:3179:2: rule__Rule__Group__0__Impl rule__Rule__Group__1
+            // InternalIHE.g:3286:1: ( rule__Rule__Group__0__Impl rule__Rule__Group__1 )
+            // InternalIHE.g:3287:2: rule__Rule__Group__0__Impl rule__Rule__Group__1
             {
             pushFollow(FOLLOW_10);
             rule__Rule__Group__0__Impl();
@@ -10051,17 +10394,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__0__Impl"
-    // InternalIHE.g:3186:1: rule__Rule__Group__0__Impl : ( ruleRuleId ) ;
+    // InternalIHE.g:3294:1: rule__Rule__Group__0__Impl : ( ruleRuleId ) ;
     public final void rule__Rule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3190:1: ( ( ruleRuleId ) )
-            // InternalIHE.g:3191:1: ( ruleRuleId )
+            // InternalIHE.g:3298:1: ( ( ruleRuleId ) )
+            // InternalIHE.g:3299:1: ( ruleRuleId )
             {
-            // InternalIHE.g:3191:1: ( ruleRuleId )
-            // InternalIHE.g:3192:2: ruleRuleId
+            // InternalIHE.g:3299:1: ( ruleRuleId )
+            // InternalIHE.g:3300:2: ruleRuleId
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRuleAccess().getRuleIdParserRuleCall_0()); 
@@ -10096,14 +10439,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__1"
-    // InternalIHE.g:3201:1: rule__Rule__Group__1 : rule__Rule__Group__1__Impl rule__Rule__Group__2 ;
+    // InternalIHE.g:3309:1: rule__Rule__Group__1 : rule__Rule__Group__1__Impl rule__Rule__Group__2 ;
     public final void rule__Rule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3205:1: ( rule__Rule__Group__1__Impl rule__Rule__Group__2 )
-            // InternalIHE.g:3206:2: rule__Rule__Group__1__Impl rule__Rule__Group__2
+            // InternalIHE.g:3313:1: ( rule__Rule__Group__1__Impl rule__Rule__Group__2 )
+            // InternalIHE.g:3314:2: rule__Rule__Group__1__Impl rule__Rule__Group__2
             {
             pushFollow(FOLLOW_3);
             rule__Rule__Group__1__Impl();
@@ -10134,17 +10477,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__1__Impl"
-    // InternalIHE.g:3213:1: rule__Rule__Group__1__Impl : ( ':' ) ;
+    // InternalIHE.g:3321:1: rule__Rule__Group__1__Impl : ( ':' ) ;
     public final void rule__Rule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3217:1: ( ( ':' ) )
-            // InternalIHE.g:3218:1: ( ':' )
+            // InternalIHE.g:3325:1: ( ( ':' ) )
+            // InternalIHE.g:3326:1: ( ':' )
             {
-            // InternalIHE.g:3218:1: ( ':' )
-            // InternalIHE.g:3219:2: ':'
+            // InternalIHE.g:3326:1: ( ':' )
+            // InternalIHE.g:3327:2: ':'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRuleAccess().getColonKeyword_1()); 
@@ -10175,14 +10518,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__2"
-    // InternalIHE.g:3228:1: rule__Rule__Group__2 : rule__Rule__Group__2__Impl ;
+    // InternalIHE.g:3336:1: rule__Rule__Group__2 : rule__Rule__Group__2__Impl ;
     public final void rule__Rule__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3232:1: ( rule__Rule__Group__2__Impl )
-            // InternalIHE.g:3233:2: rule__Rule__Group__2__Impl
+            // InternalIHE.g:3340:1: ( rule__Rule__Group__2__Impl )
+            // InternalIHE.g:3341:2: rule__Rule__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Rule__Group__2__Impl();
@@ -10208,17 +10551,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__2__Impl"
-    // InternalIHE.g:3239:1: rule__Rule__Group__2__Impl : ( RULE_STRING ) ;
+    // InternalIHE.g:3347:1: rule__Rule__Group__2__Impl : ( RULE_STRING ) ;
     public final void rule__Rule__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3243:1: ( ( RULE_STRING ) )
-            // InternalIHE.g:3244:1: ( RULE_STRING )
+            // InternalIHE.g:3351:1: ( ( RULE_STRING ) )
+            // InternalIHE.g:3352:1: ( RULE_STRING )
             {
-            // InternalIHE.g:3244:1: ( RULE_STRING )
-            // InternalIHE.g:3245:2: RULE_STRING
+            // InternalIHE.g:3352:1: ( RULE_STRING )
+            // InternalIHE.g:3353:2: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getRuleAccess().getSTRINGTerminalRuleCall_2()); 
@@ -10249,29 +10592,29 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IHE__UnorderedGroup"
-    // InternalIHE.g:3255:1: rule__IHE__UnorderedGroup : ( rule__IHE__UnorderedGroup__0 )? ;
+    // InternalIHE.g:3363:1: rule__IHE__UnorderedGroup : ( rule__IHE__UnorderedGroup__0 )? ;
     public final void rule__IHE__UnorderedGroup() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         		getUnorderedGroupHelper().enter(grammarAccess.getIHEAccess().getUnorderedGroup());
         	
         try {
-            // InternalIHE.g:3260:1: ( ( rule__IHE__UnorderedGroup__0 )? )
-            // InternalIHE.g:3261:2: ( rule__IHE__UnorderedGroup__0 )?
+            // InternalIHE.g:3368:1: ( ( rule__IHE__UnorderedGroup__0 )? )
+            // InternalIHE.g:3369:2: ( rule__IHE__UnorderedGroup__0 )?
             {
-            // InternalIHE.g:3261:2: ( rule__IHE__UnorderedGroup__0 )?
-            int alt25=2;
-            int LA25_0 = input.LA(1);
+            // InternalIHE.g:3369:2: ( rule__IHE__UnorderedGroup__0 )?
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( LA25_0 == 11 && getUnorderedGroupHelper().canSelect(grammarAccess.getIHEAccess().getUnorderedGroup(), 0) ) {
-                alt25=1;
+            if ( LA26_0 == 11 && getUnorderedGroupHelper().canSelect(grammarAccess.getIHEAccess().getUnorderedGroup(), 0) ) {
+                alt26=1;
             }
-            else if ( LA25_0 == 12 && getUnorderedGroupHelper().canSelect(grammarAccess.getIHEAccess().getUnorderedGroup(), 1) ) {
-                alt25=1;
+            else if ( LA26_0 == 12 && getUnorderedGroupHelper().canSelect(grammarAccess.getIHEAccess().getUnorderedGroup(), 1) ) {
+                alt26=1;
             }
-            switch (alt25) {
+            switch (alt26) {
                 case 1 :
-                    // InternalIHE.g:3261:2: rule__IHE__UnorderedGroup__0
+                    // InternalIHE.g:3369:2: rule__IHE__UnorderedGroup__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__IHE__UnorderedGroup__0();
@@ -10304,60 +10647,60 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IHE__UnorderedGroup__Impl"
-    // InternalIHE.g:3269:1: rule__IHE__UnorderedGroup__Impl : ( ({...}? => ( ( ( ( rule__IHE__ImportElAssignment_0 ) ) ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* ) ) ) ) | ({...}? => ( ( ( rule__IHE__MainAssignment_1 ) ) ) ) ) ;
+    // InternalIHE.g:3377:1: rule__IHE__UnorderedGroup__Impl : ( ({...}? => ( ( ( ( rule__IHE__ImportElAssignment_0 ) ) ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* ) ) ) ) | ({...}? => ( ( ( rule__IHE__MainAssignment_1 ) ) ) ) ) ;
     public final void rule__IHE__UnorderedGroup__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         		boolean selected = false;
         	
         try {
-            // InternalIHE.g:3274:1: ( ( ({...}? => ( ( ( ( rule__IHE__ImportElAssignment_0 ) ) ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* ) ) ) ) | ({...}? => ( ( ( rule__IHE__MainAssignment_1 ) ) ) ) ) )
-            // InternalIHE.g:3275:3: ( ({...}? => ( ( ( ( rule__IHE__ImportElAssignment_0 ) ) ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* ) ) ) ) | ({...}? => ( ( ( rule__IHE__MainAssignment_1 ) ) ) ) )
+            // InternalIHE.g:3382:1: ( ( ({...}? => ( ( ( ( rule__IHE__ImportElAssignment_0 ) ) ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* ) ) ) ) | ({...}? => ( ( ( rule__IHE__MainAssignment_1 ) ) ) ) ) )
+            // InternalIHE.g:3383:3: ( ({...}? => ( ( ( ( rule__IHE__ImportElAssignment_0 ) ) ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* ) ) ) ) | ({...}? => ( ( ( rule__IHE__MainAssignment_1 ) ) ) ) )
             {
-            // InternalIHE.g:3275:3: ( ({...}? => ( ( ( ( rule__IHE__ImportElAssignment_0 ) ) ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* ) ) ) ) | ({...}? => ( ( ( rule__IHE__MainAssignment_1 ) ) ) ) )
-            int alt27=2;
-            int LA27_0 = input.LA(1);
+            // InternalIHE.g:3383:3: ( ({...}? => ( ( ( ( rule__IHE__ImportElAssignment_0 ) ) ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* ) ) ) ) | ({...}? => ( ( ( rule__IHE__MainAssignment_1 ) ) ) ) )
+            int alt28=2;
+            int LA28_0 = input.LA(1);
 
-            if ( LA27_0 == 11 && getUnorderedGroupHelper().canSelect(grammarAccess.getIHEAccess().getUnorderedGroup(), 0) ) {
-                alt27=1;
+            if ( LA28_0 == 11 && getUnorderedGroupHelper().canSelect(grammarAccess.getIHEAccess().getUnorderedGroup(), 0) ) {
+                alt28=1;
             }
-            else if ( LA27_0 == 12 && getUnorderedGroupHelper().canSelect(grammarAccess.getIHEAccess().getUnorderedGroup(), 1) ) {
-                alt27=2;
+            else if ( LA28_0 == 12 && getUnorderedGroupHelper().canSelect(grammarAccess.getIHEAccess().getUnorderedGroup(), 1) ) {
+                alt28=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 27, 0, input);
+                    new NoViableAltException("", 28, 0, input);
 
                 throw nvae;
             }
-            switch (alt27) {
+            switch (alt28) {
                 case 1 :
-                    // InternalIHE.g:3276:3: ({...}? => ( ( ( ( rule__IHE__ImportElAssignment_0 ) ) ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* ) ) ) )
+                    // InternalIHE.g:3384:3: ({...}? => ( ( ( ( rule__IHE__ImportElAssignment_0 ) ) ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* ) ) ) )
                     {
-                    // InternalIHE.g:3276:3: ({...}? => ( ( ( ( rule__IHE__ImportElAssignment_0 ) ) ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* ) ) ) )
-                    // InternalIHE.g:3277:4: {...}? => ( ( ( ( rule__IHE__ImportElAssignment_0 ) ) ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* ) ) )
+                    // InternalIHE.g:3384:3: ({...}? => ( ( ( ( rule__IHE__ImportElAssignment_0 ) ) ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* ) ) ) )
+                    // InternalIHE.g:3385:4: {...}? => ( ( ( ( rule__IHE__ImportElAssignment_0 ) ) ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getIHEAccess().getUnorderedGroup(), 0) ) {
                         if (state.backtracking>0) {state.failed=true; return ;}
                         throw new FailedPredicateException(input, "rule__IHE__UnorderedGroup__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getIHEAccess().getUnorderedGroup(), 0)");
                     }
-                    // InternalIHE.g:3277:97: ( ( ( ( rule__IHE__ImportElAssignment_0 ) ) ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* ) ) )
-                    // InternalIHE.g:3278:5: ( ( ( rule__IHE__ImportElAssignment_0 ) ) ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* ) )
+                    // InternalIHE.g:3385:97: ( ( ( ( rule__IHE__ImportElAssignment_0 ) ) ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* ) ) )
+                    // InternalIHE.g:3386:5: ( ( ( rule__IHE__ImportElAssignment_0 ) ) ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* ) )
                     {
                     getUnorderedGroupHelper().select(grammarAccess.getIHEAccess().getUnorderedGroup(), 0);
                     selected = true;
-                    // InternalIHE.g:3284:5: ( ( ( rule__IHE__ImportElAssignment_0 ) ) ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* ) )
-                    // InternalIHE.g:3285:6: ( ( rule__IHE__ImportElAssignment_0 ) ) ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* )
+                    // InternalIHE.g:3392:5: ( ( ( rule__IHE__ImportElAssignment_0 ) ) ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* ) )
+                    // InternalIHE.g:3393:6: ( ( rule__IHE__ImportElAssignment_0 ) ) ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* )
                     {
-                    // InternalIHE.g:3285:6: ( ( rule__IHE__ImportElAssignment_0 ) )
-                    // InternalIHE.g:3286:7: ( rule__IHE__ImportElAssignment_0 )
+                    // InternalIHE.g:3393:6: ( ( rule__IHE__ImportElAssignment_0 ) )
+                    // InternalIHE.g:3394:7: ( rule__IHE__ImportElAssignment_0 )
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getIHEAccess().getImportElAssignment_0()); 
                     }
-                    // InternalIHE.g:3287:7: ( rule__IHE__ImportElAssignment_0 )
-                    // InternalIHE.g:3287:8: rule__IHE__ImportElAssignment_0
+                    // InternalIHE.g:3395:7: ( rule__IHE__ImportElAssignment_0 )
+                    // InternalIHE.g:3395:8: rule__IHE__ImportElAssignment_0
                     {
                     pushFollow(FOLLOW_25);
                     rule__IHE__ImportElAssignment_0();
@@ -10373,26 +10716,26 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
                     }
 
-                    // InternalIHE.g:3290:6: ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* )
-                    // InternalIHE.g:3291:7: ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )*
+                    // InternalIHE.g:3398:6: ( ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )* )
+                    // InternalIHE.g:3399:7: ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )*
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getIHEAccess().getImportElAssignment_0()); 
                     }
-                    // InternalIHE.g:3292:7: ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )*
-                    loop26:
+                    // InternalIHE.g:3400:7: ( ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0 )*
+                    loop27:
                     do {
-                        int alt26=2;
-                        int LA26_0 = input.LA(1);
+                        int alt27=2;
+                        int LA27_0 = input.LA(1);
 
-                        if ( (LA26_0==11) ) {
-                            int LA26_1 = input.LA(2);
+                        if ( (LA27_0==11) ) {
+                            int LA27_1 = input.LA(2);
 
-                            if ( (LA26_1==RULE_STRING) ) {
-                                int LA26_3 = input.LA(3);
+                            if ( (LA27_1==RULE_STRING) ) {
+                                int LA27_3 = input.LA(3);
 
                                 if ( (synpred1_InternalIHE()) ) {
-                                    alt26=1;
+                                    alt27=1;
                                 }
 
 
@@ -10402,9 +10745,9 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
                         }
 
 
-                        switch (alt26) {
+                        switch (alt27) {
                     	case 1 :
-                    	    // InternalIHE.g:3292:8: ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0
+                    	    // InternalIHE.g:3400:8: ( rule__IHE__ImportElAssignment_0 )=> rule__IHE__ImportElAssignment_0
                     	    {
                     	    pushFollow(FOLLOW_25);
                     	    rule__IHE__ImportElAssignment_0();
@@ -10416,7 +10759,7 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
                     	    break;
 
                     	default :
-                    	    break loop26;
+                    	    break loop27;
                         }
                     } while (true);
 
@@ -10439,28 +10782,28 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalIHE.g:3298:3: ({...}? => ( ( ( rule__IHE__MainAssignment_1 ) ) ) )
+                    // InternalIHE.g:3406:3: ({...}? => ( ( ( rule__IHE__MainAssignment_1 ) ) ) )
                     {
-                    // InternalIHE.g:3298:3: ({...}? => ( ( ( rule__IHE__MainAssignment_1 ) ) ) )
-                    // InternalIHE.g:3299:4: {...}? => ( ( ( rule__IHE__MainAssignment_1 ) ) )
+                    // InternalIHE.g:3406:3: ({...}? => ( ( ( rule__IHE__MainAssignment_1 ) ) ) )
+                    // InternalIHE.g:3407:4: {...}? => ( ( ( rule__IHE__MainAssignment_1 ) ) )
                     {
                     if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getIHEAccess().getUnorderedGroup(), 1) ) {
                         if (state.backtracking>0) {state.failed=true; return ;}
                         throw new FailedPredicateException(input, "rule__IHE__UnorderedGroup__Impl", "getUnorderedGroupHelper().canSelect(grammarAccess.getIHEAccess().getUnorderedGroup(), 1)");
                     }
-                    // InternalIHE.g:3299:97: ( ( ( rule__IHE__MainAssignment_1 ) ) )
-                    // InternalIHE.g:3300:5: ( ( rule__IHE__MainAssignment_1 ) )
+                    // InternalIHE.g:3407:97: ( ( ( rule__IHE__MainAssignment_1 ) ) )
+                    // InternalIHE.g:3408:5: ( ( rule__IHE__MainAssignment_1 ) )
                     {
                     getUnorderedGroupHelper().select(grammarAccess.getIHEAccess().getUnorderedGroup(), 1);
                     selected = true;
-                    // InternalIHE.g:3306:5: ( ( rule__IHE__MainAssignment_1 ) )
-                    // InternalIHE.g:3307:6: ( rule__IHE__MainAssignment_1 )
+                    // InternalIHE.g:3414:5: ( ( rule__IHE__MainAssignment_1 ) )
+                    // InternalIHE.g:3415:6: ( rule__IHE__MainAssignment_1 )
                     {
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getIHEAccess().getMainAssignment_1()); 
                     }
-                    // InternalIHE.g:3308:6: ( rule__IHE__MainAssignment_1 )
-                    // InternalIHE.g:3308:7: rule__IHE__MainAssignment_1
+                    // InternalIHE.g:3416:6: ( rule__IHE__MainAssignment_1 )
+                    // InternalIHE.g:3416:7: rule__IHE__MainAssignment_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__IHE__MainAssignment_1();
@@ -10509,33 +10852,33 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IHE__UnorderedGroup__0"
-    // InternalIHE.g:3321:1: rule__IHE__UnorderedGroup__0 : rule__IHE__UnorderedGroup__Impl ( rule__IHE__UnorderedGroup__1 )? ;
+    // InternalIHE.g:3429:1: rule__IHE__UnorderedGroup__0 : rule__IHE__UnorderedGroup__Impl ( rule__IHE__UnorderedGroup__1 )? ;
     public final void rule__IHE__UnorderedGroup__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3325:1: ( rule__IHE__UnorderedGroup__Impl ( rule__IHE__UnorderedGroup__1 )? )
-            // InternalIHE.g:3326:2: rule__IHE__UnorderedGroup__Impl ( rule__IHE__UnorderedGroup__1 )?
+            // InternalIHE.g:3433:1: ( rule__IHE__UnorderedGroup__Impl ( rule__IHE__UnorderedGroup__1 )? )
+            // InternalIHE.g:3434:2: rule__IHE__UnorderedGroup__Impl ( rule__IHE__UnorderedGroup__1 )?
             {
             pushFollow(FOLLOW_26);
             rule__IHE__UnorderedGroup__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            // InternalIHE.g:3327:2: ( rule__IHE__UnorderedGroup__1 )?
-            int alt28=2;
-            int LA28_0 = input.LA(1);
+            // InternalIHE.g:3435:2: ( rule__IHE__UnorderedGroup__1 )?
+            int alt29=2;
+            int LA29_0 = input.LA(1);
 
-            if ( LA28_0 == 11 && getUnorderedGroupHelper().canSelect(grammarAccess.getIHEAccess().getUnorderedGroup(), 0) ) {
-                alt28=1;
+            if ( LA29_0 == 11 && getUnorderedGroupHelper().canSelect(grammarAccess.getIHEAccess().getUnorderedGroup(), 0) ) {
+                alt29=1;
             }
-            else if ( LA28_0 == 12 && getUnorderedGroupHelper().canSelect(grammarAccess.getIHEAccess().getUnorderedGroup(), 1) ) {
-                alt28=1;
+            else if ( LA29_0 == 12 && getUnorderedGroupHelper().canSelect(grammarAccess.getIHEAccess().getUnorderedGroup(), 1) ) {
+                alt29=1;
             }
-            switch (alt28) {
+            switch (alt29) {
                 case 1 :
-                    // InternalIHE.g:3327:2: rule__IHE__UnorderedGroup__1
+                    // InternalIHE.g:3435:2: rule__IHE__UnorderedGroup__1
                     {
                     pushFollow(FOLLOW_2);
                     rule__IHE__UnorderedGroup__1();
@@ -10567,14 +10910,14 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IHE__UnorderedGroup__1"
-    // InternalIHE.g:3333:1: rule__IHE__UnorderedGroup__1 : rule__IHE__UnorderedGroup__Impl ;
+    // InternalIHE.g:3441:1: rule__IHE__UnorderedGroup__1 : rule__IHE__UnorderedGroup__Impl ;
     public final void rule__IHE__UnorderedGroup__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3337:1: ( rule__IHE__UnorderedGroup__Impl )
-            // InternalIHE.g:3338:2: rule__IHE__UnorderedGroup__Impl
+            // InternalIHE.g:3445:1: ( rule__IHE__UnorderedGroup__Impl )
+            // InternalIHE.g:3446:2: rule__IHE__UnorderedGroup__Impl
             {
             pushFollow(FOLLOW_2);
             rule__IHE__UnorderedGroup__Impl();
@@ -10600,17 +10943,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IHE__ImportElAssignment_0"
-    // InternalIHE.g:3345:1: rule__IHE__ImportElAssignment_0 : ( ruleImport ) ;
+    // InternalIHE.g:3453:1: rule__IHE__ImportElAssignment_0 : ( ruleImport ) ;
     public final void rule__IHE__ImportElAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3349:1: ( ( ruleImport ) )
-            // InternalIHE.g:3350:2: ( ruleImport )
+            // InternalIHE.g:3457:1: ( ( ruleImport ) )
+            // InternalIHE.g:3458:2: ( ruleImport )
             {
-            // InternalIHE.g:3350:2: ( ruleImport )
-            // InternalIHE.g:3351:3: ruleImport
+            // InternalIHE.g:3458:2: ( ruleImport )
+            // InternalIHE.g:3459:3: ruleImport
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIHEAccess().getImportElImportParserRuleCall_0_0()); 
@@ -10645,17 +10988,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IHE__MainAssignment_1"
-    // InternalIHE.g:3360:1: rule__IHE__MainAssignment_1 : ( ruleMainTgf ) ;
+    // InternalIHE.g:3468:1: rule__IHE__MainAssignment_1 : ( ruleMainTgf ) ;
     public final void rule__IHE__MainAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3364:1: ( ( ruleMainTgf ) )
-            // InternalIHE.g:3365:2: ( ruleMainTgf )
+            // InternalIHE.g:3472:1: ( ( ruleMainTgf ) )
+            // InternalIHE.g:3473:2: ( ruleMainTgf )
             {
-            // InternalIHE.g:3365:2: ( ruleMainTgf )
-            // InternalIHE.g:3366:3: ruleMainTgf
+            // InternalIHE.g:3473:2: ( ruleMainTgf )
+            // InternalIHE.g:3474:3: ruleMainTgf
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIHEAccess().getMainMainTgfParserRuleCall_1_0()); 
@@ -10690,17 +11033,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Import__ImportURIAssignment_1"
-    // InternalIHE.g:3375:1: rule__Import__ImportURIAssignment_1 : ( RULE_STRING ) ;
+    // InternalIHE.g:3483:1: rule__Import__ImportURIAssignment_1 : ( RULE_STRING ) ;
     public final void rule__Import__ImportURIAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3379:1: ( ( RULE_STRING ) )
-            // InternalIHE.g:3380:2: ( RULE_STRING )
+            // InternalIHE.g:3487:1: ( ( RULE_STRING ) )
+            // InternalIHE.g:3488:2: ( RULE_STRING )
             {
-            // InternalIHE.g:3380:2: ( RULE_STRING )
-            // InternalIHE.g:3381:3: RULE_STRING
+            // InternalIHE.g:3488:2: ( RULE_STRING )
+            // InternalIHE.g:3489:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getImportAccess().getImportURISTRINGTerminalRuleCall_1_0()); 
@@ -10731,17 +11074,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MainTgf__NameAssignment_1"
-    // InternalIHE.g:3390:1: rule__MainTgf__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalIHE.g:3498:1: rule__MainTgf__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__MainTgf__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3394:1: ( ( RULE_ID ) )
-            // InternalIHE.g:3395:2: ( RULE_ID )
+            // InternalIHE.g:3502:1: ( ( RULE_ID ) )
+            // InternalIHE.g:3503:2: ( RULE_ID )
             {
-            // InternalIHE.g:3395:2: ( RULE_ID )
-            // InternalIHE.g:3396:3: RULE_ID
+            // InternalIHE.g:3503:2: ( RULE_ID )
+            // InternalIHE.g:3504:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMainTgfAccess().getNameIDTerminalRuleCall_1_0()); 
@@ -10772,17 +11115,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MainTgf__GenPackageAssignment_3_2"
-    // InternalIHE.g:3405:1: rule__MainTgf__GenPackageAssignment_3_2 : ( RULE_STRING ) ;
+    // InternalIHE.g:3513:1: rule__MainTgf__GenPackageAssignment_3_2 : ( RULE_STRING ) ;
     public final void rule__MainTgf__GenPackageAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3409:1: ( ( RULE_STRING ) )
-            // InternalIHE.g:3410:2: ( RULE_STRING )
+            // InternalIHE.g:3517:1: ( ( RULE_STRING ) )
+            // InternalIHE.g:3518:2: ( RULE_STRING )
             {
-            // InternalIHE.g:3410:2: ( RULE_STRING )
-            // InternalIHE.g:3411:3: RULE_STRING
+            // InternalIHE.g:3518:2: ( RULE_STRING )
+            // InternalIHE.g:3519:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMainTgfAccess().getGenPackageSTRINGTerminalRuleCall_3_2_0()); 
@@ -10813,17 +11156,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MainTgf__SatNameAssignment_4_2"
-    // InternalIHE.g:3420:1: rule__MainTgf__SatNameAssignment_4_2 : ( RULE_STRING ) ;
+    // InternalIHE.g:3528:1: rule__MainTgf__SatNameAssignment_4_2 : ( RULE_STRING ) ;
     public final void rule__MainTgf__SatNameAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3424:1: ( ( RULE_STRING ) )
-            // InternalIHE.g:3425:2: ( RULE_STRING )
+            // InternalIHE.g:3532:1: ( ( RULE_STRING ) )
+            // InternalIHE.g:3533:2: ( RULE_STRING )
             {
-            // InternalIHE.g:3425:2: ( RULE_STRING )
-            // InternalIHE.g:3426:3: RULE_STRING
+            // InternalIHE.g:3533:2: ( RULE_STRING )
+            // InternalIHE.g:3534:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMainTgfAccess().getSatNameSTRINGTerminalRuleCall_4_2_0()); 
@@ -10854,17 +11197,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MainTgf__VersionNameAssignment_5_2"
-    // InternalIHE.g:3435:1: rule__MainTgf__VersionNameAssignment_5_2 : ( RULE_STRING ) ;
+    // InternalIHE.g:3543:1: rule__MainTgf__VersionNameAssignment_5_2 : ( RULE_STRING ) ;
     public final void rule__MainTgf__VersionNameAssignment_5_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3439:1: ( ( RULE_STRING ) )
-            // InternalIHE.g:3440:2: ( RULE_STRING )
+            // InternalIHE.g:3547:1: ( ( RULE_STRING ) )
+            // InternalIHE.g:3548:2: ( RULE_STRING )
             {
-            // InternalIHE.g:3440:2: ( RULE_STRING )
-            // InternalIHE.g:3441:3: RULE_STRING
+            // InternalIHE.g:3548:2: ( RULE_STRING )
+            // InternalIHE.g:3549:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMainTgfAccess().getVersionNameSTRINGTerminalRuleCall_5_2_0()); 
@@ -10895,17 +11238,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MainTgf__StatusNameAssignment_6_2"
-    // InternalIHE.g:3450:1: rule__MainTgf__StatusNameAssignment_6_2 : ( RULE_STRING ) ;
+    // InternalIHE.g:3558:1: rule__MainTgf__StatusNameAssignment_6_2 : ( RULE_STRING ) ;
     public final void rule__MainTgf__StatusNameAssignment_6_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3454:1: ( ( RULE_STRING ) )
-            // InternalIHE.g:3455:2: ( RULE_STRING )
+            // InternalIHE.g:3562:1: ( ( RULE_STRING ) )
+            // InternalIHE.g:3563:2: ( RULE_STRING )
             {
-            // InternalIHE.g:3455:2: ( RULE_STRING )
-            // InternalIHE.g:3456:3: RULE_STRING
+            // InternalIHE.g:3563:2: ( RULE_STRING )
+            // InternalIHE.g:3564:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMainTgfAccess().getStatusNameSTRINGTerminalRuleCall_6_2_0()); 
@@ -10936,17 +11279,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MainTgf__ObjectiveNameAssignment_7_2"
-    // InternalIHE.g:3465:1: rule__MainTgf__ObjectiveNameAssignment_7_2 : ( RULE_STRING ) ;
+    // InternalIHE.g:3573:1: rule__MainTgf__ObjectiveNameAssignment_7_2 : ( RULE_STRING ) ;
     public final void rule__MainTgf__ObjectiveNameAssignment_7_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3469:1: ( ( RULE_STRING ) )
-            // InternalIHE.g:3470:2: ( RULE_STRING )
+            // InternalIHE.g:3577:1: ( ( RULE_STRING ) )
+            // InternalIHE.g:3578:2: ( RULE_STRING )
             {
-            // InternalIHE.g:3470:2: ( RULE_STRING )
-            // InternalIHE.g:3471:3: RULE_STRING
+            // InternalIHE.g:3578:2: ( RULE_STRING )
+            // InternalIHE.g:3579:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMainTgfAccess().getObjectiveNameSTRINGTerminalRuleCall_7_2_0()); 
@@ -10977,17 +11320,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MainTgf__HlfunctionNameAssignment_8_2"
-    // InternalIHE.g:3480:1: rule__MainTgf__HlfunctionNameAssignment_8_2 : ( RULE_STRING ) ;
+    // InternalIHE.g:3588:1: rule__MainTgf__HlfunctionNameAssignment_8_2 : ( RULE_STRING ) ;
     public final void rule__MainTgf__HlfunctionNameAssignment_8_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3484:1: ( ( RULE_STRING ) )
-            // InternalIHE.g:3485:2: ( RULE_STRING )
+            // InternalIHE.g:3592:1: ( ( RULE_STRING ) )
+            // InternalIHE.g:3593:2: ( RULE_STRING )
             {
-            // InternalIHE.g:3485:2: ( RULE_STRING )
-            // InternalIHE.g:3486:3: RULE_STRING
+            // InternalIHE.g:3593:2: ( RULE_STRING )
+            // InternalIHE.g:3594:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMainTgfAccess().getHlfunctionNameSTRINGTerminalRuleCall_8_2_0()); 
@@ -11018,17 +11361,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MainTgf__RulesAssignment_9_2"
-    // InternalIHE.g:3495:1: rule__MainTgf__RulesAssignment_9_2 : ( ruleRule ) ;
+    // InternalIHE.g:3603:1: rule__MainTgf__RulesAssignment_9_2 : ( ruleRule ) ;
     public final void rule__MainTgf__RulesAssignment_9_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3499:1: ( ( ruleRule ) )
-            // InternalIHE.g:3500:2: ( ruleRule )
+            // InternalIHE.g:3607:1: ( ( ruleRule ) )
+            // InternalIHE.g:3608:2: ( ruleRule )
             {
-            // InternalIHE.g:3500:2: ( ruleRule )
-            // InternalIHE.g:3501:3: ruleRule
+            // InternalIHE.g:3608:2: ( ruleRule )
+            // InternalIHE.g:3609:3: ruleRule
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMainTgfAccess().getRulesRuleParserRuleCall_9_2_0()); 
@@ -11063,17 +11406,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MainTgf__ProfAssignment_10"
-    // InternalIHE.g:3510:1: rule__MainTgf__ProfAssignment_10 : ( ruleProfile ) ;
+    // InternalIHE.g:3618:1: rule__MainTgf__ProfAssignment_10 : ( ruleProfile ) ;
     public final void rule__MainTgf__ProfAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3514:1: ( ( ruleProfile ) )
-            // InternalIHE.g:3515:2: ( ruleProfile )
+            // InternalIHE.g:3622:1: ( ( ruleProfile ) )
+            // InternalIHE.g:3623:2: ( ruleProfile )
             {
-            // InternalIHE.g:3515:2: ( ruleProfile )
-            // InternalIHE.g:3516:3: ruleProfile
+            // InternalIHE.g:3623:2: ( ruleProfile )
+            // InternalIHE.g:3624:3: ruleProfile
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMainTgfAccess().getProfProfileParserRuleCall_10_0()); 
@@ -11108,17 +11451,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Profile__NameAssignment_1"
-    // InternalIHE.g:3525:1: rule__Profile__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalIHE.g:3633:1: rule__Profile__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Profile__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3529:1: ( ( RULE_ID ) )
-            // InternalIHE.g:3530:2: ( RULE_ID )
+            // InternalIHE.g:3637:1: ( ( RULE_ID ) )
+            // InternalIHE.g:3638:2: ( RULE_ID )
             {
-            // InternalIHE.g:3530:2: ( RULE_ID )
-            // InternalIHE.g:3531:3: RULE_ID
+            // InternalIHE.g:3638:2: ( RULE_ID )
+            // InternalIHE.g:3639:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getProfileAccess().getNameIDTerminalRuleCall_1_0()); 
@@ -11149,17 +11492,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Profile__ProfNameAssignment_3_2"
-    // InternalIHE.g:3540:1: rule__Profile__ProfNameAssignment_3_2 : ( RULE_STRING ) ;
+    // InternalIHE.g:3648:1: rule__Profile__ProfNameAssignment_3_2 : ( RULE_STRING ) ;
     public final void rule__Profile__ProfNameAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3544:1: ( ( RULE_STRING ) )
-            // InternalIHE.g:3545:2: ( RULE_STRING )
+            // InternalIHE.g:3652:1: ( ( RULE_STRING ) )
+            // InternalIHE.g:3653:2: ( RULE_STRING )
             {
-            // InternalIHE.g:3545:2: ( RULE_STRING )
-            // InternalIHE.g:3546:3: RULE_STRING
+            // InternalIHE.g:3653:2: ( RULE_STRING )
+            // InternalIHE.g:3654:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getProfileAccess().getProfNameSTRINGTerminalRuleCall_3_2_0()); 
@@ -11190,17 +11533,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Profile__DescrNameAssignment_4_2"
-    // InternalIHE.g:3555:1: rule__Profile__DescrNameAssignment_4_2 : ( RULE_STRING ) ;
+    // InternalIHE.g:3663:1: rule__Profile__DescrNameAssignment_4_2 : ( RULE_STRING ) ;
     public final void rule__Profile__DescrNameAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3559:1: ( ( RULE_STRING ) )
-            // InternalIHE.g:3560:2: ( RULE_STRING )
+            // InternalIHE.g:3667:1: ( ( RULE_STRING ) )
+            // InternalIHE.g:3668:2: ( RULE_STRING )
             {
-            // InternalIHE.g:3560:2: ( RULE_STRING )
-            // InternalIHE.g:3561:3: RULE_STRING
+            // InternalIHE.g:3668:2: ( RULE_STRING )
+            // InternalIHE.g:3669:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getProfileAccess().getDescrNameSTRINGTerminalRuleCall_4_2_0()); 
@@ -11231,17 +11574,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Profile__FeatNameAssignment_5_2"
-    // InternalIHE.g:3570:1: rule__Profile__FeatNameAssignment_5_2 : ( RULE_STRING ) ;
+    // InternalIHE.g:3678:1: rule__Profile__FeatNameAssignment_5_2 : ( RULE_STRING ) ;
     public final void rule__Profile__FeatNameAssignment_5_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3574:1: ( ( RULE_STRING ) )
-            // InternalIHE.g:3575:2: ( RULE_STRING )
+            // InternalIHE.g:3682:1: ( ( RULE_STRING ) )
+            // InternalIHE.g:3683:2: ( RULE_STRING )
             {
-            // InternalIHE.g:3575:2: ( RULE_STRING )
-            // InternalIHE.g:3576:3: RULE_STRING
+            // InternalIHE.g:3683:2: ( RULE_STRING )
+            // InternalIHE.g:3684:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getProfileAccess().getFeatNameSTRINGTerminalRuleCall_5_2_0()); 
@@ -11272,17 +11615,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Profile__FunctionNameAssignment_6_2"
-    // InternalIHE.g:3585:1: rule__Profile__FunctionNameAssignment_6_2 : ( RULE_STRING ) ;
+    // InternalIHE.g:3693:1: rule__Profile__FunctionNameAssignment_6_2 : ( RULE_STRING ) ;
     public final void rule__Profile__FunctionNameAssignment_6_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3589:1: ( ( RULE_STRING ) )
-            // InternalIHE.g:3590:2: ( RULE_STRING )
+            // InternalIHE.g:3697:1: ( ( RULE_STRING ) )
+            // InternalIHE.g:3698:2: ( RULE_STRING )
             {
-            // InternalIHE.g:3590:2: ( RULE_STRING )
-            // InternalIHE.g:3591:3: RULE_STRING
+            // InternalIHE.g:3698:2: ( RULE_STRING )
+            // InternalIHE.g:3699:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getProfileAccess().getFunctionNameSTRINGTerminalRuleCall_6_2_0()); 
@@ -11313,17 +11656,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Profile__ActorAssignment_8"
-    // InternalIHE.g:3600:1: rule__Profile__ActorAssignment_8 : ( ruleActor ) ;
+    // InternalIHE.g:3708:1: rule__Profile__ActorAssignment_8 : ( ruleActor ) ;
     public final void rule__Profile__ActorAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3604:1: ( ( ruleActor ) )
-            // InternalIHE.g:3605:2: ( ruleActor )
+            // InternalIHE.g:3712:1: ( ( ruleActor ) )
+            // InternalIHE.g:3713:2: ( ruleActor )
             {
-            // InternalIHE.g:3605:2: ( ruleActor )
-            // InternalIHE.g:3606:3: ruleActor
+            // InternalIHE.g:3713:2: ( ruleActor )
+            // InternalIHE.g:3714:3: ruleActor
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getProfileAccess().getActorActorParserRuleCall_8_0()); 
@@ -11358,17 +11701,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Profile__TransactionAssignment_10"
-    // InternalIHE.g:3615:1: rule__Profile__TransactionAssignment_10 : ( ruleTransaction ) ;
+    // InternalIHE.g:3723:1: rule__Profile__TransactionAssignment_10 : ( ruleTransaction ) ;
     public final void rule__Profile__TransactionAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3619:1: ( ( ruleTransaction ) )
-            // InternalIHE.g:3620:2: ( ruleTransaction )
+            // InternalIHE.g:3727:1: ( ( ruleTransaction ) )
+            // InternalIHE.g:3728:2: ( ruleTransaction )
             {
-            // InternalIHE.g:3620:2: ( ruleTransaction )
-            // InternalIHE.g:3621:3: ruleTransaction
+            // InternalIHE.g:3728:2: ( ruleTransaction )
+            // InternalIHE.g:3729:3: ruleTransaction
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getProfileAccess().getTransactionTransactionParserRuleCall_10_0()); 
@@ -11403,17 +11746,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Profile__DomainAssignment_12"
-    // InternalIHE.g:3630:1: rule__Profile__DomainAssignment_12 : ( ruleDomain ) ;
+    // InternalIHE.g:3738:1: rule__Profile__DomainAssignment_12 : ( ruleDomain ) ;
     public final void rule__Profile__DomainAssignment_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3634:1: ( ( ruleDomain ) )
-            // InternalIHE.g:3635:2: ( ruleDomain )
+            // InternalIHE.g:3742:1: ( ( ruleDomain ) )
+            // InternalIHE.g:3743:2: ( ruleDomain )
             {
-            // InternalIHE.g:3635:2: ( ruleDomain )
-            // InternalIHE.g:3636:3: ruleDomain
+            // InternalIHE.g:3743:2: ( ruleDomain )
+            // InternalIHE.g:3744:3: ruleDomain
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getProfileAccess().getDomainDomainParserRuleCall_12_0()); 
@@ -11448,17 +11791,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Profile__QualityattrAssignment_14"
-    // InternalIHE.g:3645:1: rule__Profile__QualityattrAssignment_14 : ( ruleQualityAttr ) ;
+    // InternalIHE.g:3753:1: rule__Profile__QualityattrAssignment_14 : ( ruleQualityAttr ) ;
     public final void rule__Profile__QualityattrAssignment_14() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3649:1: ( ( ruleQualityAttr ) )
-            // InternalIHE.g:3650:2: ( ruleQualityAttr )
+            // InternalIHE.g:3757:1: ( ( ruleQualityAttr ) )
+            // InternalIHE.g:3758:2: ( ruleQualityAttr )
             {
-            // InternalIHE.g:3650:2: ( ruleQualityAttr )
-            // InternalIHE.g:3651:3: ruleQualityAttr
+            // InternalIHE.g:3758:2: ( ruleQualityAttr )
+            // InternalIHE.g:3759:3: ruleQualityAttr
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getProfileAccess().getQualityattrQualityAttrParserRuleCall_14_0()); 
@@ -11493,17 +11836,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Profile__SecreAssignment_16"
-    // InternalIHE.g:3660:1: rule__Profile__SecreAssignment_16 : ( ruleSecRequirements ) ;
+    // InternalIHE.g:3768:1: rule__Profile__SecreAssignment_16 : ( ruleSecRequirements ) ;
     public final void rule__Profile__SecreAssignment_16() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3664:1: ( ( ruleSecRequirements ) )
-            // InternalIHE.g:3665:2: ( ruleSecRequirements )
+            // InternalIHE.g:3772:1: ( ( ruleSecRequirements ) )
+            // InternalIHE.g:3773:2: ( ruleSecRequirements )
             {
-            // InternalIHE.g:3665:2: ( ruleSecRequirements )
-            // InternalIHE.g:3666:3: ruleSecRequirements
+            // InternalIHE.g:3773:2: ( ruleSecRequirements )
+            // InternalIHE.g:3774:3: ruleSecRequirements
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getProfileAccess().getSecreSecRequirementsParserRuleCall_16_0()); 
@@ -11538,17 +11881,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__SecReIDAssignment_0"
-    // InternalIHE.g:3675:1: rule__SecRequirements__SecReIDAssignment_0 : ( RULE_ID ) ;
+    // InternalIHE.g:3783:1: rule__SecRequirements__SecReIDAssignment_0 : ( RULE_ID ) ;
     public final void rule__SecRequirements__SecReIDAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3679:1: ( ( RULE_ID ) )
-            // InternalIHE.g:3680:2: ( RULE_ID )
+            // InternalIHE.g:3787:1: ( ( RULE_ID ) )
+            // InternalIHE.g:3788:2: ( RULE_ID )
             {
-            // InternalIHE.g:3680:2: ( RULE_ID )
-            // InternalIHE.g:3681:3: RULE_ID
+            // InternalIHE.g:3788:2: ( RULE_ID )
+            // InternalIHE.g:3789:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSecRequirementsAccess().getSecReIDIDTerminalRuleCall_0_0()); 
@@ -11578,25 +11921,25 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__SecRequirements__SecReIDAssignment_0"
 
 
-    // $ANTLR start "rule__SecRequirements__SecreGoalAssignment_2_2"
-    // InternalIHE.g:3690:1: rule__SecRequirements__SecreGoalAssignment_2_2 : ( RULE_STRING ) ;
-    public final void rule__SecRequirements__SecreGoalAssignment_2_2() throws RecognitionException {
+    // $ANTLR start "rule__SecRequirements__SecreFormAssignment_2_2"
+    // InternalIHE.g:3798:1: rule__SecRequirements__SecreFormAssignment_2_2 : ( RULE_STRING ) ;
+    public final void rule__SecRequirements__SecreFormAssignment_2_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3694:1: ( ( RULE_STRING ) )
-            // InternalIHE.g:3695:2: ( RULE_STRING )
+            // InternalIHE.g:3802:1: ( ( RULE_STRING ) )
+            // InternalIHE.g:3803:2: ( RULE_STRING )
             {
-            // InternalIHE.g:3695:2: ( RULE_STRING )
-            // InternalIHE.g:3696:3: RULE_STRING
+            // InternalIHE.g:3803:2: ( RULE_STRING )
+            // InternalIHE.g:3804:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSecRequirementsAccess().getSecreGoalSTRINGTerminalRuleCall_2_2_0()); 
+               before(grammarAccess.getSecRequirementsAccess().getSecreFormSTRINGTerminalRuleCall_2_2_0()); 
             }
             match(input,RULE_STRING,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSecRequirementsAccess().getSecreGoalSTRINGTerminalRuleCall_2_2_0()); 
+               after(grammarAccess.getSecRequirementsAccess().getSecreFormSTRINGTerminalRuleCall_2_2_0()); 
             }
 
             }
@@ -11616,28 +11959,28 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SecRequirements__SecreGoalAssignment_2_2"
+    // $ANTLR end "rule__SecRequirements__SecreFormAssignment_2_2"
 
 
-    // $ANTLR start "rule__SecRequirements__SecreLevelAssignment_3_2"
-    // InternalIHE.g:3705:1: rule__SecRequirements__SecreLevelAssignment_3_2 : ( RULE_STRING ) ;
-    public final void rule__SecRequirements__SecreLevelAssignment_3_2() throws RecognitionException {
+    // $ANTLR start "rule__SecRequirements__SecreSensitivityAssignment_3_2"
+    // InternalIHE.g:3813:1: rule__SecRequirements__SecreSensitivityAssignment_3_2 : ( RULE_STRING ) ;
+    public final void rule__SecRequirements__SecreSensitivityAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3709:1: ( ( RULE_STRING ) )
-            // InternalIHE.g:3710:2: ( RULE_STRING )
+            // InternalIHE.g:3817:1: ( ( RULE_STRING ) )
+            // InternalIHE.g:3818:2: ( RULE_STRING )
             {
-            // InternalIHE.g:3710:2: ( RULE_STRING )
-            // InternalIHE.g:3711:3: RULE_STRING
+            // InternalIHE.g:3818:2: ( RULE_STRING )
+            // InternalIHE.g:3819:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSecRequirementsAccess().getSecreLevelSTRINGTerminalRuleCall_3_2_0()); 
+               before(grammarAccess.getSecRequirementsAccess().getSecreSensitivitySTRINGTerminalRuleCall_3_2_0()); 
             }
             match(input,RULE_STRING,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSecRequirementsAccess().getSecreLevelSTRINGTerminalRuleCall_3_2_0()); 
+               after(grammarAccess.getSecRequirementsAccess().getSecreSensitivitySTRINGTerminalRuleCall_3_2_0()); 
             }
 
             }
@@ -11657,21 +12000,21 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SecRequirements__SecreLevelAssignment_3_2"
+    // $ANTLR end "rule__SecRequirements__SecreSensitivityAssignment_3_2"
 
 
     // $ANTLR start "rule__SecRequirements__SecreLocationAssignment_4_2"
-    // InternalIHE.g:3720:1: rule__SecRequirements__SecreLocationAssignment_4_2 : ( RULE_STRING ) ;
+    // InternalIHE.g:3828:1: rule__SecRequirements__SecreLocationAssignment_4_2 : ( RULE_STRING ) ;
     public final void rule__SecRequirements__SecreLocationAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3724:1: ( ( RULE_STRING ) )
-            // InternalIHE.g:3725:2: ( RULE_STRING )
+            // InternalIHE.g:3832:1: ( ( RULE_STRING ) )
+            // InternalIHE.g:3833:2: ( RULE_STRING )
             {
-            // InternalIHE.g:3725:2: ( RULE_STRING )
-            // InternalIHE.g:3726:3: RULE_STRING
+            // InternalIHE.g:3833:2: ( RULE_STRING )
+            // InternalIHE.g:3834:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSecRequirementsAccess().getSecreLocationSTRINGTerminalRuleCall_4_2_0()); 
@@ -11702,17 +12045,17 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SecRequirements__SecreStateAssignment_5_2"
-    // InternalIHE.g:3735:1: rule__SecRequirements__SecreStateAssignment_5_2 : ( RULE_STRING ) ;
+    // InternalIHE.g:3843:1: rule__SecRequirements__SecreStateAssignment_5_2 : ( RULE_STRING ) ;
     public final void rule__SecRequirements__SecreStateAssignment_5_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3739:1: ( ( RULE_STRING ) )
-            // InternalIHE.g:3740:2: ( RULE_STRING )
+            // InternalIHE.g:3847:1: ( ( RULE_STRING ) )
+            // InternalIHE.g:3848:2: ( RULE_STRING )
             {
-            // InternalIHE.g:3740:2: ( RULE_STRING )
-            // InternalIHE.g:3741:3: RULE_STRING
+            // InternalIHE.g:3848:2: ( RULE_STRING )
+            // InternalIHE.g:3849:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSecRequirementsAccess().getSecreStateSTRINGTerminalRuleCall_5_2_0()); 
@@ -11742,25 +12085,25 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__SecRequirements__SecreStateAssignment_5_2"
 
 
-    // $ANTLR start "rule__SecRequirements__SecreDescAssignment_6_2"
-    // InternalIHE.g:3750:1: rule__SecRequirements__SecreDescAssignment_6_2 : ( RULE_STRING ) ;
-    public final void rule__SecRequirements__SecreDescAssignment_6_2() throws RecognitionException {
+    // $ANTLR start "rule__SecRequirements__SecreGoalAssignment_6_2"
+    // InternalIHE.g:3858:1: rule__SecRequirements__SecreGoalAssignment_6_2 : ( RULE_STRING ) ;
+    public final void rule__SecRequirements__SecreGoalAssignment_6_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3754:1: ( ( RULE_STRING ) )
-            // InternalIHE.g:3755:2: ( RULE_STRING )
+            // InternalIHE.g:3862:1: ( ( RULE_STRING ) )
+            // InternalIHE.g:3863:2: ( RULE_STRING )
             {
-            // InternalIHE.g:3755:2: ( RULE_STRING )
-            // InternalIHE.g:3756:3: RULE_STRING
+            // InternalIHE.g:3863:2: ( RULE_STRING )
+            // InternalIHE.g:3864:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSecRequirementsAccess().getSecreDescSTRINGTerminalRuleCall_6_2_0()); 
+               before(grammarAccess.getSecRequirementsAccess().getSecreGoalSTRINGTerminalRuleCall_6_2_0()); 
             }
             match(input,RULE_STRING,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSecRequirementsAccess().getSecreDescSTRINGTerminalRuleCall_6_2_0()); 
+               after(grammarAccess.getSecRequirementsAccess().getSecreGoalSTRINGTerminalRuleCall_6_2_0()); 
             }
 
             }
@@ -11780,28 +12123,28 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SecRequirements__SecreDescAssignment_6_2"
+    // $ANTLR end "rule__SecRequirements__SecreGoalAssignment_6_2"
 
 
-    // $ANTLR start "rule__SecRequirements__SecreCategoryAssignment_7_2"
-    // InternalIHE.g:3765:1: rule__SecRequirements__SecreCategoryAssignment_7_2 : ( RULE_STRING ) ;
-    public final void rule__SecRequirements__SecreCategoryAssignment_7_2() throws RecognitionException {
+    // $ANTLR start "rule__SecRequirements__SecreCountermeasureAssignment_7_2"
+    // InternalIHE.g:3873:1: rule__SecRequirements__SecreCountermeasureAssignment_7_2 : ( RULE_STRING ) ;
+    public final void rule__SecRequirements__SecreCountermeasureAssignment_7_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIHE.g:3769:1: ( ( RULE_STRING ) )
-            // InternalIHE.g:3770:2: ( RULE_STRING )
+            // InternalIHE.g:3877:1: ( ( RULE_STRING ) )
+            // InternalIHE.g:3878:2: ( RULE_STRING )
             {
-            // InternalIHE.g:3770:2: ( RULE_STRING )
-            // InternalIHE.g:3771:3: RULE_STRING
+            // InternalIHE.g:3878:2: ( RULE_STRING )
+            // InternalIHE.g:3879:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getSecRequirementsAccess().getSecreCategorySTRINGTerminalRuleCall_7_2_0()); 
+               before(grammarAccess.getSecRequirementsAccess().getSecreCountermeasureSTRINGTerminalRuleCall_7_2_0()); 
             }
             match(input,RULE_STRING,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getSecRequirementsAccess().getSecreCategorySTRINGTerminalRuleCall_7_2_0()); 
+               after(grammarAccess.getSecRequirementsAccess().getSecreCountermeasureSTRINGTerminalRuleCall_7_2_0()); 
             }
 
             }
@@ -11821,12 +12164,53 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SecRequirements__SecreCategoryAssignment_7_2"
+    // $ANTLR end "rule__SecRequirements__SecreCountermeasureAssignment_7_2"
+
+
+    // $ANTLR start "rule__SecRequirements__SecreCategoryAssignment_8_2"
+    // InternalIHE.g:3888:1: rule__SecRequirements__SecreCategoryAssignment_8_2 : ( RULE_STRING ) ;
+    public final void rule__SecRequirements__SecreCategoryAssignment_8_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalIHE.g:3892:1: ( ( RULE_STRING ) )
+            // InternalIHE.g:3893:2: ( RULE_STRING )
+            {
+            // InternalIHE.g:3893:2: ( RULE_STRING )
+            // InternalIHE.g:3894:3: RULE_STRING
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getSecRequirementsAccess().getSecreCategorySTRINGTerminalRuleCall_8_2_0()); 
+            }
+            match(input,RULE_STRING,FOLLOW_2); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getSecRequirementsAccess().getSecreCategorySTRINGTerminalRuleCall_8_2_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SecRequirements__SecreCategoryAssignment_8_2"
 
     // $ANTLR start synpred1_InternalIHE
     public final void synpred1_InternalIHE_fragment() throws RecognitionException {   
-        // InternalIHE.g:3292:8: ( rule__IHE__ImportElAssignment_0 )
-        // InternalIHE.g:3292:9: rule__IHE__ImportElAssignment_0
+        // InternalIHE.g:3400:8: ( rule__IHE__ImportElAssignment_0 )
+        // InternalIHE.g:3400:9: rule__IHE__ImportElAssignment_0
         {
         pushFollow(FOLLOW_2);
         rule__IHE__ImportElAssignment_0();
@@ -11873,15 +12257,15 @@ public class InternalIHEParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x00000000E1020000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000004004000000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000008004000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000008000000002L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000008000010L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000010000020L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000003F00004000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000007F00004000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000080000000000L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000000802L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000001802L});
 

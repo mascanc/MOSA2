@@ -48,7 +48,7 @@ public class TestCentralRegistry {
          */
         Group g = new Group();
         g.setAvailableABBs(abbList);
-        ABB groupedABB = g.group(abbList.get("PORTAL"), abbList.get("XDS"), abbList.get("EXTSOURCE"));
+        ABB groupedABB = g.group(abbList.get("CLINIC"), abbList.get("XDS"), abbList.get("EXTSOURCE"));
         assertNotNull(groupedABB);
 
         /*
@@ -65,14 +65,13 @@ public class TestCentralRegistry {
         /*
          * Show the Generated security requirements
          */
-        String[] columnNames = {"ID", "Goal", "Level", "Location", "State", "Description", "Category"};
-
+        String[] columnNames = {"ID", "Form", "Sensitivity", "Location", "State", "Goal", "Countermeasure", "Category"};
         Object[][] data = new Object[groupedABB.getSecurityRequirements().size() + 1][8];
 
         AtomicInteger counter = new AtomicInteger(0);
         groupedABB.getSecurityRequirements().stream().forEach(x -> {
             int i = counter.getAndIncrement();
-            data[i] = new Object[] {x.getName(), x.getGoal(), x.getLevel(), x.getLocation(), x.getState(), x.getDescription(), x.getCategory()};
+            data[i] = new Object[] {x.getName(),x.getForm(), x.getSensitivity(), x.getLocation(), x.getState(), x.getGoal(), x.getCountermeasure(), x.getCategory()};
 
         });
         TextTable tt = new TextTable(columnNames, data);

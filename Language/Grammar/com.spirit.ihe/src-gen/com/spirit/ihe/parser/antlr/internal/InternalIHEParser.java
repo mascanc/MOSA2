@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalIHEParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'ArchitecturalElement'", "'{'", "'JavaPackage'", "':'", "'Name'", "'Version'", "'Status'", "'Objective'", "'HL_Function'", "'Rules:'", "'}'", "'Profile'", "'Description'", "'Features'", "'Function'", "'actors:'", "'transactions:'", "'domains:'", "'quality_attributes:'", "'security_requirements:'", "'Form'", "'Sensitivity'", "'Location'", "'State'", "'Goal'", "'Descr'", "'Category'", "'('", "','", "')'", "'['", "']'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'ArchitecturalElement'", "'{'", "'JavaPackage'", "':'", "'Name'", "'Version'", "'Status'", "'Objective'", "'HL_Function'", "'Rules:'", "'}'", "'Profile'", "'Description'", "'Features'", "'Function'", "'actors:'", "'transactions:'", "'domains:'", "'quality_attributes:'", "'security_requirements:'", "'Form'", "'Sensitivity'", "'Location'", "'State'", "'Goal'", "'Countermeasure'", "'Category'", "'('", "','", "')'", "'['", "']'"
     };
     public static final int T__19=19;
     public static final int T__15=15;
@@ -1730,7 +1730,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSecRequirements"
-    // InternalIHE.g:744:1: ruleSecRequirements returns [EObject current=null] : ( ( (lv_SecReID_0_0= RULE_ID ) ) otherlv_1= '{' (otherlv_2= 'Form' otherlv_3= ':' ( (lv_secreForm_4_0= RULE_STRING ) ) )? (otherlv_5= 'Sensitivity' otherlv_6= ':' ( (lv_secreSensitivity_7_0= RULE_STRING ) ) )? (otherlv_8= 'Location' otherlv_9= ':' ( (lv_secreLocation_10_0= RULE_STRING ) ) )? (otherlv_11= 'State' otherlv_12= ':' ( (lv_secreState_13_0= RULE_STRING ) ) )? (otherlv_14= 'Goal' otherlv_15= ':' ( (lv_secreGoal_16_0= RULE_STRING ) ) )? (otherlv_17= 'Descr' otherlv_18= ':' ( (lv_secreDesc_19_0= RULE_STRING ) ) )? (otherlv_20= 'Category' otherlv_21= ':' ( (lv_secreCategory_22_0= RULE_STRING ) ) )? otherlv_23= '}' ) ;
+    // InternalIHE.g:744:1: ruleSecRequirements returns [EObject current=null] : ( ( (lv_SecReID_0_0= RULE_ID ) ) otherlv_1= '{' (otherlv_2= 'Form' otherlv_3= ':' ( (lv_secreForm_4_0= RULE_STRING ) ) )? (otherlv_5= 'Sensitivity' otherlv_6= ':' ( (lv_secreSensitivity_7_0= RULE_STRING ) ) )? (otherlv_8= 'Location' otherlv_9= ':' ( (lv_secreLocation_10_0= RULE_STRING ) ) )? (otherlv_11= 'State' otherlv_12= ':' ( (lv_secreState_13_0= RULE_STRING ) ) )? (otherlv_14= 'Goal' otherlv_15= ':' ( (lv_secreGoal_16_0= RULE_STRING ) ) )? (otherlv_17= 'Countermeasure' otherlv_18= ':' ( (lv_secreCountermeasure_19_0= RULE_STRING ) ) )? (otherlv_20= 'Category' otherlv_21= ':' ( (lv_secreCategory_22_0= RULE_STRING ) ) )? otherlv_23= '}' ) ;
     public final EObject ruleSecRequirements() throws RecognitionException {
         EObject current = null;
 
@@ -1753,7 +1753,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
         Token lv_secreGoal_16_0=null;
         Token otherlv_17=null;
         Token otherlv_18=null;
-        Token lv_secreDesc_19_0=null;
+        Token lv_secreCountermeasure_19_0=null;
         Token otherlv_20=null;
         Token otherlv_21=null;
         Token lv_secreCategory_22_0=null;
@@ -1763,11 +1763,11 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalIHE.g:750:2: ( ( ( (lv_SecReID_0_0= RULE_ID ) ) otherlv_1= '{' (otherlv_2= 'Form' otherlv_3= ':' ( (lv_secreForm_4_0= RULE_STRING ) ) )? (otherlv_5= 'Sensitivity' otherlv_6= ':' ( (lv_secreSensitivity_7_0= RULE_STRING ) ) )? (otherlv_8= 'Location' otherlv_9= ':' ( (lv_secreLocation_10_0= RULE_STRING ) ) )? (otherlv_11= 'State' otherlv_12= ':' ( (lv_secreState_13_0= RULE_STRING ) ) )? (otherlv_14= 'Goal' otherlv_15= ':' ( (lv_secreGoal_16_0= RULE_STRING ) ) )? (otherlv_17= 'Descr' otherlv_18= ':' ( (lv_secreDesc_19_0= RULE_STRING ) ) )? (otherlv_20= 'Category' otherlv_21= ':' ( (lv_secreCategory_22_0= RULE_STRING ) ) )? otherlv_23= '}' ) )
-            // InternalIHE.g:751:2: ( ( (lv_SecReID_0_0= RULE_ID ) ) otherlv_1= '{' (otherlv_2= 'Form' otherlv_3= ':' ( (lv_secreForm_4_0= RULE_STRING ) ) )? (otherlv_5= 'Sensitivity' otherlv_6= ':' ( (lv_secreSensitivity_7_0= RULE_STRING ) ) )? (otherlv_8= 'Location' otherlv_9= ':' ( (lv_secreLocation_10_0= RULE_STRING ) ) )? (otherlv_11= 'State' otherlv_12= ':' ( (lv_secreState_13_0= RULE_STRING ) ) )? (otherlv_14= 'Goal' otherlv_15= ':' ( (lv_secreGoal_16_0= RULE_STRING ) ) )? (otherlv_17= 'Descr' otherlv_18= ':' ( (lv_secreDesc_19_0= RULE_STRING ) ) )? (otherlv_20= 'Category' otherlv_21= ':' ( (lv_secreCategory_22_0= RULE_STRING ) ) )? otherlv_23= '}' )
+            // InternalIHE.g:750:2: ( ( ( (lv_SecReID_0_0= RULE_ID ) ) otherlv_1= '{' (otherlv_2= 'Form' otherlv_3= ':' ( (lv_secreForm_4_0= RULE_STRING ) ) )? (otherlv_5= 'Sensitivity' otherlv_6= ':' ( (lv_secreSensitivity_7_0= RULE_STRING ) ) )? (otherlv_8= 'Location' otherlv_9= ':' ( (lv_secreLocation_10_0= RULE_STRING ) ) )? (otherlv_11= 'State' otherlv_12= ':' ( (lv_secreState_13_0= RULE_STRING ) ) )? (otherlv_14= 'Goal' otherlv_15= ':' ( (lv_secreGoal_16_0= RULE_STRING ) ) )? (otherlv_17= 'Countermeasure' otherlv_18= ':' ( (lv_secreCountermeasure_19_0= RULE_STRING ) ) )? (otherlv_20= 'Category' otherlv_21= ':' ( (lv_secreCategory_22_0= RULE_STRING ) ) )? otherlv_23= '}' ) )
+            // InternalIHE.g:751:2: ( ( (lv_SecReID_0_0= RULE_ID ) ) otherlv_1= '{' (otherlv_2= 'Form' otherlv_3= ':' ( (lv_secreForm_4_0= RULE_STRING ) ) )? (otherlv_5= 'Sensitivity' otherlv_6= ':' ( (lv_secreSensitivity_7_0= RULE_STRING ) ) )? (otherlv_8= 'Location' otherlv_9= ':' ( (lv_secreLocation_10_0= RULE_STRING ) ) )? (otherlv_11= 'State' otherlv_12= ':' ( (lv_secreState_13_0= RULE_STRING ) ) )? (otherlv_14= 'Goal' otherlv_15= ':' ( (lv_secreGoal_16_0= RULE_STRING ) ) )? (otherlv_17= 'Countermeasure' otherlv_18= ':' ( (lv_secreCountermeasure_19_0= RULE_STRING ) ) )? (otherlv_20= 'Category' otherlv_21= ':' ( (lv_secreCategory_22_0= RULE_STRING ) ) )? otherlv_23= '}' )
             {
-            // InternalIHE.g:751:2: ( ( (lv_SecReID_0_0= RULE_ID ) ) otherlv_1= '{' (otherlv_2= 'Form' otherlv_3= ':' ( (lv_secreForm_4_0= RULE_STRING ) ) )? (otherlv_5= 'Sensitivity' otherlv_6= ':' ( (lv_secreSensitivity_7_0= RULE_STRING ) ) )? (otherlv_8= 'Location' otherlv_9= ':' ( (lv_secreLocation_10_0= RULE_STRING ) ) )? (otherlv_11= 'State' otherlv_12= ':' ( (lv_secreState_13_0= RULE_STRING ) ) )? (otherlv_14= 'Goal' otherlv_15= ':' ( (lv_secreGoal_16_0= RULE_STRING ) ) )? (otherlv_17= 'Descr' otherlv_18= ':' ( (lv_secreDesc_19_0= RULE_STRING ) ) )? (otherlv_20= 'Category' otherlv_21= ':' ( (lv_secreCategory_22_0= RULE_STRING ) ) )? otherlv_23= '}' )
-            // InternalIHE.g:752:3: ( (lv_SecReID_0_0= RULE_ID ) ) otherlv_1= '{' (otherlv_2= 'Form' otherlv_3= ':' ( (lv_secreForm_4_0= RULE_STRING ) ) )? (otherlv_5= 'Sensitivity' otherlv_6= ':' ( (lv_secreSensitivity_7_0= RULE_STRING ) ) )? (otherlv_8= 'Location' otherlv_9= ':' ( (lv_secreLocation_10_0= RULE_STRING ) ) )? (otherlv_11= 'State' otherlv_12= ':' ( (lv_secreState_13_0= RULE_STRING ) ) )? (otherlv_14= 'Goal' otherlv_15= ':' ( (lv_secreGoal_16_0= RULE_STRING ) ) )? (otherlv_17= 'Descr' otherlv_18= ':' ( (lv_secreDesc_19_0= RULE_STRING ) ) )? (otherlv_20= 'Category' otherlv_21= ':' ( (lv_secreCategory_22_0= RULE_STRING ) ) )? otherlv_23= '}'
+            // InternalIHE.g:751:2: ( ( (lv_SecReID_0_0= RULE_ID ) ) otherlv_1= '{' (otherlv_2= 'Form' otherlv_3= ':' ( (lv_secreForm_4_0= RULE_STRING ) ) )? (otherlv_5= 'Sensitivity' otherlv_6= ':' ( (lv_secreSensitivity_7_0= RULE_STRING ) ) )? (otherlv_8= 'Location' otherlv_9= ':' ( (lv_secreLocation_10_0= RULE_STRING ) ) )? (otherlv_11= 'State' otherlv_12= ':' ( (lv_secreState_13_0= RULE_STRING ) ) )? (otherlv_14= 'Goal' otherlv_15= ':' ( (lv_secreGoal_16_0= RULE_STRING ) ) )? (otherlv_17= 'Countermeasure' otherlv_18= ':' ( (lv_secreCountermeasure_19_0= RULE_STRING ) ) )? (otherlv_20= 'Category' otherlv_21= ':' ( (lv_secreCategory_22_0= RULE_STRING ) ) )? otherlv_23= '}' )
+            // InternalIHE.g:752:3: ( (lv_SecReID_0_0= RULE_ID ) ) otherlv_1= '{' (otherlv_2= 'Form' otherlv_3= ':' ( (lv_secreForm_4_0= RULE_STRING ) ) )? (otherlv_5= 'Sensitivity' otherlv_6= ':' ( (lv_secreSensitivity_7_0= RULE_STRING ) ) )? (otherlv_8= 'Location' otherlv_9= ':' ( (lv_secreLocation_10_0= RULE_STRING ) ) )? (otherlv_11= 'State' otherlv_12= ':' ( (lv_secreState_13_0= RULE_STRING ) ) )? (otherlv_14= 'Goal' otherlv_15= ':' ( (lv_secreGoal_16_0= RULE_STRING ) ) )? (otherlv_17= 'Countermeasure' otherlv_18= ':' ( (lv_secreCountermeasure_19_0= RULE_STRING ) ) )? (otherlv_20= 'Category' otherlv_21= ':' ( (lv_secreCategory_22_0= RULE_STRING ) ) )? otherlv_23= '}'
             {
             // InternalIHE.g:752:3: ( (lv_SecReID_0_0= RULE_ID ) )
             // InternalIHE.g:753:4: (lv_SecReID_0_0= RULE_ID )
@@ -2054,7 +2054,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalIHE.g:914:3: (otherlv_17= 'Descr' otherlv_18= ':' ( (lv_secreDesc_19_0= RULE_STRING ) ) )?
+            // InternalIHE.g:914:3: (otherlv_17= 'Countermeasure' otherlv_18= ':' ( (lv_secreCountermeasure_19_0= RULE_STRING ) ) )?
             int alt26=2;
             int LA26_0 = input.LA(1);
 
@@ -2063,25 +2063,25 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
             }
             switch (alt26) {
                 case 1 :
-                    // InternalIHE.g:915:4: otherlv_17= 'Descr' otherlv_18= ':' ( (lv_secreDesc_19_0= RULE_STRING ) )
+                    // InternalIHE.g:915:4: otherlv_17= 'Countermeasure' otherlv_18= ':' ( (lv_secreCountermeasure_19_0= RULE_STRING ) )
                     {
                     otherlv_17=(Token)match(input,37,FOLLOW_8); 
 
-                    				newLeafNode(otherlv_17, grammarAccess.getSecRequirementsAccess().getDescrKeyword_7_0());
+                    				newLeafNode(otherlv_17, grammarAccess.getSecRequirementsAccess().getCountermeasureKeyword_7_0());
                     			
                     otherlv_18=(Token)match(input,15,FOLLOW_4); 
 
                     				newLeafNode(otherlv_18, grammarAccess.getSecRequirementsAccess().getColonKeyword_7_1());
                     			
-                    // InternalIHE.g:923:4: ( (lv_secreDesc_19_0= RULE_STRING ) )
-                    // InternalIHE.g:924:5: (lv_secreDesc_19_0= RULE_STRING )
+                    // InternalIHE.g:923:4: ( (lv_secreCountermeasure_19_0= RULE_STRING ) )
+                    // InternalIHE.g:924:5: (lv_secreCountermeasure_19_0= RULE_STRING )
                     {
-                    // InternalIHE.g:924:5: (lv_secreDesc_19_0= RULE_STRING )
-                    // InternalIHE.g:925:6: lv_secreDesc_19_0= RULE_STRING
+                    // InternalIHE.g:924:5: (lv_secreCountermeasure_19_0= RULE_STRING )
+                    // InternalIHE.g:925:6: lv_secreCountermeasure_19_0= RULE_STRING
                     {
-                    lv_secreDesc_19_0=(Token)match(input,RULE_STRING,FOLLOW_26); 
+                    lv_secreCountermeasure_19_0=(Token)match(input,RULE_STRING,FOLLOW_26); 
 
-                    						newLeafNode(lv_secreDesc_19_0, grammarAccess.getSecRequirementsAccess().getSecreDescSTRINGTerminalRuleCall_7_2_0());
+                    						newLeafNode(lv_secreCountermeasure_19_0, grammarAccess.getSecRequirementsAccess().getSecreCountermeasureSTRINGTerminalRuleCall_7_2_0());
                     					
 
                     						if (current==null) {
@@ -2089,8 +2089,8 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
                     						}
                     						setWithLastConsumed(
                     							current,
-                    							"secreDesc",
-                    							lv_secreDesc_19_0,
+                    							"secreCountermeasure",
+                    							lv_secreCountermeasure_19_0,
                     							"org.eclipse.xtext.common.Terminals.STRING");
                     					
 

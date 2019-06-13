@@ -48,7 +48,7 @@ public class XDS {
         			private String location = "Any";
         			private String state = "";
         			private String goal = "";
-        			private String descr = "";
+        			private String countermeasure = "";
         			private String category = "";
         			private String name = "xds1";
         			
@@ -57,7 +57,7 @@ public class XDS {
         				return this.name;	
         			}
 
-							@Override
+        		@Override
         			public String getForm() {
         				return this.form;	
         			}
@@ -78,8 +78,8 @@ public class XDS {
         				return this.state;	
         			}
         			@Override
-        			public String getDescription() {
-        				return this.descr;	
+        			public String getCountermeasure() {
+        				return this.countermeasure;	
         			}
         			@Override
         			public String getCategory() {

@@ -2,6 +2,7 @@ package com.spirit.togaf.bb.test;
 import static org.junit.Assert.assertNotNull;
 
 import java.awt.BorderLayout;
+import java.io.IOException;
 import java.util.HashMap;
 
 import javax.swing.JFrame;
@@ -24,7 +25,7 @@ import com.spirit.sample.generated.iti.AllABBs;
 public class TestITI {
 
     @Test
-    public void testGroupGeneratedFiles() {
+    public void testGroupGeneratedFiles() throws IOException {
 
         AllABBs allAbb = new AllABBs();
         HashMap<String, ABB> abbList = allAbb.getAbbList();
@@ -38,5 +39,6 @@ public class TestITI {
         frame.getContentPane().add(new TouchgraphPanel<>(g.createGraph(groupedABB, g.getRuleList()), true), BorderLayout.CENTER);
         frame.pack();
         frame.setVisible(true);
+        System.in.read();
     }
 }
