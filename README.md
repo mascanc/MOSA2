@@ -19,7 +19,7 @@ Design software architectures should not be part of an naive inspiration (the ar
 
 Each profile has one or more **merging rules**, defining which other profiles are needed in order to achieve a given functionality. Additional rules are added by the architect to fulfill the need of the architecture.  The following picture (see, IHE ITI TF Vol1, Figure 2-1) shows the profiles and their respective rules (the arrows) for some of the IHE ITI profiles. 
 
-![IHE Basic Merging Rules](http://www.mascanc.net/vol21.png)
+![IHE Basic Merging Rules](img/vol21.png)
 
 
 1. The architect starts by defining the _building blocks (BB)_, or use a library. For instance, the IHE technical framework provides building blocks used in healthcare projects [worldwide](https://www.google.com/maps/d/viewer?ie=UTF8&hl=en&oe=UTF8&msa=0&source=embed&ll=-3.81666561775622e-14%2C155.390625&spn=138.013795%2C352.265625&z=1&mid=1wx3-Ye3zDFPl0r6wU2OvxtcObc0), while [IES](http://iesaustria.at) provides building blocks to establish the Smart Grid, or the [Connecting the European Facility, CEF](https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL2018/About+CEF+building+blocks), providing building blocks to implement eServices in Europe (provided by the European Commission). 
@@ -29,7 +29,7 @@ Each profile has one or more **merging rules**, defining which other profiles ar
 
 The following picture shows the interactions amongst the profiles of IHE. We see the centrality of ATNA and CT. The picture is obtained executing `TestITI.java` under the `test` directory. 
 
-![ATNA rule](http://www.mascanc.net/atna.png)
+![ATNA rule](img/atna.png)
 
 
 
@@ -62,11 +62,11 @@ What makes this language different from the many existing? Our language implemen
 ## The syntax
 The syntax of the IHE process is defined in the following picture.
 
-![The syntax of the IHE Process](http://www.mascanc.net/syntaxihe.png)
+![The syntax of the IHE Process](img/syntaxihe.png)
 
 Where the security requirements 
 
-![The syntax of the IHE Process](http://www.mascanc.net/secre.png)
+![The syntax of the IHE Process](img/secre.png)
 
 We start by identifying an architectural element (e.g., a Technical Framework like IT Infrastructure, Eye care) which is composed by one or more profiles (e.g., XDS, PIX). Each profile has actors, transactions, domains, quality attributes, and a specific function (will be clarified later). As example, the Consistent Time profile from the IHE TF Vol1 is rendered as follows
 
@@ -108,7 +108,7 @@ Quality attributes resutling in the compilation of the IHE Process could be furt
 
 This is ascreenshot of the IDE (using xText and xTend)
 
-![Editing lihe](http://www.mascanc.net/ide.png)
+![Editing lihe](img/ide.png)
 
 A sample execution of the test `TestCentralRegistry` (available under the `Language` directory) is as follows. 
 
@@ -186,15 +186,14 @@ Assembling the ABB
 Hit ENTER
 
    _______________________________________________________________________________________________________________________________________________________________________________________
-   | ID    | Form      | Sensitivity  | Location            | State       | Goal          | Description                                         | Category                                |
+   | ID    | Form      | Sensitivity  | Location            | State       | Goal          | Countermeasure                                      | Category                                |
    |======================================================================================================================================================================================|
-1. | es1   | Electronic| Confidential | Partially Controlled| Transmission| Authentication| Authenticate the user who is submitting the document| Data integrity transfer protection      |
-2. | xds1  | Electronic|              | Any                 |             |               |                                                     |                                         |
+1. | satna1| Electronic| Condfidential| Controlled          | Transmission|               | TLS Channels                                        | Data confidentiality transfer protection|
+2. | prtl1 | Electronic| Confidential | Controlled          | Transit     | Authentication| The portal authenticates user via a login screen    | User Authentication                     |
 3. | satna2| Electronic| Confidential | Controlled          | Transmission| Accountability| rfc5424 syslog and DICOM PS A.5                     | Accountability                          |
-4. | satna1| Electronic| Condfidential| Controlled          | Transmission| Authentication| TLS Channels                                        | Data confidentiality transfer protection|
-5. | prtl1 | Electronic| Confidential | Controlled          | Transit     | Authentication| The portal authenticates user via a login screen    | User Authentication                     |
+4. | es1   | Electronic| Confidential | Partially Controlled| Transmission| Authentication| Authenticate the user who is submitting the document| Data integrity transfer protection      |
+5. | xds1  | Electronic|              | Any                 |             |               |                                                     |                                         |
 6. |       |           |              |                     |             |               |                                                     |                                         |
-
 
 ```
 
