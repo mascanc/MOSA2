@@ -4,8 +4,8 @@ import com.spirit.ihe.language.bb.ABB;
 import com.spirit.ihe.language.bb.dependencies.Actor;
 import com.spirit.ihe.language.bb.dependencies.Domain;
 import com.spirit.ihe.language.bb.dependencies.QualityAttribute;
-import com.spirit.ihe.language.bb.dependencies.SecurityRequirement;
 import com.spirit.ihe.language.bb.dependencies.Transaction;
+import com.spirit.ihe.language.bb.dependencies.SecurityRequirement;
         
 public class XUA {
     private ABB xua;
@@ -49,10 +49,11 @@ public class XUA {
         		xua.addQualityAttribute(att1);
         		
         		SecurityRequirement xua1 = new SecurityRequirement() {
+        			private String form = "Electronic";
+        			private String sensitivity = "Public";
+        			private String location = "Controlled";
+        			private String state = "Transmission";
         			private String goal = "Authentication";
-        			private String level = "2";
-        			private String location = "Zone1";
-        			private String state = "Transit";
         			private String descr = "SAML with passwords";
         			private String category = "User Authentication";
         			private String name = "xua1";
@@ -62,6 +63,10 @@ public class XUA {
         				return this.name;	
         			}
 
+							@Override
+        			public String getForm() {
+        				return this.form;	
+        			}
         			@Override
         			public String getGoal() {
         				return this.goal;	
@@ -71,8 +76,8 @@ public class XUA {
         				return this.location;	
         			}
         			@Override
-        			public String getLevel() {
-        				return this.level;	
+        			public String getSensitivity() {
+        				return this.sensitivity;	
         			}
         			@Override
         			public String getState() {

@@ -9,7 +9,7 @@ public class AllABBs {
 	private final XDS xds = new XDS();
 	private final ATNA atna = new ATNA();
 	private final XUA xua = new XUA();
-	private final Portal portal = new Portal();
+	private final Clinic clinic = new Clinic();
 	private final ExtSource extsource = new ExtSource();
 	private final HashMap<String, ABB> abbList = new HashMap<>();
 	
@@ -17,7 +17,7 @@ public class AllABBs {
 	public AllABBs() {
 		
 		// Instantiate the SAT
-		CentralRegistry centralregistry = new CentralRegistry(xds, atna, xua, portal, extsource,  0);
+		CentralRegistry centralregistry = new CentralRegistry(xds, atna, xua, clinic, extsource,  0);
 		
 		// Add this SAT as parent SAT
 		xds.getABB().addParentSAT(centralregistry.getSAT());
@@ -26,8 +26,8 @@ public class AllABBs {
 		abbList.put(atna.getABB().getName(), atna.getABB());
 		xua.getABB().addParentSAT(centralregistry.getSAT());
 		abbList.put(xua.getABB().getName(), xua.getABB());
-		portal.getABB().addParentSAT(centralregistry.getSAT());
-		abbList.put(portal.getABB().getName(), portal.getABB());
+		clinic.getABB().addParentSAT(centralregistry.getSAT());
+		abbList.put(clinic.getABB().getName(), clinic.getABB());
 		extsource.getABB().addParentSAT(centralregistry.getSAT());
 		abbList.put(extsource.getABB().getName(), extsource.getABB());
 	}

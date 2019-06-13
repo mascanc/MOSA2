@@ -4,8 +4,8 @@ import com.spirit.ihe.language.bb.ABB;
 import com.spirit.ihe.language.bb.dependencies.Actor;
 import com.spirit.ihe.language.bb.dependencies.Domain;
 import com.spirit.ihe.language.bb.dependencies.QualityAttribute;
-import com.spirit.ihe.language.bb.dependencies.SecurityRequirement;
 import com.spirit.ihe.language.bb.dependencies.Transaction;
+import com.spirit.ihe.language.bb.dependencies.SecurityRequirement;
         
 public class ATNA {
     private ABB atna;
@@ -74,10 +74,11 @@ public class ATNA {
         		atna.addQualityAttribute(att2);
         		
         		SecurityRequirement satna1 = new SecurityRequirement() {
-        			private String goal = "Confidentiality";
-        			private String level = "2";
-        			private String location = "Zone1";
-        			private String state = "Transit";
+        			private String form = "Electronic";
+        			private String sensitivity = "Condfidential";
+        			private String location = "Controlled";
+        			private String state = "Transmission";
+        			private String goal = "";
         			private String descr = "TLS Channels";
         			private String category = "Data confidentiality transfer protection";
         			private String name = "satna1";
@@ -87,6 +88,10 @@ public class ATNA {
         				return this.name;	
         			}
 
+							@Override
+        			public String getForm() {
+        				return this.form;	
+        			}
         			@Override
         			public String getGoal() {
         				return this.goal;	
@@ -96,8 +101,8 @@ public class ATNA {
         				return this.location;	
         			}
         			@Override
-        			public String getLevel() {
-        				return this.level;	
+        			public String getSensitivity() {
+        				return this.sensitivity;	
         			}
         			@Override
         			public String getState() {
@@ -116,10 +121,11 @@ public class ATNA {
         		atna.addSecurityRequirements(satna1);
         		
         		SecurityRequirement satna2 = new SecurityRequirement() {
+        			private String form = "Electronic";
+        			private String sensitivity = "Confidential";
+        			private String location = "Controlled";
+        			private String state = "Transmission";
         			private String goal = "Accountability";
-        			private String level = "1";
-        			private String location = "Zone1";
-        			private String state = "Transit";
         			private String descr = "rfc5424 syslog and DICOM PS A.5";
         			private String category = "Accountability";
         			private String name = "satna2";
@@ -129,6 +135,10 @@ public class ATNA {
         				return this.name;	
         			}
 
+							@Override
+        			public String getForm() {
+        				return this.form;	
+        			}
         			@Override
         			public String getGoal() {
         				return this.goal;	
@@ -138,8 +148,8 @@ public class ATNA {
         				return this.location;	
         			}
         			@Override
-        			public String getLevel() {
-        				return this.level;	
+        			public String getSensitivity() {
+        				return this.sensitivity;	
         			}
         			@Override
         			public String getState() {

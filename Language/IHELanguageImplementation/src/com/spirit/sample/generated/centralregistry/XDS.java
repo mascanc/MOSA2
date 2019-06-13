@@ -4,8 +4,8 @@ import com.spirit.ihe.language.bb.ABB;
 import com.spirit.ihe.language.bb.dependencies.Actor;
 import com.spirit.ihe.language.bb.dependencies.Domain;
 import com.spirit.ihe.language.bb.dependencies.QualityAttribute;
-import com.spirit.ihe.language.bb.dependencies.SecurityRequirement;
 import com.spirit.ihe.language.bb.dependencies.Transaction;
+import com.spirit.ihe.language.bb.dependencies.SecurityRequirement;
         
 public class XDS {
     private ABB xds;
@@ -22,17 +22,17 @@ public class XDS {
                 Actor repository = new Actor("Repository");
 		        	xds.addActor(repository);
         	
-        	Transaction submit = new Transaction(source, "Submit", repository);
+        	Transaction submit = new Transaction(source, "Submit()", repository);
         	xds.addTransaction(submit);
         	                
-        	Transaction register = new Transaction(repository, "Register", registry);
+        	Transaction register = new Transaction(repository, "Register()", registry);
         	xds.addTransaction(register);
         	                
-        	Transaction query = new Transaction(consumer, "Query", registry);
+        	Transaction query = new Transaction(consumer, "Query()", registry);
         	xds.addTransaction(query);
         	                
-        	Transaction retrieves = new Transaction(consumer, "Retrieves", repository);
-        	xds.addTransaction(retrieves);
+        	Transaction retrieve = new Transaction(consumer, "Retrieve()", repository);
+        	xds.addTransaction(retrieve);
         	                
         	
         	Domain infrastructure = new Domain() { 
@@ -43,10 +43,11 @@ public class XDS {
         		
         		
         		SecurityRequirement xds1 = new SecurityRequirement() {
-        			private String goal = "";
-        			private String level = "-1";
+        			private String form = "Electronic";
+        			private String sensitivity = "";
         			private String location = "Any";
         			private String state = "";
+        			private String goal = "";
         			private String descr = "";
         			private String category = "";
         			private String name = "xds1";
@@ -56,6 +57,10 @@ public class XDS {
         				return this.name;	
         			}
 
+							@Override
+        			public String getForm() {
+        				return this.form;	
+        			}
         			@Override
         			public String getGoal() {
         				return this.goal;	
@@ -65,8 +70,8 @@ public class XDS {
         				return this.location;	
         			}
         			@Override
-        			public String getLevel() {
-        				return this.level;	
+        			public String getSensitivity() {
+        				return this.sensitivity;	
         			}
         			@Override
         			public String getState() {
