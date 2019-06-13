@@ -21,33 +21,18 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalIHEParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'ArchitecturalElement'", "'{'", "'JavaPackage'", "':'", "'Name'", "'Version'", "'Status'", "'Objective'", "'HL_Function'", "'Rules:'", "'}'", "'Profile'", "'Description'", "'Features'", "'Function'", "'actors:'", "'transactions:'", "'domains:'", "'quality_attributes:'", "'security_requirements:'", "'Goal'", "'Level'", "'Location'", "'State'", "'Descr'", "'Category'", "'('", "','", "')'", "'['", "']'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'ArchitecturalElement'", "'{'", "'JavaPackage'", "':'", "'Name'", "'Version'", "'Status'", "'Objective'", "'HL_Function'", "'Rules:'", "'}'", "'Profile'", "'Description'", "'Features'", "'Function'", "'actors:'", "'transactions:'", "'domains:'", "'quality_attributes:'", "'security_requirements:'", "'Form'", "'Sensitivity'", "'Location'", "'State'", "'Goal'", "'Descr'", "'Category'", "'('", "','", "')'", "'['", "']'"
     };
-    public static final int RULE_STRING=4;
-    public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
-    public static final int T__37=37;
     public static final int T__16=16;
-    public static final int T__38=38;
     public static final int T__17=17;
-    public static final int T__39=39;
     public static final int T__18=18;
     public static final int T__11=11;
-    public static final int T__33=33;
     public static final int T__12=12;
-    public static final int T__34=34;
     public static final int T__13=13;
-    public static final int T__35=35;
     public static final int T__14=14;
-    public static final int T__36=36;
-    public static final int EOF=-1;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
     public static final int RULE_ID=5;
-    public static final int RULE_WS=9;
-    public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
@@ -58,11 +43,27 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
     public static final int T__23=23;
     public static final int T__24=24;
     public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
+    public static final int RULE_STRING=4;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
+    public static final int T__33=33;
+    public static final int T__34=34;
+    public static final int T__35=35;
+    public static final int T__36=36;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
     public static final int T__40=40;
     public static final int T__41=41;
-    public static final int T__20=20;
     public static final int T__42=42;
-    public static final int T__21=21;
+    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -1464,7 +1465,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
                 int alt17=2;
                 int LA17_0 = input.LA(1);
 
-                if ( (LA17_0==38) ) {
+                if ( (LA17_0==39) ) {
                     alt17=1;
                 }
 
@@ -1729,7 +1730,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSecRequirements"
-    // InternalIHE.g:744:1: ruleSecRequirements returns [EObject current=null] : ( ( (lv_SecReID_0_0= RULE_ID ) ) otherlv_1= '{' (otherlv_2= 'Goal' otherlv_3= ':' ( (lv_secreGoal_4_0= RULE_STRING ) ) )? (otherlv_5= 'Level' otherlv_6= ':' ( (lv_secreLevel_7_0= RULE_STRING ) ) )? (otherlv_8= 'Location' otherlv_9= ':' ( (lv_secreLocation_10_0= RULE_STRING ) ) )? (otherlv_11= 'State' otherlv_12= ':' ( (lv_secreState_13_0= RULE_STRING ) ) )? (otherlv_14= 'Descr' otherlv_15= ':' ( (lv_secreDesc_16_0= RULE_STRING ) ) )? (otherlv_17= 'Category' otherlv_18= ':' ( (lv_secreCategory_19_0= RULE_STRING ) ) )? otherlv_20= '}' ) ;
+    // InternalIHE.g:744:1: ruleSecRequirements returns [EObject current=null] : ( ( (lv_SecReID_0_0= RULE_ID ) ) otherlv_1= '{' (otherlv_2= 'Form' otherlv_3= ':' ( (lv_secreForm_4_0= RULE_STRING ) ) )? (otherlv_5= 'Sensitivity' otherlv_6= ':' ( (lv_secreSensitivity_7_0= RULE_STRING ) ) )? (otherlv_8= 'Location' otherlv_9= ':' ( (lv_secreLocation_10_0= RULE_STRING ) ) )? (otherlv_11= 'State' otherlv_12= ':' ( (lv_secreState_13_0= RULE_STRING ) ) )? (otherlv_14= 'Goal' otherlv_15= ':' ( (lv_secreGoal_16_0= RULE_STRING ) ) )? (otherlv_17= 'Descr' otherlv_18= ':' ( (lv_secreDesc_19_0= RULE_STRING ) ) )? (otherlv_20= 'Category' otherlv_21= ':' ( (lv_secreCategory_22_0= RULE_STRING ) ) )? otherlv_23= '}' ) ;
     public final EObject ruleSecRequirements() throws RecognitionException {
         EObject current = null;
 
@@ -1737,10 +1738,10 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
         Token otherlv_1=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
-        Token lv_secreGoal_4_0=null;
+        Token lv_secreForm_4_0=null;
         Token otherlv_5=null;
         Token otherlv_6=null;
-        Token lv_secreLevel_7_0=null;
+        Token lv_secreSensitivity_7_0=null;
         Token otherlv_8=null;
         Token otherlv_9=null;
         Token lv_secreLocation_10_0=null;
@@ -1749,21 +1750,24 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
         Token lv_secreState_13_0=null;
         Token otherlv_14=null;
         Token otherlv_15=null;
-        Token lv_secreDesc_16_0=null;
+        Token lv_secreGoal_16_0=null;
         Token otherlv_17=null;
         Token otherlv_18=null;
-        Token lv_secreCategory_19_0=null;
+        Token lv_secreDesc_19_0=null;
         Token otherlv_20=null;
+        Token otherlv_21=null;
+        Token lv_secreCategory_22_0=null;
+        Token otherlv_23=null;
 
 
         	enterRule();
 
         try {
-            // InternalIHE.g:750:2: ( ( ( (lv_SecReID_0_0= RULE_ID ) ) otherlv_1= '{' (otherlv_2= 'Goal' otherlv_3= ':' ( (lv_secreGoal_4_0= RULE_STRING ) ) )? (otherlv_5= 'Level' otherlv_6= ':' ( (lv_secreLevel_7_0= RULE_STRING ) ) )? (otherlv_8= 'Location' otherlv_9= ':' ( (lv_secreLocation_10_0= RULE_STRING ) ) )? (otherlv_11= 'State' otherlv_12= ':' ( (lv_secreState_13_0= RULE_STRING ) ) )? (otherlv_14= 'Descr' otherlv_15= ':' ( (lv_secreDesc_16_0= RULE_STRING ) ) )? (otherlv_17= 'Category' otherlv_18= ':' ( (lv_secreCategory_19_0= RULE_STRING ) ) )? otherlv_20= '}' ) )
-            // InternalIHE.g:751:2: ( ( (lv_SecReID_0_0= RULE_ID ) ) otherlv_1= '{' (otherlv_2= 'Goal' otherlv_3= ':' ( (lv_secreGoal_4_0= RULE_STRING ) ) )? (otherlv_5= 'Level' otherlv_6= ':' ( (lv_secreLevel_7_0= RULE_STRING ) ) )? (otherlv_8= 'Location' otherlv_9= ':' ( (lv_secreLocation_10_0= RULE_STRING ) ) )? (otherlv_11= 'State' otherlv_12= ':' ( (lv_secreState_13_0= RULE_STRING ) ) )? (otherlv_14= 'Descr' otherlv_15= ':' ( (lv_secreDesc_16_0= RULE_STRING ) ) )? (otherlv_17= 'Category' otherlv_18= ':' ( (lv_secreCategory_19_0= RULE_STRING ) ) )? otherlv_20= '}' )
+            // InternalIHE.g:750:2: ( ( ( (lv_SecReID_0_0= RULE_ID ) ) otherlv_1= '{' (otherlv_2= 'Form' otherlv_3= ':' ( (lv_secreForm_4_0= RULE_STRING ) ) )? (otherlv_5= 'Sensitivity' otherlv_6= ':' ( (lv_secreSensitivity_7_0= RULE_STRING ) ) )? (otherlv_8= 'Location' otherlv_9= ':' ( (lv_secreLocation_10_0= RULE_STRING ) ) )? (otherlv_11= 'State' otherlv_12= ':' ( (lv_secreState_13_0= RULE_STRING ) ) )? (otherlv_14= 'Goal' otherlv_15= ':' ( (lv_secreGoal_16_0= RULE_STRING ) ) )? (otherlv_17= 'Descr' otherlv_18= ':' ( (lv_secreDesc_19_0= RULE_STRING ) ) )? (otherlv_20= 'Category' otherlv_21= ':' ( (lv_secreCategory_22_0= RULE_STRING ) ) )? otherlv_23= '}' ) )
+            // InternalIHE.g:751:2: ( ( (lv_SecReID_0_0= RULE_ID ) ) otherlv_1= '{' (otherlv_2= 'Form' otherlv_3= ':' ( (lv_secreForm_4_0= RULE_STRING ) ) )? (otherlv_5= 'Sensitivity' otherlv_6= ':' ( (lv_secreSensitivity_7_0= RULE_STRING ) ) )? (otherlv_8= 'Location' otherlv_9= ':' ( (lv_secreLocation_10_0= RULE_STRING ) ) )? (otherlv_11= 'State' otherlv_12= ':' ( (lv_secreState_13_0= RULE_STRING ) ) )? (otherlv_14= 'Goal' otherlv_15= ':' ( (lv_secreGoal_16_0= RULE_STRING ) ) )? (otherlv_17= 'Descr' otherlv_18= ':' ( (lv_secreDesc_19_0= RULE_STRING ) ) )? (otherlv_20= 'Category' otherlv_21= ':' ( (lv_secreCategory_22_0= RULE_STRING ) ) )? otherlv_23= '}' )
             {
-            // InternalIHE.g:751:2: ( ( (lv_SecReID_0_0= RULE_ID ) ) otherlv_1= '{' (otherlv_2= 'Goal' otherlv_3= ':' ( (lv_secreGoal_4_0= RULE_STRING ) ) )? (otherlv_5= 'Level' otherlv_6= ':' ( (lv_secreLevel_7_0= RULE_STRING ) ) )? (otherlv_8= 'Location' otherlv_9= ':' ( (lv_secreLocation_10_0= RULE_STRING ) ) )? (otherlv_11= 'State' otherlv_12= ':' ( (lv_secreState_13_0= RULE_STRING ) ) )? (otherlv_14= 'Descr' otherlv_15= ':' ( (lv_secreDesc_16_0= RULE_STRING ) ) )? (otherlv_17= 'Category' otherlv_18= ':' ( (lv_secreCategory_19_0= RULE_STRING ) ) )? otherlv_20= '}' )
-            // InternalIHE.g:752:3: ( (lv_SecReID_0_0= RULE_ID ) ) otherlv_1= '{' (otherlv_2= 'Goal' otherlv_3= ':' ( (lv_secreGoal_4_0= RULE_STRING ) ) )? (otherlv_5= 'Level' otherlv_6= ':' ( (lv_secreLevel_7_0= RULE_STRING ) ) )? (otherlv_8= 'Location' otherlv_9= ':' ( (lv_secreLocation_10_0= RULE_STRING ) ) )? (otherlv_11= 'State' otherlv_12= ':' ( (lv_secreState_13_0= RULE_STRING ) ) )? (otherlv_14= 'Descr' otherlv_15= ':' ( (lv_secreDesc_16_0= RULE_STRING ) ) )? (otherlv_17= 'Category' otherlv_18= ':' ( (lv_secreCategory_19_0= RULE_STRING ) ) )? otherlv_20= '}'
+            // InternalIHE.g:751:2: ( ( (lv_SecReID_0_0= RULE_ID ) ) otherlv_1= '{' (otherlv_2= 'Form' otherlv_3= ':' ( (lv_secreForm_4_0= RULE_STRING ) ) )? (otherlv_5= 'Sensitivity' otherlv_6= ':' ( (lv_secreSensitivity_7_0= RULE_STRING ) ) )? (otherlv_8= 'Location' otherlv_9= ':' ( (lv_secreLocation_10_0= RULE_STRING ) ) )? (otherlv_11= 'State' otherlv_12= ':' ( (lv_secreState_13_0= RULE_STRING ) ) )? (otherlv_14= 'Goal' otherlv_15= ':' ( (lv_secreGoal_16_0= RULE_STRING ) ) )? (otherlv_17= 'Descr' otherlv_18= ':' ( (lv_secreDesc_19_0= RULE_STRING ) ) )? (otherlv_20= 'Category' otherlv_21= ':' ( (lv_secreCategory_22_0= RULE_STRING ) ) )? otherlv_23= '}' )
+            // InternalIHE.g:752:3: ( (lv_SecReID_0_0= RULE_ID ) ) otherlv_1= '{' (otherlv_2= 'Form' otherlv_3= ':' ( (lv_secreForm_4_0= RULE_STRING ) ) )? (otherlv_5= 'Sensitivity' otherlv_6= ':' ( (lv_secreSensitivity_7_0= RULE_STRING ) ) )? (otherlv_8= 'Location' otherlv_9= ':' ( (lv_secreLocation_10_0= RULE_STRING ) ) )? (otherlv_11= 'State' otherlv_12= ':' ( (lv_secreState_13_0= RULE_STRING ) ) )? (otherlv_14= 'Goal' otherlv_15= ':' ( (lv_secreGoal_16_0= RULE_STRING ) ) )? (otherlv_17= 'Descr' otherlv_18= ':' ( (lv_secreDesc_19_0= RULE_STRING ) ) )? (otherlv_20= 'Category' otherlv_21= ':' ( (lv_secreCategory_22_0= RULE_STRING ) ) )? otherlv_23= '}'
             {
             // InternalIHE.g:752:3: ( (lv_SecReID_0_0= RULE_ID ) )
             // InternalIHE.g:753:4: (lv_SecReID_0_0= RULE_ID )
@@ -1795,7 +1799,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getSecRequirementsAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalIHE.g:774:3: (otherlv_2= 'Goal' otherlv_3= ':' ( (lv_secreGoal_4_0= RULE_STRING ) ) )?
+            // InternalIHE.g:774:3: (otherlv_2= 'Form' otherlv_3= ':' ( (lv_secreForm_4_0= RULE_STRING ) ) )?
             int alt21=2;
             int LA21_0 = input.LA(1);
 
@@ -1804,25 +1808,25 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
             }
             switch (alt21) {
                 case 1 :
-                    // InternalIHE.g:775:4: otherlv_2= 'Goal' otherlv_3= ':' ( (lv_secreGoal_4_0= RULE_STRING ) )
+                    // InternalIHE.g:775:4: otherlv_2= 'Form' otherlv_3= ':' ( (lv_secreForm_4_0= RULE_STRING ) )
                     {
                     otherlv_2=(Token)match(input,32,FOLLOW_8); 
 
-                    				newLeafNode(otherlv_2, grammarAccess.getSecRequirementsAccess().getGoalKeyword_2_0());
+                    				newLeafNode(otherlv_2, grammarAccess.getSecRequirementsAccess().getFormKeyword_2_0());
                     			
                     otherlv_3=(Token)match(input,15,FOLLOW_4); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getSecRequirementsAccess().getColonKeyword_2_1());
                     			
-                    // InternalIHE.g:783:4: ( (lv_secreGoal_4_0= RULE_STRING ) )
-                    // InternalIHE.g:784:5: (lv_secreGoal_4_0= RULE_STRING )
+                    // InternalIHE.g:783:4: ( (lv_secreForm_4_0= RULE_STRING ) )
+                    // InternalIHE.g:784:5: (lv_secreForm_4_0= RULE_STRING )
                     {
-                    // InternalIHE.g:784:5: (lv_secreGoal_4_0= RULE_STRING )
-                    // InternalIHE.g:785:6: lv_secreGoal_4_0= RULE_STRING
+                    // InternalIHE.g:784:5: (lv_secreForm_4_0= RULE_STRING )
+                    // InternalIHE.g:785:6: lv_secreForm_4_0= RULE_STRING
                     {
-                    lv_secreGoal_4_0=(Token)match(input,RULE_STRING,FOLLOW_21); 
+                    lv_secreForm_4_0=(Token)match(input,RULE_STRING,FOLLOW_21); 
 
-                    						newLeafNode(lv_secreGoal_4_0, grammarAccess.getSecRequirementsAccess().getSecreGoalSTRINGTerminalRuleCall_2_2_0());
+                    						newLeafNode(lv_secreForm_4_0, grammarAccess.getSecRequirementsAccess().getSecreFormSTRINGTerminalRuleCall_2_2_0());
                     					
 
                     						if (current==null) {
@@ -1830,8 +1834,8 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
                     						}
                     						setWithLastConsumed(
                     							current,
-                    							"secreGoal",
-                    							lv_secreGoal_4_0,
+                    							"secreForm",
+                    							lv_secreForm_4_0,
                     							"org.eclipse.xtext.common.Terminals.STRING");
                     					
 
@@ -1846,7 +1850,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalIHE.g:802:3: (otherlv_5= 'Level' otherlv_6= ':' ( (lv_secreLevel_7_0= RULE_STRING ) ) )?
+            // InternalIHE.g:802:3: (otherlv_5= 'Sensitivity' otherlv_6= ':' ( (lv_secreSensitivity_7_0= RULE_STRING ) ) )?
             int alt22=2;
             int LA22_0 = input.LA(1);
 
@@ -1855,25 +1859,25 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
             }
             switch (alt22) {
                 case 1 :
-                    // InternalIHE.g:803:4: otherlv_5= 'Level' otherlv_6= ':' ( (lv_secreLevel_7_0= RULE_STRING ) )
+                    // InternalIHE.g:803:4: otherlv_5= 'Sensitivity' otherlv_6= ':' ( (lv_secreSensitivity_7_0= RULE_STRING ) )
                     {
                     otherlv_5=(Token)match(input,33,FOLLOW_8); 
 
-                    				newLeafNode(otherlv_5, grammarAccess.getSecRequirementsAccess().getLevelKeyword_3_0());
+                    				newLeafNode(otherlv_5, grammarAccess.getSecRequirementsAccess().getSensitivityKeyword_3_0());
                     			
                     otherlv_6=(Token)match(input,15,FOLLOW_4); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getSecRequirementsAccess().getColonKeyword_3_1());
                     			
-                    // InternalIHE.g:811:4: ( (lv_secreLevel_7_0= RULE_STRING ) )
-                    // InternalIHE.g:812:5: (lv_secreLevel_7_0= RULE_STRING )
+                    // InternalIHE.g:811:4: ( (lv_secreSensitivity_7_0= RULE_STRING ) )
+                    // InternalIHE.g:812:5: (lv_secreSensitivity_7_0= RULE_STRING )
                     {
-                    // InternalIHE.g:812:5: (lv_secreLevel_7_0= RULE_STRING )
-                    // InternalIHE.g:813:6: lv_secreLevel_7_0= RULE_STRING
+                    // InternalIHE.g:812:5: (lv_secreSensitivity_7_0= RULE_STRING )
+                    // InternalIHE.g:813:6: lv_secreSensitivity_7_0= RULE_STRING
                     {
-                    lv_secreLevel_7_0=(Token)match(input,RULE_STRING,FOLLOW_22); 
+                    lv_secreSensitivity_7_0=(Token)match(input,RULE_STRING,FOLLOW_22); 
 
-                    						newLeafNode(lv_secreLevel_7_0, grammarAccess.getSecRequirementsAccess().getSecreLevelSTRINGTerminalRuleCall_3_2_0());
+                    						newLeafNode(lv_secreSensitivity_7_0, grammarAccess.getSecRequirementsAccess().getSecreSensitivitySTRINGTerminalRuleCall_3_2_0());
                     					
 
                     						if (current==null) {
@@ -1881,8 +1885,8 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
                     						}
                     						setWithLastConsumed(
                     							current,
-                    							"secreLevel",
-                    							lv_secreLevel_7_0,
+                    							"secreSensitivity",
+                    							lv_secreSensitivity_7_0,
                     							"org.eclipse.xtext.common.Terminals.STRING");
                     					
 
@@ -1999,7 +2003,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalIHE.g:886:3: (otherlv_14= 'Descr' otherlv_15= ':' ( (lv_secreDesc_16_0= RULE_STRING ) ) )?
+            // InternalIHE.g:886:3: (otherlv_14= 'Goal' otherlv_15= ':' ( (lv_secreGoal_16_0= RULE_STRING ) ) )?
             int alt25=2;
             int LA25_0 = input.LA(1);
 
@@ -2008,25 +2012,25 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
             }
             switch (alt25) {
                 case 1 :
-                    // InternalIHE.g:887:4: otherlv_14= 'Descr' otherlv_15= ':' ( (lv_secreDesc_16_0= RULE_STRING ) )
+                    // InternalIHE.g:887:4: otherlv_14= 'Goal' otherlv_15= ':' ( (lv_secreGoal_16_0= RULE_STRING ) )
                     {
                     otherlv_14=(Token)match(input,36,FOLLOW_8); 
 
-                    				newLeafNode(otherlv_14, grammarAccess.getSecRequirementsAccess().getDescrKeyword_6_0());
+                    				newLeafNode(otherlv_14, grammarAccess.getSecRequirementsAccess().getGoalKeyword_6_0());
                     			
                     otherlv_15=(Token)match(input,15,FOLLOW_4); 
 
                     				newLeafNode(otherlv_15, grammarAccess.getSecRequirementsAccess().getColonKeyword_6_1());
                     			
-                    // InternalIHE.g:895:4: ( (lv_secreDesc_16_0= RULE_STRING ) )
-                    // InternalIHE.g:896:5: (lv_secreDesc_16_0= RULE_STRING )
+                    // InternalIHE.g:895:4: ( (lv_secreGoal_16_0= RULE_STRING ) )
+                    // InternalIHE.g:896:5: (lv_secreGoal_16_0= RULE_STRING )
                     {
-                    // InternalIHE.g:896:5: (lv_secreDesc_16_0= RULE_STRING )
-                    // InternalIHE.g:897:6: lv_secreDesc_16_0= RULE_STRING
+                    // InternalIHE.g:896:5: (lv_secreGoal_16_0= RULE_STRING )
+                    // InternalIHE.g:897:6: lv_secreGoal_16_0= RULE_STRING
                     {
-                    lv_secreDesc_16_0=(Token)match(input,RULE_STRING,FOLLOW_25); 
+                    lv_secreGoal_16_0=(Token)match(input,RULE_STRING,FOLLOW_25); 
 
-                    						newLeafNode(lv_secreDesc_16_0, grammarAccess.getSecRequirementsAccess().getSecreDescSTRINGTerminalRuleCall_6_2_0());
+                    						newLeafNode(lv_secreGoal_16_0, grammarAccess.getSecRequirementsAccess().getSecreGoalSTRINGTerminalRuleCall_6_2_0());
                     					
 
                     						if (current==null) {
@@ -2034,8 +2038,8 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
                     						}
                     						setWithLastConsumed(
                     							current,
-                    							"secreDesc",
-                    							lv_secreDesc_16_0,
+                    							"secreGoal",
+                    							lv_secreGoal_16_0,
                     							"org.eclipse.xtext.common.Terminals.STRING");
                     					
 
@@ -2050,7 +2054,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalIHE.g:914:3: (otherlv_17= 'Category' otherlv_18= ':' ( (lv_secreCategory_19_0= RULE_STRING ) ) )?
+            // InternalIHE.g:914:3: (otherlv_17= 'Descr' otherlv_18= ':' ( (lv_secreDesc_19_0= RULE_STRING ) ) )?
             int alt26=2;
             int LA26_0 = input.LA(1);
 
@@ -2059,25 +2063,25 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
             }
             switch (alt26) {
                 case 1 :
-                    // InternalIHE.g:915:4: otherlv_17= 'Category' otherlv_18= ':' ( (lv_secreCategory_19_0= RULE_STRING ) )
+                    // InternalIHE.g:915:4: otherlv_17= 'Descr' otherlv_18= ':' ( (lv_secreDesc_19_0= RULE_STRING ) )
                     {
                     otherlv_17=(Token)match(input,37,FOLLOW_8); 
 
-                    				newLeafNode(otherlv_17, grammarAccess.getSecRequirementsAccess().getCategoryKeyword_7_0());
+                    				newLeafNode(otherlv_17, grammarAccess.getSecRequirementsAccess().getDescrKeyword_7_0());
                     			
                     otherlv_18=(Token)match(input,15,FOLLOW_4); 
 
                     				newLeafNode(otherlv_18, grammarAccess.getSecRequirementsAccess().getColonKeyword_7_1());
                     			
-                    // InternalIHE.g:923:4: ( (lv_secreCategory_19_0= RULE_STRING ) )
-                    // InternalIHE.g:924:5: (lv_secreCategory_19_0= RULE_STRING )
+                    // InternalIHE.g:923:4: ( (lv_secreDesc_19_0= RULE_STRING ) )
+                    // InternalIHE.g:924:5: (lv_secreDesc_19_0= RULE_STRING )
                     {
-                    // InternalIHE.g:924:5: (lv_secreCategory_19_0= RULE_STRING )
-                    // InternalIHE.g:925:6: lv_secreCategory_19_0= RULE_STRING
+                    // InternalIHE.g:924:5: (lv_secreDesc_19_0= RULE_STRING )
+                    // InternalIHE.g:925:6: lv_secreDesc_19_0= RULE_STRING
                     {
-                    lv_secreCategory_19_0=(Token)match(input,RULE_STRING,FOLLOW_26); 
+                    lv_secreDesc_19_0=(Token)match(input,RULE_STRING,FOLLOW_26); 
 
-                    						newLeafNode(lv_secreCategory_19_0, grammarAccess.getSecRequirementsAccess().getSecreCategorySTRINGTerminalRuleCall_7_2_0());
+                    						newLeafNode(lv_secreDesc_19_0, grammarAccess.getSecRequirementsAccess().getSecreDescSTRINGTerminalRuleCall_7_2_0());
                     					
 
                     						if (current==null) {
@@ -2085,8 +2089,8 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
                     						}
                     						setWithLastConsumed(
                     							current,
-                    							"secreCategory",
-                    							lv_secreCategory_19_0,
+                    							"secreDesc",
+                    							lv_secreDesc_19_0,
                     							"org.eclipse.xtext.common.Terminals.STRING");
                     					
 
@@ -2101,9 +2105,60 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_20=(Token)match(input,22,FOLLOW_2); 
+            // InternalIHE.g:942:3: (otherlv_20= 'Category' otherlv_21= ':' ( (lv_secreCategory_22_0= RULE_STRING ) ) )?
+            int alt27=2;
+            int LA27_0 = input.LA(1);
 
-            			newLeafNode(otherlv_20, grammarAccess.getSecRequirementsAccess().getRightCurlyBracketKeyword_8());
+            if ( (LA27_0==38) ) {
+                alt27=1;
+            }
+            switch (alt27) {
+                case 1 :
+                    // InternalIHE.g:943:4: otherlv_20= 'Category' otherlv_21= ':' ( (lv_secreCategory_22_0= RULE_STRING ) )
+                    {
+                    otherlv_20=(Token)match(input,38,FOLLOW_8); 
+
+                    				newLeafNode(otherlv_20, grammarAccess.getSecRequirementsAccess().getCategoryKeyword_8_0());
+                    			
+                    otherlv_21=(Token)match(input,15,FOLLOW_4); 
+
+                    				newLeafNode(otherlv_21, grammarAccess.getSecRequirementsAccess().getColonKeyword_8_1());
+                    			
+                    // InternalIHE.g:951:4: ( (lv_secreCategory_22_0= RULE_STRING ) )
+                    // InternalIHE.g:952:5: (lv_secreCategory_22_0= RULE_STRING )
+                    {
+                    // InternalIHE.g:952:5: (lv_secreCategory_22_0= RULE_STRING )
+                    // InternalIHE.g:953:6: lv_secreCategory_22_0= RULE_STRING
+                    {
+                    lv_secreCategory_22_0=(Token)match(input,RULE_STRING,FOLLOW_27); 
+
+                    						newLeafNode(lv_secreCategory_22_0, grammarAccess.getSecRequirementsAccess().getSecreCategorySTRINGTerminalRuleCall_8_2_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSecRequirementsRule());
+                    						}
+                    						setWithLastConsumed(
+                    							current,
+                    							"secreCategory",
+                    							lv_secreCategory_22_0,
+                    							"org.eclipse.xtext.common.Terminals.STRING");
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            otherlv_23=(Token)match(input,22,FOLLOW_2); 
+
+            			newLeafNode(otherlv_23, grammarAccess.getSecRequirementsAccess().getRightCurlyBracketKeyword_9());
             		
 
             }
@@ -2128,7 +2183,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleActor"
-    // InternalIHE.g:950:1: entryRuleActor returns [String current=null] : iv_ruleActor= ruleActor EOF ;
+    // InternalIHE.g:978:1: entryRuleActor returns [String current=null] : iv_ruleActor= ruleActor EOF ;
     public final String entryRuleActor() throws RecognitionException {
         String current = null;
 
@@ -2136,8 +2191,8 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalIHE.g:950:45: (iv_ruleActor= ruleActor EOF )
-            // InternalIHE.g:951:2: iv_ruleActor= ruleActor EOF
+            // InternalIHE.g:978:45: (iv_ruleActor= ruleActor EOF )
+            // InternalIHE.g:979:2: iv_ruleActor= ruleActor EOF
             {
              newCompositeNode(grammarAccess.getActorRule()); 
             pushFollow(FOLLOW_1);
@@ -2164,7 +2219,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActor"
-    // InternalIHE.g:957:1: ruleActor returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
+    // InternalIHE.g:985:1: ruleActor returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
     public final AntlrDatatypeRuleToken ruleActor() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2174,8 +2229,8 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalIHE.g:963:2: (this_STRING_0= RULE_STRING )
-            // InternalIHE.g:964:2: this_STRING_0= RULE_STRING
+            // InternalIHE.g:991:2: (this_STRING_0= RULE_STRING )
+            // InternalIHE.g:992:2: this_STRING_0= RULE_STRING
             {
             this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -2204,7 +2259,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTransaction"
-    // InternalIHE.g:974:1: entryRuleTransaction returns [String current=null] : iv_ruleTransaction= ruleTransaction EOF ;
+    // InternalIHE.g:1002:1: entryRuleTransaction returns [String current=null] : iv_ruleTransaction= ruleTransaction EOF ;
     public final String entryRuleTransaction() throws RecognitionException {
         String current = null;
 
@@ -2212,8 +2267,8 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalIHE.g:974:51: (iv_ruleTransaction= ruleTransaction EOF )
-            // InternalIHE.g:975:2: iv_ruleTransaction= ruleTransaction EOF
+            // InternalIHE.g:1002:51: (iv_ruleTransaction= ruleTransaction EOF )
+            // InternalIHE.g:1003:2: iv_ruleTransaction= ruleTransaction EOF
             {
              newCompositeNode(grammarAccess.getTransactionRule()); 
             pushFollow(FOLLOW_1);
@@ -2240,7 +2295,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransaction"
-    // InternalIHE.g:981:1: ruleTransaction returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '(' this_Actor_1= ruleActor kw= ',' this_STRING_3= RULE_STRING kw= ',' this_Actor_5= ruleActor kw= ')' ) ;
+    // InternalIHE.g:1009:1: ruleTransaction returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '(' this_Actor_1= ruleActor kw= ',' this_STRING_3= RULE_STRING kw= ',' this_Actor_5= ruleActor kw= ')' ) ;
     public final AntlrDatatypeRuleToken ruleTransaction() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2255,13 +2310,13 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalIHE.g:987:2: ( (kw= '(' this_Actor_1= ruleActor kw= ',' this_STRING_3= RULE_STRING kw= ',' this_Actor_5= ruleActor kw= ')' ) )
-            // InternalIHE.g:988:2: (kw= '(' this_Actor_1= ruleActor kw= ',' this_STRING_3= RULE_STRING kw= ',' this_Actor_5= ruleActor kw= ')' )
+            // InternalIHE.g:1015:2: ( (kw= '(' this_Actor_1= ruleActor kw= ',' this_STRING_3= RULE_STRING kw= ',' this_Actor_5= ruleActor kw= ')' ) )
+            // InternalIHE.g:1016:2: (kw= '(' this_Actor_1= ruleActor kw= ',' this_STRING_3= RULE_STRING kw= ',' this_Actor_5= ruleActor kw= ')' )
             {
-            // InternalIHE.g:988:2: (kw= '(' this_Actor_1= ruleActor kw= ',' this_STRING_3= RULE_STRING kw= ',' this_Actor_5= ruleActor kw= ')' )
-            // InternalIHE.g:989:3: kw= '(' this_Actor_1= ruleActor kw= ',' this_STRING_3= RULE_STRING kw= ',' this_Actor_5= ruleActor kw= ')'
+            // InternalIHE.g:1016:2: (kw= '(' this_Actor_1= ruleActor kw= ',' this_STRING_3= RULE_STRING kw= ',' this_Actor_5= ruleActor kw= ')' )
+            // InternalIHE.g:1017:3: kw= '(' this_Actor_1= ruleActor kw= ',' this_STRING_3= RULE_STRING kw= ',' this_Actor_5= ruleActor kw= ')'
             {
-            kw=(Token)match(input,38,FOLLOW_4); 
+            kw=(Token)match(input,39,FOLLOW_4); 
 
             			current.merge(kw);
             			newLeafNode(kw, grammarAccess.getTransactionAccess().getLeftParenthesisKeyword_0());
@@ -2269,7 +2324,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
             			newCompositeNode(grammarAccess.getTransactionAccess().getActorParserRuleCall_1());
             		
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_28);
             this_Actor_1=ruleActor();
 
             state._fsp--;
@@ -2280,19 +2335,19 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
             			afterParserOrEnumRuleCall();
             		
-            kw=(Token)match(input,39,FOLLOW_4); 
+            kw=(Token)match(input,40,FOLLOW_4); 
 
             			current.merge(kw);
             			newLeafNode(kw, grammarAccess.getTransactionAccess().getCommaKeyword_2());
             		
-            this_STRING_3=(Token)match(input,RULE_STRING,FOLLOW_27); 
+            this_STRING_3=(Token)match(input,RULE_STRING,FOLLOW_28); 
 
             			current.merge(this_STRING_3);
             		
 
             			newLeafNode(this_STRING_3, grammarAccess.getTransactionAccess().getSTRINGTerminalRuleCall_3());
             		
-            kw=(Token)match(input,39,FOLLOW_4); 
+            kw=(Token)match(input,40,FOLLOW_4); 
 
             			current.merge(kw);
             			newLeafNode(kw, grammarAccess.getTransactionAccess().getCommaKeyword_4());
@@ -2300,7 +2355,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
             			newCompositeNode(grammarAccess.getTransactionAccess().getActorParserRuleCall_5());
             		
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_29);
             this_Actor_5=ruleActor();
 
             state._fsp--;
@@ -2311,7 +2366,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
             			afterParserOrEnumRuleCall();
             		
-            kw=(Token)match(input,40,FOLLOW_2); 
+            kw=(Token)match(input,41,FOLLOW_2); 
 
             			current.merge(kw);
             			newLeafNode(kw, grammarAccess.getTransactionAccess().getRightParenthesisKeyword_6());
@@ -2339,7 +2394,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDomain"
-    // InternalIHE.g:1040:1: entryRuleDomain returns [String current=null] : iv_ruleDomain= ruleDomain EOF ;
+    // InternalIHE.g:1068:1: entryRuleDomain returns [String current=null] : iv_ruleDomain= ruleDomain EOF ;
     public final String entryRuleDomain() throws RecognitionException {
         String current = null;
 
@@ -2347,8 +2402,8 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalIHE.g:1040:46: (iv_ruleDomain= ruleDomain EOF )
-            // InternalIHE.g:1041:2: iv_ruleDomain= ruleDomain EOF
+            // InternalIHE.g:1068:46: (iv_ruleDomain= ruleDomain EOF )
+            // InternalIHE.g:1069:2: iv_ruleDomain= ruleDomain EOF
             {
              newCompositeNode(grammarAccess.getDomainRule()); 
             pushFollow(FOLLOW_1);
@@ -2375,7 +2430,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDomain"
-    // InternalIHE.g:1047:1: ruleDomain returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
+    // InternalIHE.g:1075:1: ruleDomain returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
     public final AntlrDatatypeRuleToken ruleDomain() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2385,8 +2440,8 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalIHE.g:1053:2: (this_STRING_0= RULE_STRING )
-            // InternalIHE.g:1054:2: this_STRING_0= RULE_STRING
+            // InternalIHE.g:1081:2: (this_STRING_0= RULE_STRING )
+            // InternalIHE.g:1082:2: this_STRING_0= RULE_STRING
             {
             this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -2415,7 +2470,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualityAttr"
-    // InternalIHE.g:1064:1: entryRuleQualityAttr returns [String current=null] : iv_ruleQualityAttr= ruleQualityAttr EOF ;
+    // InternalIHE.g:1092:1: entryRuleQualityAttr returns [String current=null] : iv_ruleQualityAttr= ruleQualityAttr EOF ;
     public final String entryRuleQualityAttr() throws RecognitionException {
         String current = null;
 
@@ -2423,8 +2478,8 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalIHE.g:1064:51: (iv_ruleQualityAttr= ruleQualityAttr EOF )
-            // InternalIHE.g:1065:2: iv_ruleQualityAttr= ruleQualityAttr EOF
+            // InternalIHE.g:1092:51: (iv_ruleQualityAttr= ruleQualityAttr EOF )
+            // InternalIHE.g:1093:2: iv_ruleQualityAttr= ruleQualityAttr EOF
             {
              newCompositeNode(grammarAccess.getQualityAttrRule()); 
             pushFollow(FOLLOW_1);
@@ -2451,7 +2506,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualityAttr"
-    // InternalIHE.g:1071:1: ruleQualityAttr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_QualityAttrID_0= ruleQualityAttrID kw= '[' this_STRING_2= RULE_STRING kw= ']' ) ;
+    // InternalIHE.g:1099:1: ruleQualityAttr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_QualityAttrID_0= ruleQualityAttrID kw= '[' this_STRING_2= RULE_STRING kw= ']' ) ;
     public final AntlrDatatypeRuleToken ruleQualityAttr() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2464,16 +2519,16 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalIHE.g:1077:2: ( (this_QualityAttrID_0= ruleQualityAttrID kw= '[' this_STRING_2= RULE_STRING kw= ']' ) )
-            // InternalIHE.g:1078:2: (this_QualityAttrID_0= ruleQualityAttrID kw= '[' this_STRING_2= RULE_STRING kw= ']' )
+            // InternalIHE.g:1105:2: ( (this_QualityAttrID_0= ruleQualityAttrID kw= '[' this_STRING_2= RULE_STRING kw= ']' ) )
+            // InternalIHE.g:1106:2: (this_QualityAttrID_0= ruleQualityAttrID kw= '[' this_STRING_2= RULE_STRING kw= ']' )
             {
-            // InternalIHE.g:1078:2: (this_QualityAttrID_0= ruleQualityAttrID kw= '[' this_STRING_2= RULE_STRING kw= ']' )
-            // InternalIHE.g:1079:3: this_QualityAttrID_0= ruleQualityAttrID kw= '[' this_STRING_2= RULE_STRING kw= ']'
+            // InternalIHE.g:1106:2: (this_QualityAttrID_0= ruleQualityAttrID kw= '[' this_STRING_2= RULE_STRING kw= ']' )
+            // InternalIHE.g:1107:3: this_QualityAttrID_0= ruleQualityAttrID kw= '[' this_STRING_2= RULE_STRING kw= ']'
             {
 
             			newCompositeNode(grammarAccess.getQualityAttrAccess().getQualityAttrIDParserRuleCall_0());
             		
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_30);
             this_QualityAttrID_0=ruleQualityAttrID();
 
             state._fsp--;
@@ -2484,19 +2539,19 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
             			afterParserOrEnumRuleCall();
             		
-            kw=(Token)match(input,41,FOLLOW_4); 
+            kw=(Token)match(input,42,FOLLOW_4); 
 
             			current.merge(kw);
             			newLeafNode(kw, grammarAccess.getQualityAttrAccess().getLeftSquareBracketKeyword_1());
             		
-            this_STRING_2=(Token)match(input,RULE_STRING,FOLLOW_30); 
+            this_STRING_2=(Token)match(input,RULE_STRING,FOLLOW_31); 
 
             			current.merge(this_STRING_2);
             		
 
             			newLeafNode(this_STRING_2, grammarAccess.getQualityAttrAccess().getSTRINGTerminalRuleCall_2());
             		
-            kw=(Token)match(input,42,FOLLOW_2); 
+            kw=(Token)match(input,43,FOLLOW_2); 
 
             			current.merge(kw);
             			newLeafNode(kw, grammarAccess.getQualityAttrAccess().getRightSquareBracketKeyword_3());
@@ -2524,7 +2579,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualityAttrID"
-    // InternalIHE.g:1110:1: entryRuleQualityAttrID returns [String current=null] : iv_ruleQualityAttrID= ruleQualityAttrID EOF ;
+    // InternalIHE.g:1138:1: entryRuleQualityAttrID returns [String current=null] : iv_ruleQualityAttrID= ruleQualityAttrID EOF ;
     public final String entryRuleQualityAttrID() throws RecognitionException {
         String current = null;
 
@@ -2532,8 +2587,8 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalIHE.g:1110:53: (iv_ruleQualityAttrID= ruleQualityAttrID EOF )
-            // InternalIHE.g:1111:2: iv_ruleQualityAttrID= ruleQualityAttrID EOF
+            // InternalIHE.g:1138:53: (iv_ruleQualityAttrID= ruleQualityAttrID EOF )
+            // InternalIHE.g:1139:2: iv_ruleQualityAttrID= ruleQualityAttrID EOF
             {
              newCompositeNode(grammarAccess.getQualityAttrIDRule()); 
             pushFollow(FOLLOW_1);
@@ -2560,7 +2615,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualityAttrID"
-    // InternalIHE.g:1117:1: ruleQualityAttrID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
+    // InternalIHE.g:1145:1: ruleQualityAttrID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
     public final AntlrDatatypeRuleToken ruleQualityAttrID() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2570,8 +2625,8 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalIHE.g:1123:2: (this_ID_0= RULE_ID )
-            // InternalIHE.g:1124:2: this_ID_0= RULE_ID
+            // InternalIHE.g:1151:2: (this_ID_0= RULE_ID )
+            // InternalIHE.g:1152:2: this_ID_0= RULE_ID
             {
             this_ID_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -2600,7 +2655,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRule"
-    // InternalIHE.g:1134:1: entryRuleRule returns [String current=null] : iv_ruleRule= ruleRule EOF ;
+    // InternalIHE.g:1162:1: entryRuleRule returns [String current=null] : iv_ruleRule= ruleRule EOF ;
     public final String entryRuleRule() throws RecognitionException {
         String current = null;
 
@@ -2608,8 +2663,8 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalIHE.g:1134:44: (iv_ruleRule= ruleRule EOF )
-            // InternalIHE.g:1135:2: iv_ruleRule= ruleRule EOF
+            // InternalIHE.g:1162:44: (iv_ruleRule= ruleRule EOF )
+            // InternalIHE.g:1163:2: iv_ruleRule= ruleRule EOF
             {
              newCompositeNode(grammarAccess.getRuleRule()); 
             pushFollow(FOLLOW_1);
@@ -2636,7 +2691,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRule"
-    // InternalIHE.g:1141:1: ruleRule returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_RuleId_0= ruleRuleId kw= ':' this_STRING_2= RULE_STRING ) ;
+    // InternalIHE.g:1169:1: ruleRule returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_RuleId_0= ruleRuleId kw= ':' this_STRING_2= RULE_STRING ) ;
     public final AntlrDatatypeRuleToken ruleRule() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2649,11 +2704,11 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalIHE.g:1147:2: ( (this_RuleId_0= ruleRuleId kw= ':' this_STRING_2= RULE_STRING ) )
-            // InternalIHE.g:1148:2: (this_RuleId_0= ruleRuleId kw= ':' this_STRING_2= RULE_STRING )
+            // InternalIHE.g:1175:2: ( (this_RuleId_0= ruleRuleId kw= ':' this_STRING_2= RULE_STRING ) )
+            // InternalIHE.g:1176:2: (this_RuleId_0= ruleRuleId kw= ':' this_STRING_2= RULE_STRING )
             {
-            // InternalIHE.g:1148:2: (this_RuleId_0= ruleRuleId kw= ':' this_STRING_2= RULE_STRING )
-            // InternalIHE.g:1149:3: this_RuleId_0= ruleRuleId kw= ':' this_STRING_2= RULE_STRING
+            // InternalIHE.g:1176:2: (this_RuleId_0= ruleRuleId kw= ':' this_STRING_2= RULE_STRING )
+            // InternalIHE.g:1177:3: this_RuleId_0= ruleRuleId kw= ':' this_STRING_2= RULE_STRING
             {
 
             			newCompositeNode(grammarAccess.getRuleAccess().getRuleIdParserRuleCall_0());
@@ -2704,7 +2759,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRuleId"
-    // InternalIHE.g:1175:1: entryRuleRuleId returns [String current=null] : iv_ruleRuleId= ruleRuleId EOF ;
+    // InternalIHE.g:1203:1: entryRuleRuleId returns [String current=null] : iv_ruleRuleId= ruleRuleId EOF ;
     public final String entryRuleRuleId() throws RecognitionException {
         String current = null;
 
@@ -2712,8 +2767,8 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalIHE.g:1175:46: (iv_ruleRuleId= ruleRuleId EOF )
-            // InternalIHE.g:1176:2: iv_ruleRuleId= ruleRuleId EOF
+            // InternalIHE.g:1203:46: (iv_ruleRuleId= ruleRuleId EOF )
+            // InternalIHE.g:1204:2: iv_ruleRuleId= ruleRuleId EOF
             {
              newCompositeNode(grammarAccess.getRuleIdRule()); 
             pushFollow(FOLLOW_1);
@@ -2740,7 +2795,7 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRuleId"
-    // InternalIHE.g:1182:1: ruleRuleId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
+    // InternalIHE.g:1210:1: ruleRuleId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
     public final AntlrDatatypeRuleToken ruleRuleId() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2750,8 +2805,8 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalIHE.g:1188:2: (this_ID_0= RULE_ID )
-            // InternalIHE.g:1189:2: this_ID_0= RULE_ID
+            // InternalIHE.g:1216:2: (this_ID_0= RULE_ID )
+            // InternalIHE.g:1217:2: this_ID_0= RULE_ID
             {
             this_ID_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -2799,19 +2854,20 @@ public class InternalIHEParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x000000000C000000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000008000000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000010000010L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000004020000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000008020000000L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000040000010L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000080000020L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000003F00400000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000003E00400000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000003C00400000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000003800400000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000003000400000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000002000400000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000007F00400000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000007E00400000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000007C00400000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000007800400000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000007000400000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000006000400000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000004000400000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000010000000000L});
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000020000000000L});
     public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000080000000000L});
 
 }

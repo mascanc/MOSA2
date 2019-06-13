@@ -45,10 +45,11 @@ Profile:
 
 SecRequirements:
 	SecReID=ID '{'
-	('Goal' ':' secreGoal=STRING)?
-	('Level' ':' secreLevel=STRING)?
+	('Form' ':' secreForm=STRING)?
+	('Sensitivity' ':' secreSensitivity=STRING)?
 	('Location' ':' secreLocation=STRING)?
 	('State' ':' secreState=STRING)?
+	('Goal' ':' secreGoal=STRING)?
 	('Descr' ':' secreDesc=STRING)?
 	('Category' ':' secreCategory=STRING)?
 

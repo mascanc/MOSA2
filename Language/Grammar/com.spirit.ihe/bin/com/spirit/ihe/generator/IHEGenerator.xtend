@@ -71,7 +71,7 @@ class IHEGenerator extends AbstractGenerator {
 		
 		import java.util.HashMap;
 		
-		import com.spirit.togaf.bb.ABB;
+		import com.spirit.ihe.language.bb.ABB;
 		
 		public class AllABBs {
 			// instantiate all the ABBs
@@ -107,8 +107,8 @@ class IHEGenerator extends AbstractGenerator {
 		«ELSE»
 			package «packageGenerated»;
 		«ENDIF»
-		import com.spirit.togaf.bb.SAT;
-		import com.spirit.togaf.bb.dependencies.TFRule;
+		import com.spirit.ihe.language.bb.SAT;
+		import com.spirit.ihe.language.bb.dependencies.TFRule;
 		
 		public class «e.name» {
 			private SAT «e.name.toLowerCase»;
@@ -143,12 +143,12 @@ class IHEGenerator extends AbstractGenerator {
 			package «packageGenerated»;
 		        «ENDIF»
 		        
-		import com.spirit.togaf.bb.ABB;
-		import com.spirit.togaf.bb.dependencies.Actor;
-		import com.spirit.togaf.bb.dependencies.Domain;
-		import com.spirit.togaf.bb.dependencies.QualityAttribute;
-		import com.spirit.togaf.bb.dependencies.Transaction;
-		import com.spirit.togaf.bb.dependencies.SecurityRequirement;
+		import com.spirit.ihe.language.bb.ABB;
+		import com.spirit.ihe.language.bb.dependencies.Actor;
+		import com.spirit.ihe.language.bb.dependencies.Domain;
+		import com.spirit.ihe.language.bb.dependencies.QualityAttribute;
+		import com.spirit.ihe.language.bb.dependencies.Transaction;
+		import com.spirit.ihe.language.bb.dependencies.SecurityRequirement;
 		        
 		public class «e.name» {
 		    private ABB «e.name.toLowerCase»;
@@ -199,10 +199,11 @@ class IHEGenerator extends AbstractGenerator {
 		        		
 		        		«FOR sre : e.secre»
 		        		SecurityRequirement «sre.secReID.toLowerCase.trim.split(" ").get(0)» = new SecurityRequirement() {
-		        			private String goal = "«sre.secreGoal»";
-		        			private String level = "«sre.secreLevel»";
+		        			private String form = "«sre.secreForm»";
+		        			private String sensitivity = "«sre.secreSensitivity»";
 		        			private String location = "«sre.secreLocation»";
 		        			private String state = "«sre.secreState»";
+		        			private String goal = "«sre.secreGoal»";
 		        			private String descr = "«sre.secreDesc»";
 		        			private String category = "«sre.secreCategory»";
 		        			private String name = "«sre.secReID»";
@@ -212,6 +213,10 @@ class IHEGenerator extends AbstractGenerator {
 		        				return this.name;	
 		        			}
 
+							@Override
+		        			public String getForm() {
+		        				return this.form;	
+		        			}
 		        			@Override
 		        			public String getGoal() {
 		        				return this.goal;	
@@ -221,8 +226,8 @@ class IHEGenerator extends AbstractGenerator {
 		        				return this.location;	
 		        			}
 		        			@Override
-		        			public String getLevel() {
-		        				return this.level;	
+		        			public String getSensitivity() {
+		        				return this.sensitivity;	
 		        			}
 		        			@Override
 		        			public String getState() {
