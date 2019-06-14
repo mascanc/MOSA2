@@ -208,7 +208,7 @@ groupedABB.getSecurityRequirements().stream().forEach(x -> {
 
 ```
 where `groupedABB` is the result of Group. See the tests provided for more information.
-The architect is left free to evaluate the security requirements as he wants. We provided in our technical report a gamma notation (which is inspired by the relational algebra).  
+The architect is left free to evaluate the security requirements as he wants. We provided in our technical report a sigma notation (which is inspired by the relational algebra).  
 
 ### Evaluating with Z3
 Quality attributes can be further evaluated with Z3, as previously described. 
